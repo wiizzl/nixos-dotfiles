@@ -29,7 +29,7 @@ in
       pavucontrol
       bun
       nodejs
-      vlc
+      nerdfonts.fira-code
     ];
   };
 
