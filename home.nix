@@ -29,7 +29,6 @@ in
       pavucontrol
       bun
       nodejs
-      nerdfonts.fira-code
     ];
   };
 
