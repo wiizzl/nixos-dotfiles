@@ -1,0 +1,22 @@
+{
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "Tokyo Night Light",
+    "dark": "Tokyo Night Storm"
+  },
+  "auto_install_extensions": {
+    "html": true,
+    "astro": true,
+    "nix": true,
+    "toml": true,
+    "php": true,
+    "dockerfile": true,
+    "sql": true,
+    "vue": true,
+    "xml": true,
+    "prisma": true,
+    "tokyo-night": true
+  }
+}

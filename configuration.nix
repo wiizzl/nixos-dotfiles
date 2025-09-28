@@ -1,17 +1,16 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos";
-  # networking.wireless.enable = true;
   networking.networkmanager.enable = true;
+  # networking.wireless.enable = true;
 
   time.timeZone = "Europe/Paris";
 
@@ -31,6 +30,16 @@
     };
   };
 
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+    pulse.enable = true;
+  };
+
   services.displayManager = {
     ly.enable = true;
   };
@@ -39,11 +48,11 @@
     enable = true;
     autoRepeatDelay = 200;
     autoRepeatInterval = 35;
-
     windowManager.qtile.enable = true;
-    windowManager.dwm = {
-      enable = true;
-    };
+
+    excludePackages = with pkgs; [
+      xterm
+    ];
 
     xkb = {
       layout = "fr";
@@ -51,39 +60,34 @@
     };
   };
 
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
   console.keyMap = "fr";
 
   users.users.pier = {
     isNormalUser = true;
     description = "Pierre";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      tree
+    extraGroups = [
+      "networkmanager"
+      "wheel"
     ];
   };
 
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    vim
     wget
     git
-    fastfetch
     alacritty
-    discord
-    dbeaver-bin
+    firefox
   ];
 
-  programs.firefox.enable = true;
+  hardware.bluetooth.enable = true;
 
   services.openssh.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   system.stateVersion = "25.05";
 }

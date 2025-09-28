@@ -1,32 +1,5 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 import os
 
-import libqtile.resources
 from libqtile import bar, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -44,12 +17,14 @@ keys = [
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
+
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
     Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
@@ -57,6 +32,7 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -67,10 +43,9 @@ keys = [
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    # Toggle between different layouts as defined below
+
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key(
         [mod],
         "f",
@@ -80,7 +55,11 @@ keys = [
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+
+    # Run app
+    Key([mod], "Return", lazy.spawn(terminal), desc="Run terminal"),
+    Key([mod], "d", lazy.spawn("rofi -show drun"), desc='Run app launcher'),
+    Key([mod], "b", lazy.spawn("firefox"), desc='Run browser'),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -110,23 +89,45 @@ for i in groups:
                 desc=f"Switch to group {i.name}",
             ),
             # mod + shift + group number = switch to & move focused window to group
-            Key(
-                [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name, switch_group=True),
-                desc=f"Switch to & move focused window to group {i.name}",
-            ),
+            # Key(
+            #     [mod, "shift"],
+            #     i.name,
+            #     lazy.window.togroup(i.name, switch_group=True),
+            #     desc=f"Switch to & move focused window to group {i.name}",
+            # ),
             # Or, use below if you prefer not to switch to that group.
-            # # mod + shift + group number = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
+            # mod + shift + group number = move focused window to group
+            Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+                desc="move focused window to group {}".format(i.name)),
         ]
     )
 
+colors = [
+    ["#1a1b26", "#1a1b26"],  # bg        (primary.background)
+    ["#a9b1d6", "#a9b1d6"],  # fg        (primary.foreground)
+    ["#32344a", "#32344a"],  # color01   (normal.black)
+    ["#f7768e", "#f7768e"],  # color02   (normal.red)
+    ["#9ece6a", "#9ece6a"],  # color03   (normal.green)
+    ["#e0af68", "#e0af68"],  # color04   (normal.yellow)
+    ["#7aa2f7", "#7aa2f7"],  # color05   (normal.blue)
+    ["#ad8ee6", "#ad8ee6"],  # color06   (normal.magenta)
+    ["#0db9d7", "#0db9d7"],  # color15   (bright.cyan)
+    ["#444b6a", "#444b6a"]   # color[9]  (bright.black)
+]
+
+# helper in case your colors are ["#hex", "#hex"]
+def C(x): return x[0] if isinstance(x, (list, tuple)) else x
+
+layout_theme = {
+    "border_width" : 1,
+    "margin" : 4,
+    "border_focus" : colors[6],
+    "border_normal" : colors[0],
+}
+
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    layout.Max(),
-    # Try more layouts by unleashing below layouts.
+    layout.Columns(**layout_theme),
+    layout.Max(**layout_theme),
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
@@ -141,41 +142,87 @@ layouts = [
 
 widget_defaults = dict(
     font="sans",
-    fontsize=12,
-    padding=3,
+    fontsize=14,
+    padding=0,
+    background=colors[0],
 )
+
 extension_defaults = widget_defaults.copy()
 
-logo = os.path.join(os.path.dirname(libqtile.resources.__file__), "logo.png")
+sep = widget.Sep(linewidth=1, padding=8, foreground=colors[9])
+
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
+                widget.Spacer(length = 8),
+                widget.Image(
+                    filename = "~/.config/qtile/icons/NixOS.png",
+                    scale = "False",
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
+                widget.GroupBox(
+                    fontsize = 16,
+                    margin_y = 5,
+                    margin_x = 5,
+                    padding_y = 0,
+                    padding_x = 2,
+                    borderwidth = 3,
+                    active = colors[8],
+                    inactive = colors[9],
+                    rounded = False,
+                    highlight_color = colors[0],
+                    highlight_method = "line",
+                    this_current_screen_border = colors[7],
+                    this_screen_border = colors [4],
+                    other_current_screen_border = colors[7],
+                    other_screen_border = colors[4],
+                ),
+                sep,
+                widget.CurrentLayout(
+                    foreground = colors[1],
+                    padding = 5
+                ),
+                widget.WindowName(
+                    foreground = colors[6],
+                    padding = 8,
+                    max_chars = 40
+                ),
+                widget.Systray(padding = 6),
+                sep,
+                widget.CPU(
+                    foreground = colors[4],
+                    padding = 8,
+                    format="CPU: {load_percent}%",
+                ),
+                sep,
+                widget.Memory(
+                    foreground = colors[8],
+                    padding = 8,
+                    format = 'Mem: {MemUsed:.0f}{mm}',
+                ),
+                sep,
+                widget.DF(
+                    update_interval = 60,
+                    foreground = colors[5],
+                    padding = 8,
+                    partition = '/',
+                    format = '{uf}{m} free',
+                    fmt = 'Disk: {}',
+                    visible_on_warn = False,
+                ),
+                widget.Clock(
+                    foreground = colors[8],
+                    padding = 8,
+                    format = "%d/%m/%y - %H:%M",
+                ),
+                widget.Spacer(length = 8),
             ],
-            24,
+            # 24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            margin=[0, 0, 1, 0],
+            size=30
         ),
-        background="#000000",
-        wallpaper=logo,
-        wallpaper_mode="center",
         # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
         # By default we handle these events delayed to already improve performance, however your system might still be struggling
         # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
@@ -210,7 +257,6 @@ floating_layout = layout.Floating(
 )
 auto_fullscreen = True
 focus_on_window_activation = "smart"
-focus_previous_on_window_remove = False
 reconfigure_screens = True
 
 # If things like steam games want to auto-minimize themselves when losing
@@ -224,12 +270,4 @@ wl_input_rules = None
 wl_xcursor_theme = None
 wl_xcursor_size = 24
 
-# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
-# string besides java UI toolkits; you can see several discussions on the
-# mailing lists, GitHub issues, and other WM documentation that suggest setting
-# this string if your java app doesn't work correctly. We may as well just lie
-# and say that we're a working one by default.
-#
-# We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
-# java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname = "Qtile"

@@ -5,13 +5,32 @@ let
 
   configs = {
     qtile = "qtile";
+    zed = "zed";
+    alacritty = "alacritty";
+    fastfetch = "fastfetch";
+    rofi = "rofi";
   };
 in
 {
+  imports = [
+    ./modules/zed.nix
+    ./modules/git.nix
+  ];
+
   home = {
     username = "pier";
     homeDirectory = "/home/pier";
     stateVersion = "25.05";
+
+    packages = with pkgs; [
+      fastfetch
+      dbeaver-bin
+      rofi
+      pavucontrol
+      bun
+      nodejs
+      vlc
+    ];
   };
 
   xdg.configFile = builtins.mapAttrs (name: subpath: {
@@ -23,21 +42,18 @@ in
     bash = {
       enable = true;
       shellAliases = {
-        btw = "echo I use NixOS, btw";
+        nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos";
         ff = "fastfetch";
       };
     };
 
-    git = {
+    nixcord = {
       enable = true;
-      userName = "wiizzl";
-      userEmail = "github@houlliere.com";
-      extraConfig = {
-        init.defaultBranch = "main";
-      };
+      vesktop.enable = true;
+      discord.enable = false;
     };
 
-    zed-editor = {
+    starship = {
       enable = true;
     };
   };
