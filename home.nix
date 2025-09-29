@@ -34,6 +34,7 @@ in
       bun
       nodejs
       cava
+      thunderbird
     ];
   };
 
