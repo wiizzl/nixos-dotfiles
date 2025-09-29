@@ -80,32 +80,43 @@ for vt in range(1, 8):
         )
     )
 
+azerty_keys = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "underscore", "ccedilla"]
+group_names = "123456789"
 
-groups = [Group(i) for i in "123456789"]
+for key_sym, group_name in zip(azerty_keys, group_names):
+    keys.extend([
+        # Switch to group
+        Key([mod], key_sym, lazy.group[group_name].toscreen(), desc=f"Switch to group {group_name}"),
 
-for i in groups:
-    keys.extend(
-        [
-            # mod + group number = switch to group
-            Key(
-                [mod],
-                i.name,
-                lazy.group[i.name].toscreen(),
-                desc=f"Switch to group {i.name}",
-            ),
-            # mod + shift + group number = switch to & move focused window to group
-            # Key(
-            #     [mod, "shift"],
-            #     i.name,
-            #     lazy.window.togroup(i.name, switch_group=True),
-            #     desc=f"Switch to & move focused window to group {i.name}",
-            # ),
-            # Or, use below if you prefer not to switch to that group.
-            # mod + shift + group number = move focused window to group
-            Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-                desc="move focused window to group {}".format(i.name)),
-        ]
-    )
+        # Move focused window to group
+        Key([mod, "shift"], key_sym, lazy.window.togroup(group_name), desc=f"Move window to group {group_name}"),
+    ])
+
+# groups = [Group(i) for i in "123456789"]
+
+# for i in groups:
+#     keys.extend(
+#         [
+#             # mod + group number = switch to group
+#             Key(
+#                 [mod],
+#                 i.name,
+#                 lazy.group[i.name].toscreen(),
+#                 desc=f"Switch to group {i.name}",
+#             ),
+#             # mod + shift + group number = switch to & move focused window to group
+#             # Key(
+#             #     [mod, "shift"],
+#             #     i.name,
+#             #     lazy.window.togroup(i.name, switch_group=True),
+#             #     desc=f"Switch to & move focused window to group {i.name}",
+#             # ),
+#             # Or, use below if you prefer not to switch to that group.
+#             # mod + shift + group number = move focused window to group
+#             Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+#                 desc="move focused window to group {}".format(i.name)),
+#         ]
+#     )
 
 colors = [
     ["#1e1e2e", "#1e1e2e"],
