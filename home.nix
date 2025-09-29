@@ -16,6 +16,7 @@ in
     ./modules/zed.nix
     ./modules/git.nix
     ./modules/discord.nix
+    ./modules/spotify.nix
     ./modules/theme.nix
   ];
 
