@@ -36,6 +36,7 @@ in
       nodejs
       cava
       thunderbird
+      tldr
       kdePackages.dolphin
     ];
   };
