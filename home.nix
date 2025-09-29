@@ -15,6 +15,7 @@ in
   imports = [
     ./modules/zed.nix
     ./modules/git.nix
+    ./modules/theme.nix
   ];
 
   home = {
