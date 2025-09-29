@@ -18,6 +18,7 @@ in
     ./modules/git.nix
     ./modules/discord.nix
     ./modules/spotify.nix
+    ./modules/zen.nix
   ];
 
   home = {
@@ -55,10 +56,6 @@ in
     };
 
     starship = {
-      enable = true;
-    };
-
-    zen-browser = {
       enable = true;
     };
   };
