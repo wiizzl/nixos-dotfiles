@@ -29,7 +29,7 @@ in
 
     packages = with pkgs; [
       fastfetch
-      dbeaver-bin
+      dbgate
       rofi
       pavucontrol
       bun
@@ -37,7 +37,12 @@ in
       cava
       thunderbird
       tldr
+      podman-desktop
       kdePackages.dolphin
+      android-studio
+      jetbrains.rider
+      jdk
+      dotnetCorePackages.sdk_9_0-bin
     ];
   };
 

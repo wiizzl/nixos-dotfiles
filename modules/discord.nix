@@ -12,6 +12,8 @@
       frameless = true;
       plugins = {
         fakeNitro.enable = true;
+        callTimer.enable = true;
+        friendsSince.enable = true;
       };
     };
   };
