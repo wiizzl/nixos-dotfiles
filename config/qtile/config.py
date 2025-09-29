@@ -1,14 +1,14 @@
 import os
 import subprocess
 
-from libqtile import bar, layout, qtile, widget
+from libqtile import bar, layout, qtile, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 @hook.subscribe.startup_once
 def autostart_once():
-    subprocess.run(os.path.expanduser('~/.config/qtile/autostart.sh'))
+    subprocess.call([os.path.expanduser("~/.config/qtile/autostart.sh")])
 
 mod = "mod4"
 terminal = guess_terminal()
