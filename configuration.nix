@@ -83,7 +83,6 @@
     wget
     git
     alacritty
-    firefox
   ];
 
   hardware.bluetooth.enable = true;

@@ -65,7 +65,6 @@ keys = [
     # Run app
     Key([mod], "Return", lazy.spawn(terminal), desc="Run terminal"),
     Key([mod], "d", lazy.spawn("rofi -show drun"), desc='Run app launcher'),
-    Key([mod], "b", lazy.spawn("firefox"), desc='Run browser'),
 ]
 
 # Add key bindings to switch VTs in Wayland.

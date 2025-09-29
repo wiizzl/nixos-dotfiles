@@ -43,15 +43,22 @@ in
   }) configs;
 
   programs = {
+    home-manager = {
+      enable = true;
+    };
+
     bash = {
       enable = true;
       shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos";
-        ff = "fastfetch";
       };
     };
 
     starship = {
+      enable = true;
+    };
+
+    zen-browser = {
       enable = true;
     };
   };
