@@ -1,16 +1,22 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
+
+let
+  theme = pkgs.fetchFromGitHub {
+    owner = "catppuccin";
+    repo = "spicetify";
+    rev = "4294a61";
+    sha256 = "sha256-OHsauoCjj99aoIbq78xQf1ehYtLpIcUde5DmZSJFCXI=";
+  };
+in
 
 {
-  programs.spicetify =
-    let
-      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-    in
-    {
-      enable = true;
-      theme = spicePkgs.themes.catppuccin;
-      colorScheme = "mocha";
-      enabledExtensions = with spicePkgs.extensions; [
-        adblock
-      ];
+  programs.spicetify = {
+    enable = true;
+
+    colorScheme = "mocha";
+    theme = {
+      name = "Catppucin";
+      src = "${theme}/catppuccin";
     };
+  };
 }

@@ -13,9 +13,14 @@
 
   outputs =
     { self, nixpkgs, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = system;
+        specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
           inputs.home-manager.nixosModules.home-manager
