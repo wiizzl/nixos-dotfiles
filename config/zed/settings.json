@@ -11,6 +11,34 @@
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Mocha"
   },
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5"
+    },
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "diagnostics": {
+    "button": false,
+    "include_warnings": true,
+    "inline": {
+      "enabled": true,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": null
+    }
+  },
+  "indent_guides": {
+    "enabled": true,
+    "line_width": 1,
+    "active_line_width": 2,
+    "coloring": "indent_aware"
+  },
   "auto_install_extensions": {
     "html": true,
     "astro": true,
@@ -23,6 +51,7 @@
     "xml": true,
     "prisma": true,
     "catppuccin": true,
-    "catppuccin-icons": true
+    "catppuccin-icons": true,
+    "biome": true
   }
 }

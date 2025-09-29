@@ -123,7 +123,7 @@ colors = [
 
 layout_theme = {
     "border_width" : 1,
-    "margin" : 1,
+    "margin" : 0,
     "border_focus" : colors[6],
     "border_normal" : colors[0],
 }
