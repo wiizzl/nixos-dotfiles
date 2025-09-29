@@ -9,6 +9,7 @@ let
     alacritty = "alacritty";
     fastfetch = "fastfetch";
     rofi = "rofi";
+    cava = "cava";
   };
 in
 {
@@ -32,6 +33,7 @@ in
       pavucontrol
       bun
       nodejs
+      cava
     ];
   };
 
