@@ -18,7 +18,6 @@ in
     ./modules/git.nix
     ./modules/discord.nix
     ./modules/spotify.nix
-    ./modules/theme.nix
   ];
 
   home = {
