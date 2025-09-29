@@ -68,12 +68,15 @@
 
   console.keyMap = "fr";
 
+  virtualisation.docker.enable = true;
+
   users.users.pier = {
     isNormalUser = true;
     description = "Pierre";
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
   };
 
