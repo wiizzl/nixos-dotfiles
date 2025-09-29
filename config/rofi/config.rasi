@@ -1,3 +1,5 @@
+@theme "catppucin-mocha.rasi"
+
 configuration{
     modi: ["drun"];
     show-icons: true;
@@ -20,5 +22,3 @@ configuration{
     kb-move-char-forward: "Control+f";
     kb-mode-complete: "Control+o";
 }
-
-@theme "tokyonight.rasi"

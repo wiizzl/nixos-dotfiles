@@ -2,9 +2,14 @@
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "theme": {
-    "mode": "system",
-    "light": "Tokyo Night Light",
-    "dark": "Tokyo Night Storm"
+    "mode": "dark",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
+  },
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
   },
   "auto_install_extensions": {
     "html": true,
@@ -17,6 +22,7 @@
     "vue": true,
     "xml": true,
     "prisma": true,
-    "tokyo-night": true
+    "catppuccin": true,
+    "catppuccin-icons": true
   }
 }

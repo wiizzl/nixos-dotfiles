@@ -1,33 +1,45 @@
-/*
- * Tokyonight colorscheme (big icons) for rofi
- * User: w8ste
- */
-
-
-// define colors etc.
 * {
-    bg: #24283b;
-    hv: #9274ca;
-    primary: #444b6a;  // TokyoNight bright black
-    ug: #0B2447;
+    rosewater: #f5e0dc;
+    flamingo: #f2cdcd;
+    pink: #f5c2e7;
+    mauve: #cba6f7;
+    red: #f38ba8;
+    maroon: #eba0ac;
+    peach: #fab387;
+    yellow: #f9e2af;
+    green: #a6e3a1;
+    teal: #94e2d5;
+    sky: #89dceb;
+    sapphire: #74c7ec;
+    blue: #89b4fa;
+    lavender: #b4befe;
+    text: #cdd6f4;
+    subtext1: #bac2de;
+    subtext0: #a6adc8;
+    overlay2: #9399b2;
+    overlay1: #7f849c;
+    overlay0: #6c7086;
+    surface2: #585b70;
+    surface1: #45475a;
+    surface0: #313244;
+    base: #1e1e2e;
+    mantle: #181825;
+    crust: #11111b;
+
+    bg: @base;
+    hv: @mauve;
+    primary: @surface1;
+    ug: @red;
     font: "Monospace 11";
     background-color: @bg;
-    //dark: @bg;
     border: 0px;
-    kl: #7aa2f7;
+    kl: @blue;
     black: #000000;
-
     transparent: rgba(46,52,64,0);
 }
 
-// defines different aspects of the window
 window {
     width: 700;
-    /*since line wont work with height, i comment it out
-    if you rather control the size via height
-    just comment it out */
-    //height: 500;
-
     orientation: horizontal;
     location: center;
     anchor: center;
@@ -73,7 +85,6 @@ prompt {
 
 listview {
     layout: vertical;
-    //spacing: 5px;
     padding: 8px;
     lines: 7;
     columns: 2;
@@ -125,7 +136,6 @@ button {
     padding: 6px;
     color: @primary;
     horizonatal-align: 0.5;
-
     border: 2px 0px 2px 2px;
     border-radius: 4px 0px 0px 4px;
     border-color: @primary;
