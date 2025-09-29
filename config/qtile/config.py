@@ -16,6 +16,7 @@ terminal = guess_terminal()
 keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
+
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
@@ -108,24 +109,21 @@ for i in groups:
     )
 
 colors = [
-    ["#1a1b26", "#1a1b26"],  # bg        (primary.background)
-    ["#a9b1d6", "#a9b1d6"],  # fg        (primary.foreground)
-    ["#32344a", "#32344a"],  # color01   (normal.black)
-    ["#f7768e", "#f7768e"],  # color02   (normal.red)
-    ["#9ece6a", "#9ece6a"],  # color03   (normal.green)
-    ["#e0af68", "#e0af68"],  # color04   (normal.yellow)
-    ["#7aa2f7", "#7aa2f7"],  # color05   (normal.blue)
-    ["#ad8ee6", "#ad8ee6"],  # color06   (normal.magenta)
-    ["#0db9d7", "#0db9d7"],  # color15   (bright.cyan)
-    ["#444b6a", "#444b6a"]   # color[9]  (bright.black)
+    ["#1e1e2e", "#1e1e2e"],
+    ["#cdd6f4", "#cdd6f4"],
+    ["#181825", "#181825"],
+    ["#f7768e", "#f7768e"],
+    ["#9ece6a", "#9ece6a"],
+    ["#e0af68", "#e0af68"],
+    ["#7aa2f7", "#7aa2f7"],
+    ["#ad8ee6", "#ad8ee6"],
+    ["#0db9d7", "#0db9d7"],
+    ["#313244", "#313244"]
 ]
-
-# helper in case your colors are ["#hex", "#hex"]
-def C(x): return x[0] if isinstance(x, (list, tuple)) else x
 
 layout_theme = {
     "border_width" : 1,
-    "margin" : 4,
+    "margin" : 1,
     "border_focus" : colors[6],
     "border_normal" : colors[0],
 }
@@ -160,7 +158,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Spacer(length = 8),
+                widget.Spacer(length=8),
                 widget.Image(
                     filename = "~/.config/qtile/icons/NixOS.png",
                     scale = "False",
@@ -216,7 +214,7 @@ screens = [
                     padding = 8,
                     format = "%d/%m/%y - %H:%M",
                 ),
-                widget.Spacer(length = 8),
+                widget.Spacer(length=8),
             ],
             # 24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
@@ -224,6 +222,9 @@ screens = [
             margin=[0, 0, 1, 0],
             size=30
         ),
+        wallpaper="~/.config/qtile/wallpapers/nix-black-4k.png",
+        wallpaper_mode="fill",
+
         # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
         # By default we handle these events delayed to already improve performance, however your system might still be struggling
         # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
