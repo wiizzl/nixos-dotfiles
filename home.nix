@@ -19,6 +19,7 @@ in
     ./modules/discord.nix
     ./modules/spotify.nix
     ./modules/zen.nix
+    ./modules/theme.nix
   ];
 
   home = {
