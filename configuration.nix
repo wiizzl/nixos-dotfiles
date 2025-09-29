@@ -7,12 +7,12 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # boot.loader.grub = {
-  #   enable = true;
-  #   device = "nodev";
-  #   efiSupport = true;
-  #   useOSProber = true;
-  # };
+
+  nix.gc = {
+    automatic = true;
+    randomizedDelaySec = "14m";
+    options = "--delete-older-than 10d";
+  };
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
