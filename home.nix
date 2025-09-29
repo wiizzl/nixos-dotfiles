@@ -15,6 +15,7 @@ in
   imports = [
     ./modules/zed.nix
     ./modules/git.nix
+    ./modules/discord.nix
     ./modules/theme.nix
   ];
 
@@ -45,12 +46,6 @@ in
         nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos";
         ff = "fastfetch";
       };
-    };
-
-    nixcord = {
-      enable = true;
-      vesktop.enable = true;
-      discord.enable = false;
     };
 
     starship = {
