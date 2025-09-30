@@ -28,6 +28,7 @@ in
     stateVersion = "25.05";
 
     packages = with pkgs; [
+      htop
       fastfetch
       dbgate
       rofi
@@ -42,6 +43,8 @@ in
       android-studio
       jetbrains.rider
       jdk
+      google-chrome
+      onlyoffice-desktopeditors
       dotnetCorePackages.sdk_9_0-bin
     ];
   };
