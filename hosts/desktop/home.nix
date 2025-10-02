@@ -4,7 +4,6 @@
   imports = [
     ./variables.nix
 
-    # ../../home/programs/alacritty
     ../../home/programs/shell
     ../../home/programs/fastfetch
     ../../home/programs/git
@@ -15,7 +14,6 @@
 
     ../../home/system/qtile
     ../../home/system/zathura
-    ../../home/system/vicinae
   ];
 
   home = {
