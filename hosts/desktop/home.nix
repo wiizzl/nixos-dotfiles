@@ -33,6 +33,7 @@
       onlyoffice-desktopeditors
       pavucontrol
       dbgate
+      rofi
 
       # Dev
       go

@@ -1,15 +1,6 @@
 {
   description = "My garden of configurations";
 
-  nixConfig = {
-    extra-substituters = [
-      "https://vicinae.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
-    ];
-  };
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
@@ -22,7 +13,6 @@
     };
     nixcord.url = "github:KaylorBen/nixcord";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    vicinae.url = "github:vicinaehq/vicinae";
   };
 
   outputs =
