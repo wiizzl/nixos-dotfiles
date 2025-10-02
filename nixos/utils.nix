@@ -60,13 +60,6 @@ in
 
   console.keyMap = keyboardLayout;
 
-  environment.variables = {
-    EDITOR = "zeditor";
-    TERMINAL = "kitty";
-    TERM = "kitty";
-    BROWSER = "zen-beta";
-  };
-
   services.libinput.enable = true;
   programs.dconf.enable = true;
 
@@ -83,5 +76,6 @@ in
   environment.systemPackages = with pkgs; [
     wget
     curl
+    alacritty
   ];
 }

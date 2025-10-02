@@ -5,7 +5,7 @@ let
 in
 {
   users.users = {
-    users.${username} = {
+    ${username} = {
       isNormalUser = true;
       description = "${username} account";
       extraGroups = [

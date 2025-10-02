@@ -10,7 +10,7 @@ in
   };
 
   nix = {
-    experimental-features = [
+    settings.experimental-features = [
       "nix-command"
       "flakes"
     ];

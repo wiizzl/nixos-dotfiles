@@ -4,7 +4,7 @@
   imports = [
     ./variables.nix
 
-    ../../home/programs/kitty
+    # ../../home/programs/alacritty
     ../../home/programs/shell
     ../../home/programs/fastfetch
     ../../home/programs/git
