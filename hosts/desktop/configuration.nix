@@ -12,6 +12,7 @@
     ../../nixos/users.nix
     ../../nixos/utils.nix
     ../../nixos/qtile.nix
+    ../../nixos/podman.nix
 
     ./hardware-configuration.nix
     ./variables.nix

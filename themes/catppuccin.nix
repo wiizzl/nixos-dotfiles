@@ -28,7 +28,7 @@
     cursor = {
       name = "phinger-cursors-light";
       package = pkgs.phinger-cursors;
-      size = 48;
+      size = 32;
     };
 
     fonts = {
