@@ -48,6 +48,7 @@
       htop-vim
       tldr
       bat
+      nnn
 
       # Just cool
       peaclock
