@@ -33,9 +33,11 @@
         };
 
         ExtensionSettings = mkExtensionSettings {
+          "@react-devtools" = "react-developer-tools";
           "uBlock0@raymondhill.net" = "ublock-origin";
           "wappalyzer@crunchlabz.com" = "wappalyzer";
           "{85860b32-02a8-431a-b2b1-40fbd64c9c69}" = "github-file-icons";
+          "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}" = "stylus";
         };
 
         AutofillAddressEnabled = false;
