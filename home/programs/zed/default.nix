@@ -9,9 +9,21 @@
       nixd
     ];
 
+    extensions = [
+      "html"
+      "astro"
+      "nix"
+      "toml"
+      "php"
+      "dockerfile"
+      "sql"
+      "vue"
+      "xml"
+      "prisma"
+      "biome"
+    ];
+
     userSettings = {
-      ui_font_size = 16;
-      buffer_font_size = 15;
       agent = {
         inline_assistant_model = {
           provider = "copilot_chat";
@@ -45,19 +57,5 @@
         coloring = "indent_aware";
       };
     };
-
-    extensions = [
-      "html"
-      "astro"
-      "nix"
-      "toml"
-      "php"
-      "dockerfile"
-      "sql"
-      "vue"
-      "xml"
-      "prisma"
-      "biome"
-    ];
   };
 }

@@ -4,6 +4,7 @@
   imports = [
     ./variables.nix
 
+    ../../home/programs/ghostty
     ../../home/programs/shell
     ../../home/programs/fastfetch
     ../../home/programs/git
@@ -14,6 +15,7 @@
 
     ../../home/system/qtile
     ../../home/system/zathura
+    ../../home/system/rofi
   ];
 
   home = {
@@ -23,31 +25,29 @@
     packages = with pkgs; [
       # Apps
       vlc
-      obsidian
-      resources
-      gnome-clocks
-      gnome-text-editor
       google-chrome
       onlyoffice-desktopeditors
       pavucontrol
       dbgate
-      rofi
 
       # Dev
       go
       bun
       nodejs
       pnpm
-      python3
+      uv
       jdk
       dotnetCorePackages.sdk_9_0-bin
       nil
+      gcc
+      gnu-cobol
 
       # Utils
       zip
       unzip
       htop-vim
       tldr
+      bat
 
       # Just cool
       peaclock

@@ -55,12 +55,21 @@ in
         layout = keyboardLayout;
         variant = keyboardVariant;
       };
+
+      excludePackages = with pkgs; [ xterm ];
     };
   };
 
   console.keyMap = keyboardLayout;
 
-  services.libinput.enable = true;
+  services.libinput = {
+    enable = true;
+
+    mouse = {
+      accelProfile = "flat";
+    };
+  };
+
   programs.dconf.enable = true;
 
   documentation = {
@@ -76,6 +85,5 @@ in
   environment.systemPackages = with pkgs; [
     wget
     curl
-    alacritty
   ];
 }

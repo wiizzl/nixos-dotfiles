@@ -1,6 +1,10 @@
 { lib, ... }:
 
 {
+  imports = [
+    ../../themes/catppuccin.nix
+  ];
+
   config.var = {
     hostname = "nixos";
     username = "pier";
