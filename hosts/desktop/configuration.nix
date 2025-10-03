@@ -11,8 +11,9 @@
     ../../nixos/ly.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
-    ../../nixos/qtile.nix
+    ../../nixos/i3.nix
     ../../nixos/podman.nix
+    ../../nixos/virtmanager.nix
 
     ./hardware-configuration.nix
     ./variables.nix

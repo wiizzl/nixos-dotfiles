@@ -13,7 +13,6 @@
     ../../home/programs/zen
     ../../home/programs/zed
 
-    ../../home/system/qtile
     ../../home/system/zathura
     ../../home/system/rofi
     ../../home/system/nnn

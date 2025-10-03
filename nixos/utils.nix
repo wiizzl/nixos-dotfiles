@@ -41,6 +41,7 @@ in
       LC_PAPER = extraLocale;
       LC_TELEPHONE = extraLocale;
       LC_TIME = extraLocale;
+      LC_CTYPE = defaultLocale;
     };
   };
 
