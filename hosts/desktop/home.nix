@@ -16,6 +16,7 @@
     ../../home/system/qtile
     ../../home/system/zathura
     ../../home/system/rofi
+    ../../home/system/nnn
   ];
 
   home = {
@@ -48,7 +49,6 @@
       htop-vim
       tldr
       bat
-      nnn
 
       # Just cool
       peaclock
