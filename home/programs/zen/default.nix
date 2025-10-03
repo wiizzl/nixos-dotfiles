@@ -29,9 +29,11 @@
         Preferences = mkLockedAttrs {
           "browser.tabs.warnOnClose" = false;
           "zen.tabs.vertical.right-side" = true;
+          "zen.view.use-single-toolbar" = false;
         };
 
         ExtensionSettings = mkExtensionSettings {
+          "uBlock0@raymondhill.net" = "ublock-origin";
           "wappalyzer@crunchlabz.com" = "wappalyzer";
           "{85860b32-02a8-431a-b2b1-40fbd64c9c69}" = "github-file-icons";
         };
