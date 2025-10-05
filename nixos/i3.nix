@@ -6,7 +6,8 @@
       enable = true;
 
       extraPackages = with pkgs; [
-        i3status
+        polybar
+        feh
       ];
     };
 

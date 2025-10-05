@@ -33,8 +33,8 @@
 
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrains Mono Nerd Font";
+        package = pkgs.nerd-fonts.meslo-lg;
+        name = "Meslo LGM Nerd Font";
       };
       sansSerif = {
         package = pkgs.source-sans-pro;

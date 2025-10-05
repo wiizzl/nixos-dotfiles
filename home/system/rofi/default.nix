@@ -9,7 +9,10 @@ in
   programs.rofi = {
     enable = true;
 
-    modes = [ "drun" ];
+    modes = [
+      "drun"
+      "window"
+    ];
 
     extraConfig = {
       show-icons = true;
