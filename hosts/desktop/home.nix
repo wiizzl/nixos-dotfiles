@@ -29,6 +29,7 @@
       onlyoffice-desktopeditors
       pavucontrol
       dbgate
+      thunderbird
 
       # Dev
       go

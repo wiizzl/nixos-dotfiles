@@ -16,8 +16,11 @@ in
 
     extraConfig = {
       show-icons = true;
+
       drun-display-format = "{icon} {name}";
       display-drun = "";
+      display-window = "";
+
       kb-row-up = "Up,Control+k";
       kb-row-left = "Left,Control+h";
       kb-row-right = "Right,Control+l";

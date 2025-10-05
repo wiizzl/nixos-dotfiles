@@ -15,6 +15,7 @@
     ../../nixos/i3.nix
     ../../nixos/podman.nix
     ../../nixos/virtmanager.nix
+    ../../nixos/dunst.nix
 
     ./hardware-configuration.nix
     ./variables.nix
