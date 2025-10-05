@@ -31,6 +31,7 @@
       pavucontrol
       dbgate
       thunderbird
+      slack
 
       # Dev
       go
@@ -42,6 +43,7 @@
       dotnetCorePackages.sdk_9_0-bin
       nil
       gcc
+      gnumake
       gnu-cobol
 
       # Utils
@@ -50,6 +52,7 @@
       htop-vim
       tldr
       bat
+      flameshot
 
       # Just cool
       peaclock
