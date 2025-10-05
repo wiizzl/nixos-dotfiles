@@ -8,6 +8,7 @@
     ../../nixos/home-manager.nix
     ../../nixos/nixos.nix
     ../../nixos/systemd-boot.nix
+    ../../nixos/picom.nix
     ../../nixos/ly.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix

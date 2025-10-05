@@ -10,17 +10,17 @@
       ];
     };
 
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
-        enable = true;
-        noDesktop = true;
-        enableXfwm = false;
-      };
-    };
+    # desktopManager = {
+    #   xterm.enable = false;
+    #   xfce = {
+    #     enable = true;
+    #     noDesktop = true;
+    #     enableXfwm = false;
+    #   };
+    # };
   };
 
-  services.displayManager = {
-    defaultSession = "xfce+i3";
-  };
+  # services.displayManager = {
+  #   defaultSession = "xfce+i3";
+  # };
 }
