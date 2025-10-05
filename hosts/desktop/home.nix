@@ -16,6 +16,7 @@
     ../../home/system/zathura
     ../../home/system/rofi
     ../../home/system/nnn
+    ../../home/system/dunst
   ];
 
   home = {
