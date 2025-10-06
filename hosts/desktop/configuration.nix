@@ -9,6 +9,8 @@
     ../../nixos/nixos.nix
     ../../nixos/systemd-boot.nix
     ../../nixos/ly.nix
+    ../../nixos/i3.nix
+    ../../nixos/picom.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
     ../../nixos/podman.nix
