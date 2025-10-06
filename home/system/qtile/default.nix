@@ -1,5 +1,0 @@
-{ ... }:
-
-{
-  # TODO: symlink to config
-}
