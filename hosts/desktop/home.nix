@@ -24,10 +24,8 @@
 
     packages = with pkgs; [
       # Apps
-      vlc
       google-chrome
       onlyoffice-desktopeditors
-      pavucontrol
       dbgate
       thunderbird
       slack

@@ -87,5 +87,6 @@ in
     wget
     curl
     killall
+    adwaita-icon-theme
   ];
 }

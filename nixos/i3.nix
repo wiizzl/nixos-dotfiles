@@ -8,20 +8,11 @@
       extraPackages = with pkgs; [
         polybar
         feh
+        xfce.ristretto
+        xfce.thunar
+        vlc
+        pavucontrol
       ];
     };
-
-    # desktopManager = {
-    #   xterm.enable = false;
-    #   xfce = {
-    #     enable = true;
-    #     noDesktop = true;
-    #     enableXfwm = false;
-    #   };
-    # };
   };
-
-  # services.displayManager = {
-  #   defaultSession = "xfce+i3";
-  # };
 }
