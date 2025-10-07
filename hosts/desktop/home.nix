@@ -16,6 +16,8 @@
     ../../home/system/rofi
     ../../home/system/nnn
     ../../home/system/dunst
+    ../../home/system/i3
+    ../../home/system/polybar
   ];
 
   home = {
@@ -29,6 +31,7 @@
       dbgate
       thunderbird
       slack
+      localsend
 
       # Dev
       go

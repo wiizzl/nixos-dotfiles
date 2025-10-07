@@ -15,6 +15,7 @@
     ../../nixos/utils.nix
     ../../nixos/podman.nix
     ../../nixos/virtmanager.nix
+    ../../nixos/firewall.nix
 
     ./hardware-configuration.nix
     ./variables.nix
