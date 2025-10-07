@@ -10,7 +10,7 @@ exec_always --no-startup-id polybar-msg cmd quit
 exec_always --no-startup-id polybar
 
 # Wallpaper
-exec_always feh --bg-scale ~/Pictures/nix-black-4k.png
+exec_always feh --bg-scale ~/nixos-dotfiles/home/system/i3/wallpaper.jpg
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -100,10 +100,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+# bindsym $mod+d focus child
 
 # gaps
 gaps inner 7px
@@ -184,42 +184,22 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
 # window border
 for_window [class="^.*"] border pixel 1
 
 # theme
-set $rosewater #f5e0dc
-set $flamingo  #f2cdcd
-set $pink      #f5c2e7
-set $mauve     #cba6f7
-set $red       #f38ba8
-set $maroon    #eba0ac
-set $peach     #fab387
-set $yellow    #f9e2af
-set $green     #a6e3a1
-set $teal      #94e2d5
-set $sky       #89dceb
-set $sapphire  #74c7ec
-set $blue      #89b4fa
-set $lavender  #b4befe
-set $text      #cdd6f4
-set $subtext1  #bac2de
-set $subtext0  #a6adc8
-set $overlay2  #9399b2
-set $overlay1  #7f849c
-set $overlay0  #6c7086
-set $surface2  #585b70
-set $surface1  #45475a
-set $surface0  #313244
-set $base      #1e1e2e
-set $mantle    #181825
-set $crust     #11111b
+set $background #1e1e2e
+set $background-alt #373B41
+set $foreground #cdd6f4
+set $primary #cba6f7
+set $secondary #8ABEB7
+set $alert #A54242
+set $disabled #6c7086
 
-# target                 title     bg    text      indicator    border
-client.focused           $mantle   $mauve $mantle  $rosewater $mauve
-client.focused_inactive  $overlay0 $base  $text    $rosewater $overlay0
-client.unfocused         $overlay0 $base  $text    $rosewater $overlay0
-client.urgent            $peach    $base  $peach   $overlay0  $peach
-client.placeholder       $overlay0 $base  $text    $overlay0  $overlay0
-client.background        $base
+#                        title        bg           text         indicator  border
+client.focused           $foreground  $primary     $foreground  $primary   $primary
+client.focused_inactive  $disabled    $background  $foreground  $primary   $disabled
+client.unfocused         $disabled    $background  $foreground  $primary   $disabled
+client.urgent            $primary     $background  $primary     $disabled  $primary
+client.placeholder       $disabled    $background  $foreground  $disabled  $disabled
+client.background        $background

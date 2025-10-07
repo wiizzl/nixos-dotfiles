@@ -7,8 +7,8 @@
     backend = "glx";
     vSync = true;
 
-    inactiveOpacity = 0.9;
-    activeOpacity = 1.0;
+    inactiveOpacity = 0.8;
+    activeOpacity = 0.9;
 
     fade = true;
     fadeDelta = 3;
@@ -32,6 +32,8 @@
         size = 10;
         strength = 3;
       };
+
+      corner-radius = 12.0;
     };
   };
 }
