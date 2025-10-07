@@ -59,17 +59,22 @@ in
 
       excludePackages = with pkgs; [ xterm ];
     };
+
+    libinput = {
+      enable = true;
+
+      touchpad = {
+        naturalScrolling = true;
+        accelProfile = "flat";
+      };
+
+      mouse = {
+        accelProfile = "flat";
+      };
+    };
   };
 
   console.keyMap = keyboardLayout;
-
-  services.libinput = {
-    enable = true;
-
-    mouse = {
-      accelProfile = "flat";
-    };
-  };
 
   programs.dconf.enable = true;
 
