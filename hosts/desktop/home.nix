@@ -2,11 +2,22 @@
 
 {
   imports = [
-    ../shared/variables.nix
+    ./variables.nix
 
-    ../../home-modules/desktop
-    ../../home-modules/programs
-    ../../home-modules/terminals
+    ../../home/programs/ghostty
+    ../../home/programs/shell
+    ../../home/programs/fastfetch
+    ../../home/programs/git
+    ../../home/programs/spicetify
+    ../../home/programs/discord
+    ../../home/programs/zen
+    ../../home/programs/zed
+
+    ../../home/system/rofi
+    ../../home/system/nnn
+    ../../home/system/dunst
+    ../../home/system/i3
+    ../../home/system/polybar
   ];
 
   home = {
