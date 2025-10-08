@@ -26,11 +26,21 @@
     in
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        desktop = nixpkgs.lib.nixosSystem {
           system = system;
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/desktop/configuration.nix
+            inputs.home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
+          ];
+        };
+
+        laptop = nixpkgs.lib.nixosSystem {
+          system = system;
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.home-manager
             inputs.stylix.nixosModules.stylix
           ];

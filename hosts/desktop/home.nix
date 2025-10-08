@@ -32,6 +32,7 @@
       thunderbird
       slack
       localsend
+      podman-desktop
 
       # Dev
       go
@@ -40,7 +41,6 @@
       pnpm
       uv
       jdk
-      dotnetCorePackages.sdk_9_0-bin
       nil
       gcc
       gnumake
