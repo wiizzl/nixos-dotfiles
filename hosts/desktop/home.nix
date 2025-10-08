@@ -32,9 +32,6 @@
       thunderbird
       slack
       localsend
-      podman-desktop
-      android-studio
-      jetbrains.rider
 
       # Dev
       go
