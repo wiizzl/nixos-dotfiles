@@ -11,7 +11,7 @@
     ../../home/programs/spicetify
     ../../home/programs/discord
     ../../home/programs/zen
-    ../../home/programs/zed
+    ../../home/programs/vscode
 
     ../../home/system/rofi
     ../../home/system/nnn
@@ -41,7 +41,6 @@
       pnpm
       uv
       jdk
-      nil
       gcc
       gnumake
       gnu-cobol
