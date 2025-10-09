@@ -22,7 +22,6 @@
       email = "github@houlliere.com";
     };
 
-    # autoUpgrade = false;
     autoGarbageCollector = true;
   };
 

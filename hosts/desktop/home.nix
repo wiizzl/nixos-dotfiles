@@ -1,10 +1,12 @@
 { pkgs, config, ... }:
 
+let
+  username = config.var.username;
+in
 {
   imports = [
     ./variables.nix
 
-    ../../home/programs/ghostty
     ../../home/programs/shell
     ../../home/programs/fastfetch
     ../../home/programs/git
@@ -14,15 +16,11 @@
     ../../home/programs/vscode
 
     ../../home/system/rofi
-    ../../home/system/nnn
-    ../../home/system/dunst
-    ../../home/system/i3
-    ../../home/system/polybar
   ];
 
   home = {
-    inherit (config.var) username;
-    homeDirectory = "/home/" + config.var.username;
+    username = username;
+    homeDirectory = "/home/" + username;
 
     packages = with pkgs; [
       # Apps
@@ -43,15 +41,12 @@
       jdk
       gcc
       gnumake
-      gnu-cobol
 
       # Utils
       zip
       unzip
-      htop-vim
       tldr
-      bat
-      flameshot
+      killall
 
       # Just cool
       peaclock

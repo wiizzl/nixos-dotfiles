@@ -1,32 +1,16 @@
 { pkgs, config, ... }:
 
 let
-  hostname = config.var.hostname;
-  keyboardLayout = config.var.keyboardLayout;
-  keyboardVariant = config.var.keyboardVariant;
-  timeZone = config.var.timeZone;
   defaultLocale = config.var.defaultLocale;
   extraLocale = config.var.extraLocale;
 in
 {
-  networking.hostName = hostname;
+  networking.hostName = config.var.hostname;
 
   networking.networkmanager.enable = true;
   # networking.wireless.enable = true;
 
-  # system.autoUpgrade = {
-  #   enable = autoUpgrade;
-  #   dates = "04:00";
-  #   flake = "${configDir}";
-  #   flags = [
-  #     "--update-input"
-  #     "nixpkgs"
-  #     "--commit-lock-file"
-  #   ];
-  #   allowReboot = false;
-  # };
-
-  time.timeZone = timeZone;
+  time.timeZone = config.var.timeZone;
 
   i18n = {
     defaultLocale = defaultLocale;
@@ -46,26 +30,11 @@ in
   };
 
   services = {
-    xserver = {
-      enable = true;
-
-      autoRepeatDelay = 200;
-      autoRepeatInterval = 35;
-
-      xkb = {
-        layout = keyboardLayout;
-        variant = keyboardVariant;
-      };
-
-      excludePackages = with pkgs; [ xterm ];
-    };
-
     libinput = {
       enable = true;
 
       touchpad = {
         naturalScrolling = true;
-        accelProfile = "flat";
       };
 
       mouse = {
@@ -74,9 +43,7 @@ in
     };
   };
 
-  console.keyMap = keyboardLayout;
-
-  programs.dconf.enable = true;
+  console.keyMap = config.var.keyboardLayout;
 
   documentation = {
     enable = true;
@@ -91,7 +58,6 @@ in
   environment.systemPackages = with pkgs; [
     wget
     curl
-    killall
-    adwaita-icon-theme
+    kitty
   ];
 }

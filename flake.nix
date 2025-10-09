@@ -21,26 +21,12 @@
 
   outputs =
     { nixpkgs, ... }@inputs:
-    let
-      system = "x86_64-linux";
-    in
     {
       nixosConfigurations = {
-        desktop = nixpkgs.lib.nixosSystem {
-          system = system;
-          specialArgs = { inherit inputs; };
+        nixos = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           modules = [
             ./hosts/desktop/configuration.nix
-            inputs.home-manager.nixosModules.home-manager
-            inputs.stylix.nixosModules.stylix
-          ];
-        };
-
-        laptop = nixpkgs.lib.nixosSystem {
-          system = system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.home-manager
             inputs.stylix.nixosModules.stylix
           ];
