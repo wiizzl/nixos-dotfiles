@@ -15,6 +15,7 @@ in
     ../../home/programs/zen
     ../../home/programs/vscode
 
+    ../../home/system/hyprland
     ../../home/system/rofi
   ];
 

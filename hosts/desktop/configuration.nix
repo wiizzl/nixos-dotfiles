@@ -1,4 +1,4 @@
-{ config, ... }:
+{ inputs, config, ... }:
 
 {
   imports = [
@@ -10,8 +10,6 @@
     ../../nixos/nixos.nix
     ../../nixos/systemd-boot.nix
     ../../nixos/ly.nix
-    ../../nixos/getty.nix
-    ../../nixos/hyprland.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
     ../../nixos/podman.nix
@@ -26,6 +24,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
+    extraSpecialArgs = { inherit inputs; };
   };
 
   system.stateVersion = "25.05";

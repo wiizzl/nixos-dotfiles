@@ -25,11 +25,11 @@
       base0F = "f2cdcd"; # Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
     };
 
-    cursor = {
-      name = "phinger-cursors-light";
-      package = pkgs.phinger-cursors;
-      size = 32;
-    };
+    # cursor = {
+      # name = "phinger-cursors-light";
+      # package = pkgs.phinger-cursors;
+      # size = 32;
+    # };
 
     fonts = {
       monospace = {
