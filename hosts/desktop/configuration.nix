@@ -10,6 +10,7 @@
     ../../nixos/nixos.nix
     ../../nixos/systemd-boot.nix
     ../../nixos/ly.nix
+    ../../nixos/hyprland.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
     ../../nixos/podman.nix

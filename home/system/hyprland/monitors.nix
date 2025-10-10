@@ -1,0 +1,5 @@
+{ ... }:
+
+{
+  monitor = ",preferred,auto,auto";
+}
