@@ -25,20 +25,20 @@
       base0F = "f2cdcd"; # Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
     };
 
-    # cursor = {
-      # name = "phinger-cursors-light";
-      # package = pkgs.phinger-cursors;
-      # size = 32;
-    # };
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 32;
+    };
 
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.meslo-lg;
-        name = "Meslo LGM Nerd Font";
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrains Mono";
       };
       sansSerif = {
-        package = pkgs.source-sans-pro;
-        name = "Source Sans Pro";
+        package = pkgs.montserrat;
+        name = "Montserrat";
       };
       serif = config.stylix.fonts.sansSerif;
       emoji = {
@@ -46,10 +46,10 @@
         name = "Noto Color Emoji";
       };
       sizes = {
-        applications = 13;
-        desktop = 13;
-        popups = 13;
-        terminal = 13;
+        applications = 12;
+        terminal = 15;
+        desktop = 11;
+        popups = 12;
       };
     };
   };
