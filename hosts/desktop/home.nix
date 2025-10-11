@@ -16,8 +16,8 @@ in
     ../../home/programs/vscode
 
     ../../home/system/hyprland
-    ../../home/system/vicinae
     ../../home/system/rofi
+    ../../home/system/mako
   ];
 
   home = {
@@ -60,6 +60,4 @@ in
 
     stateVersion = "25.05";
   };
-
-  programs.home-manager.enable = true;
 }

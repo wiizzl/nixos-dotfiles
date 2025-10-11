@@ -13,6 +13,10 @@
     enable = true;
     package = null;
     portalPackage = null;
+
+    plugins = [
+      
+    ];
   };
 
   home.sessionVariables = {
