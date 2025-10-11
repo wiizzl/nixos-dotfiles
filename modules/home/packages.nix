@@ -2,6 +2,8 @@
 
 {
   packages = with pkgs; [
+    home-manager
+
     # Apps
     google-chrome
     onlyoffice-desktopeditors
@@ -20,6 +22,7 @@
     jdk
     gcc
     gnumake
+    nixfmt
 
     # Utils
     zip
