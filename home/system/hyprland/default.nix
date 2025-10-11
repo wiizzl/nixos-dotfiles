@@ -6,6 +6,7 @@
     ./input.nix
     ./windows.nix
     ./monitors.nix
+    ./look.nix
   ];
 
   wayland.windowManager.hyprland = {

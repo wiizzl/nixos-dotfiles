@@ -12,6 +12,7 @@
       };
     };
 
+    # Per-device config
     device = {
       name = "";
       sensitivity = 0;

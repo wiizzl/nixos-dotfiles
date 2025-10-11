@@ -46,15 +46,6 @@ get_host() {
 build() {
     echo -e "\n${RED}START INSTALL PHASE${NORMAL}\n"
 
-    echo -e "Creating system folders..."
-    mkdir -p ~/Templates
-    mkdir -p ~/Music
-    mkdir -p ~/Documents
-    mkdir -p ~/Pictures
-    mkdir -p ~/Downloads
-    mkdir -p ~/Videos
-    mkdir -p ~/Public
-
     echo -e "Copying ${MAGENTA}/etc/nixos/hardware-configuration.nix${NORMAL} to ${MAGENTA}./hosts/${HOST}/${NORMAL}\n"
     cp /etc/nixos/hardware-configuration.nix hosts/${HOST}/hardware-configuration.nix
 
