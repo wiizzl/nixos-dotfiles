@@ -16,6 +16,7 @@ in
     ../../home/programs/vscode
 
     ../../home/system/hyprland
+    ../../home/system/vicinae
     ../../home/system/rofi
   ];
 

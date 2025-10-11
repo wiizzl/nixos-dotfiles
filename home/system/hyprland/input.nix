@@ -14,8 +14,8 @@
 
     # Per-device config
     device = {
-      name = "";
-      sensitivity = 0;
+      name = "logitech-usb-receiver";
+      sensitivity = -0.7;
     };
 
     gesture = "3, horizontal, workspace";

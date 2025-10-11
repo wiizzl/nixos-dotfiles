@@ -29,20 +29,6 @@ in
     };
   };
 
-  services = {
-    libinput = {
-      enable = true;
-
-      touchpad = {
-        naturalScrolling = true;
-      };
-
-      mouse = {
-        accelProfile = "flat";
-      };
-    };
-  };
-
   console.keyMap = config.var.keyboardLayout;
 
   documentation = {

@@ -22,6 +22,7 @@
     };
     nixcord.url = "github:KaylorBen/nixcord";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    vicinae.url = "github:vicinaehq/vicinae";
   };
 
   outputs = { nixpkgs, ... }@inputs:
