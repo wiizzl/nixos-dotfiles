@@ -3,7 +3,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/core
     ./variables.nix
+    
+    ../../modules/core
   ];
 }

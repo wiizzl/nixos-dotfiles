@@ -20,6 +20,7 @@ in
       s = "status";
       d = "diff";
       b = "branch";
+      p = "pull";
     };
   };
 }

@@ -12,5 +12,6 @@
     ./bash.nix
     ./git.nix
     ./vscode.nix
+    ./starship.nix
   ];
 }

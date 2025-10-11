@@ -1,5 +1,9 @@
 { config, ... }:
 
+let
+  defaultLocale = config.var.defaultLocale;
+  extraLocale = config.var.extraLocale;
+in
 {
   nix = {
     settings.experimental-features = [
@@ -20,7 +24,7 @@
     allowBroken = true;
   };
 
-  console.keyMap = config.var.keyboardLayout
+  console.keyMap = config.var.keyboardLayout;
   
   time.timeZone = config.var.timeZone;
 

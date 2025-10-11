@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   packages = with pkgs; [

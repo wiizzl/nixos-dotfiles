@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   virtualisation = {
@@ -8,20 +8,20 @@
     podman.enable = false;
 
     libvirtd.enable = true;
+  };
 
-    environment.systemPackages = with pkgs; [
-      virt-viewer
-      lazydocker
-      docker-client
+  environment.systemPackages = with pkgs; [
+    virt-viewer
+    lazydocker
+    docker-client
+  ];
+
+  programs.virt-manager.enable = false;
+
+  users.users.${config.var.username} = {
+    extraGroups = [
+      "libvirtd" # #Virt manager/QEMU access
+      "docker" # Allow access as non-root
     ];
-
-    programs.virt-manager.enable = false;
-
-    users.users.${config.var.username} = {
-      extraGroups = [
-        "libvirtd" # #Virt manager/QEMU access
-        "docker" # Allow access as non-root
-      ];
-    };
   };
 }

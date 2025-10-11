@@ -12,7 +12,6 @@
     ./virtualisation.nix
     ./xserver.nix
     ./packages.nix
-    ./starship.nix
     ./ssh.nix
     ./hyprland.nix
     ./bluetooth.nix
