@@ -49,7 +49,7 @@ build() {
     echo -e "Copying ${MAGENTA}/etc/nixos/hardware-configuration.nix${NORMAL} to ${MAGENTA}./hosts/${HOST}/${NORMAL}\n"
     cp /etc/nixos/hardware-configuration.nix hosts/${HOST}/hardware-configuration.nix
 
-    echo -e "Creating ${MAGENTA}system ${NORMAL}folders"
+    echo -e "Creating ${MAGENTA}system ${NORMAL}folders...\n"
     mkdir -p ~/Documents
     mkdir -p ~/Videos
     mkdir -p ~/Pictures
