@@ -29,6 +29,7 @@
         "[python]".editor.defaultFormatter = "charliermarsh.ruff";
         "prettier.documentSelectors" = [ "**/*.astro" ];
         "[astro]".editor.defaultFormatter = "esbenp.prettier-vscode";
+        "[nix]".editor.defaultFormatter = "jnoortheen.nix-ide";
 
         # Font
         # "editor.fontFamily" = "FiraCode Nerd Font";
@@ -105,36 +106,30 @@
       };
 
       extensions = with pkgs.vscode-marketplace; [
+        gruntfuggly.todo-tree
         astro-build.astro-vscode
-        Catppuccin.catppuccin-vsc
-        thang-nm.flow-icons
+        jnoortheen.nix-ide
         adpyke.codesnap
         naumovs.color-highlight
-        GitHub.copilot
-        GitHub.copilot-chat
-        icrawl.discord-vscode
+        github.copilot
+        github.copilot-chat
+        catppuccin.catppuccin-vsc
+        thang-nm.flow-icons
         usernamehw.errorlens
         yoavbls.pretty-ts-errors
-        dsznajder.es7-react-js-snippets
         dbaeumer.vscode-eslint
-        expo.vscode-expo-tools
-        rphlmr.vscode-drizzle-orm
-        Prisma.prisma
-        AbianS.prisma-generate-uml
-        golang.Go
-        MS-vsliveshare.vsliveshare
+        prisma.prisma
+        golang.go
+        ms-vsliveshare.vsliveshare
         unifiedjs.vscode-mdx
         quicktype.quicktype
         esbenp.prettier-vscode
         bradlc.vscode-tailwindcss
-        pflannery.vscode-versionlens
-        Gruntfuggly.todo-tree
         ms-python.python
         ms-python.debugpy
         ms-python.vscode-python-envs
         charliermarsh.ruff
         meganrogge.template-string-converter
-        jnoortheen.nix-ide
       ];
     };
   };

@@ -30,7 +30,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/desktop/configuration.nix
-            { nixpkgs.overlays = [ nix-vscode-extensions.overlays.default ]; }
+            { nixpkgs.overlays = [ inputs.nix-vscode-extensions.overlays.default ]; }
           ];
         };
       };
