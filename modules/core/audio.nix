@@ -15,6 +15,10 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    pavucontrol
+  ];
+
   services.actkbd = {
     enable = true;
 

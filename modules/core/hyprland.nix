@@ -16,8 +16,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    kitty
-    kdePackages.dolphin
+    hyprpicker
+    wl-clipboard
   ];
 
   environment.variables = {

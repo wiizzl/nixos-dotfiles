@@ -3,8 +3,8 @@
 {
   wayland.windowManager.hyprland.settings = {
     general = {
-      gaps_in = 8;
-      gaps_out = 20;
+      gaps_in = 5;
+      gaps_out = 10;
       
       border_size = 1;
       resize_on_border = false;

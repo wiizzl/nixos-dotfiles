@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../themes/catppuccin.nix
+    ../../themes/catppuccin
   ];
 
   config.var = {

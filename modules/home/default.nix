@@ -9,8 +9,11 @@
     ./zen.nix
     ./spotify.nix
     ./discord.nix
-    ./bash.nix
+    ./ghostty.nix
     ./git.nix
     ./vscode.nix
+    ./packages.nix
+    ./starship.nix
+    ./bash.nix
   ];
 }

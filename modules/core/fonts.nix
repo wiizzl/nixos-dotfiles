@@ -3,7 +3,7 @@
 {
   fonts = {
     packages = with pkgs; [
-      minecraftia
+      nerd-fonts.fira-code
     ];
 
     enableDefaultPackages = false;

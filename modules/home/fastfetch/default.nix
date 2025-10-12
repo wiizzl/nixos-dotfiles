@@ -6,11 +6,7 @@
 
     settings = {
       display = {
-        color = {
-          keys = "35";
-          output = "95";
-        };
-        separator = " ➜  ";
+        separator = " : ";
       };
 
       logo = {
@@ -32,12 +28,6 @@
           keyColor = "31";
         }
         {
-          type = "command";
-          key = " ├  ZaneyOS ";
-          keyColor = "31";
-          text = "echo v$" + "{ZANEYOS_VERSION}";
-        }
-        {
           type = "kernel";
           key = " ├  ";
           keyColor = "31";
@@ -56,16 +46,6 @@
         {
           type = "wm";
           key = "WM   ";
-          keyColor = "32";
-        }
-        {
-          type = "wmtheme";
-          key = " ├ 󰉼 ";
-          keyColor = "32";
-        }
-        {
-          type = "icons";
-          key = " ├ 󰀻 ";
           keyColor = "32";
         }
         {
@@ -110,21 +90,6 @@
         {
           type = "disk";
           key = " ├ 󰋊 ";
-          keyColor = "33";
-        }
-        {
-          type = "monitor";
-          key = " ├  ";
-          keyColor = "33";
-        }
-        {
-          type = "player";
-          key = " ├ 󰥠 ";
-          keyColor = "33";
-        }
-        {
-          type = "media";
-          key = " └ 󰝚 ";
           keyColor = "33";
         }
         "break"

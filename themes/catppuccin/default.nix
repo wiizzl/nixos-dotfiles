@@ -5,6 +5,9 @@
     enable = true;
     autoEnable = true;
 
+    image = ./wallpapers/mountainscapedark.jpg;
+    polarity = "dark";
+
     # See https://tinted-theming.github.io/tinted-gallery/ for more schemes
     base16Scheme = {
       base00 = "1e1e2e"; # Default Background
@@ -33,8 +36,8 @@
 
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrains Mono";
+        package = pkgs.nerd-fonts.meslo-lg;
+        name = "Meslo LGM Nerd Font";
       };
       sansSerif = {
         package = pkgs.montserrat;
@@ -47,9 +50,9 @@
       };
       sizes = {
         applications = 12;
-        terminal = 15;
-        desktop = 11;
-        popups = 12;
+        desktop = 13;
+        popups = 13;
+        terminal = 13;
       };
     };
   };

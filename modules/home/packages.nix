@@ -1,17 +1,18 @@
 { pkgs, ... }:
 
 {
-  packages = with pkgs; [
+  home.packages = with pkgs; [
     home-manager
 
+    # System
+    kdePackages.dolphin
+
     # Apps
-    google-chrome
     onlyoffice-desktopeditors
     dbgate
     thunderbird
     slack
-    localsend
-    podman-desktop
+    vlc
 
     # Dev
     go
