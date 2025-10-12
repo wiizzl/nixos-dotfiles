@@ -13,6 +13,7 @@
         # Theme
         "workbench.iconTheme" = "flow-dim";
         "workbench.colorTheme" = "Catppuccin Mocha";
+        "catppuccin.accentColor" = "blue";
         "workbench.productIconTheme" = "material-product-icons";
 
         # Misc
@@ -32,16 +33,7 @@
         "[nix]".editor.defaultFormatter = "jnoortheen.nix-ide";
 
         # Font
-        # "editor.fontFamily" = "FiraCode Nerd Font";
-        # "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
-        # "scm.inputFontFamily" = "FiraCode Nerd Font";
-        # "chat.editor.fontFamily" = "FiraCode Nerd Font";
-        # "debug.console.fontFamily" = "FiraCode Nerd Font";
-        # "editor.codeLensFontFamily" = "FiraCode Nerd Font";
-        # "notebook.output.fontFamily" = "FiraCode Nerd Font";
-        # "markdown.preview.fontFamily" = "FiraCode Nerd Font";
-        # "editor.inlayHints.fontFamily" = "FiraCode Nerd Font";
-        # "editor.fontLigatures" = true;
+        "editor.fontLigatures" = true;
 
         # Font size
         "editor.fontSize" = 16;
@@ -111,9 +103,8 @@
         jnoortheen.nix-ide
         adpyke.codesnap
         naumovs.color-highlight
-        github.copilot
-        github.copilot-chat
         catppuccin.catppuccin-vsc
+        pkief.material-product-icons
         thang-nm.flow-icons
         usernamehw.errorlens
         yoavbls.pretty-ts-errors
@@ -130,6 +121,8 @@
         ms-python.vscode-python-envs
         charliermarsh.ruff
         meganrogge.template-string-converter
+        # github.copilot
+        # github.copilot-chat
       ];
     };
   };
