@@ -25,7 +25,7 @@ in
   };
 
   console.keyMap = config.var.keyboardLayout;
-  
+
   time.timeZone = config.var.timeZone;
 
   i18n = {

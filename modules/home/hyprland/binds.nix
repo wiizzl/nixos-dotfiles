@@ -3,7 +3,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
-    
+
     bind = [
       "$mod, Return, exec, ghostty"
       "$mod, D, exec, rofi -show drun"

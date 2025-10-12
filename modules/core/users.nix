@@ -1,4 +1,9 @@
-{ config, inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
 let
   username = config.var.username;
@@ -10,7 +15,10 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
-    extraSpecialArgs = { inherit inputs; var = config.var; };
+    extraSpecialArgs = {
+      inherit inputs;
+      var = config.var;
+    };
 
     users."${username}" = {
       imports = [ ../home ];
