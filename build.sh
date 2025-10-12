@@ -49,11 +49,21 @@ build() {
     echo -e "Copying ${MAGENTA}/etc/nixos/hardware-configuration.nix${NORMAL} to ${MAGENTA}./hosts/${HOST}/${NORMAL}\n"
     cp /etc/nixos/hardware-configuration.nix hosts/${HOST}/hardware-configuration.nix
 
+    echo -e "Creating ${MAGENTA}system ${NORMAL}folders"
+    mkdir -p ~/Documents
+    mkdir -p ~/Videos
+    mkdir -p ~/Pictures
+    mkdir -p ~/Downloads
+    mkdir -p ~/Desktop
+    mkdir -p ~/Musics
+    mkdir -p ~/Public
+    mkdir -p ~/Templates
+
     echo -en "You are about to start the system build, do you want to process ? "
     confirm
 
     echo -e "\nBuilding the system...\n"
-    sudo nixos-rebuild switch --flake .#${HOST}
+    sudo nixos-rebuild switch --flake .
 }
 
 main() {
