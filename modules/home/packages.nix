@@ -6,6 +6,8 @@
 
     # System
     kdePackages.dolphin
+    papers
+    loupe
 
     # Apps
     onlyoffice-desktopeditors
@@ -13,6 +15,7 @@
     thunderbird
     slack
     vlc
+    gimp
 
     # Dev
     go

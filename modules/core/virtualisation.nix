@@ -8,6 +8,7 @@
     podman.enable = false;
 
     libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -16,7 +17,7 @@
     docker-client
   ];
 
-  programs.virt-manager.enable = false;
+  programs.virt-manager.enable = true;
 
   users.users.${config.var.username} = {
     extraGroups = [
