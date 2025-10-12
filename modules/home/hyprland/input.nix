@@ -1,9 +1,9 @@
-{ config, ... }:
+{ var, ... }:
 
 {
   wayland.windowManager.hyprland.settings = {
     input = {
-      kb_layout = config.var.keyboardLayout;
+      kb_layout = var.keyboardLayout;
       follow_mouse = 1;
       sensitivity = 0;
       repeat_delay = 300;

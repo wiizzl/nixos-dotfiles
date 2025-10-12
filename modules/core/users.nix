@@ -10,7 +10,7 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
-    extraSpecialArgs = { inherit inputs config; };
+    extraSpecialArgs = { inherit inputs; var = config.var; };
 
     users."${username}" = {
       imports = [ ../home ];
