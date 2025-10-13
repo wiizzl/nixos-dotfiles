@@ -9,7 +9,7 @@
     ./zen.nix
     ./spotify.nix
     ./discord.nix
-    ./ghostty.nix
+    ./wezterm.nix
     ./git.nix
     ./vscode.nix
     ./packages.nix

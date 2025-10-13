@@ -5,7 +5,7 @@
     "$mod" = "SUPER";
 
     bind = [
-      "$mod, Return, exec, ghostty"
+      "$mod, Return, exec, wezterm"
       "$mod, D, exec, rofi -show drun"
       "$mod, E, exec, dolphin"
       "$mod, Q, killactive"

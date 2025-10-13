@@ -1,0 +1,29 @@
+{ ... }:
+
+{
+  programs.wezterm = {
+    enable = true;
+
+    extraConfig = ''
+      config.enable_tab_bar = false
+
+      config.keys = {
+        {
+          key = "d",
+          mods = "CTRL",
+          action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" }
+        },
+        {
+          key = "d",
+          mods = "CTRL|SHIFT",
+          action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" }
+        },
+        {
+          key = "k",
+          mods = "CTRL",
+          action = wezterm.action.SendString "clear\n"
+        }
+      }
+    '';
+  };
+}
