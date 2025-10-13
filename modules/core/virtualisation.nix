@@ -14,7 +14,7 @@
 
   environment.systemPackages = with pkgs; [
     virt-viewer
-    podman-desktoppodman-tui
+    podman-desktop
   ];
 
   programs.virt-manager.enable = true;
