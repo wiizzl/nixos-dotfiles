@@ -2,7 +2,7 @@
 
 {
   services.mako = {
-    enable = true;
+    enable = false;
 
     settings = {
       "actionable=true" = {
