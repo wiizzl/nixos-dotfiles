@@ -6,8 +6,6 @@
 
     # System
     kdePackages.dolphin
-    papers
-    loupe
 
     # Apps
     onlyoffice-desktopeditors

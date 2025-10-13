@@ -10,6 +10,7 @@
     ./animations.nix
     ./exec-once.nix
     ./waybar.nix
+    ./swaync.nix
   ];
 
   wayland.windowManager.hyprland = {
