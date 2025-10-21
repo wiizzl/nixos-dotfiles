@@ -6,7 +6,6 @@
     ./hyprland
     ./rofi.nix
     ./mako.nix
-    ./zen.nix
     ./spotify.nix
     ./discord.nix
     ./wezterm.nix
