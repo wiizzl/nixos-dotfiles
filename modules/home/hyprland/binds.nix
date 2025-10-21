@@ -13,7 +13,7 @@
       "$mod, F, fullscreen"
       "$mod, V, togglefloating"
       "$mod, P, pseudo"
-      "$mod, J, togglesplit"
+      "$mod, W, togglesplit"
 
       # Kill focused window
       "$mod, Q, killactive"
@@ -26,16 +26,18 @@
 
       # Move focus
       "ALT, Tab, cyclenext"
-      "$mod, J, movefocus, l"
-      "$mod, K, movefocus, r"
-      "$mod, H, movefocus, u"
-      "$mod, L, movefocus, d"
+      "$mod, H, movefocus, l"
+      "$mod, L, movefocus, r"
+      "$mod, J, movefocus, u"
+      "$mod, K, movefocus, d"
 
       # Resize windows
-      "$mod Shift, K, resizeactive, 30 0"
-      "$mod Shift, J, resizeactive, -30 0"
-      "$mod Shift, H, resizeactive, 0 -30"
-      "$mod Shift, L, resizeactive, 0 30"
+      "$mod Ctrl, H, resizeactive, -30 0"
+      "$mod Ctrl, L, resizeactive, 30 0"
+      "$mod Ctrl, J, resizeactive, 0 -30"
+      "$mod Ctrl, K, resizeactive, 0 30"
+
+      # Swap windows
 
       # Switch to a different workspaces
       "$mod, ampersand, workspace, 1"
@@ -82,7 +84,7 @@
       "$mod, S, togglespecialworkspace"
 
       # Capture
-      "$mod Shift, P, exec, hyprpicker -an"
+      "$mod Shift, P, exec, hyprpicker -adln"
     ];
 
     bindm = [
