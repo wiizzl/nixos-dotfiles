@@ -16,6 +16,7 @@
     ./hyprland.nix
     ./bluetooth.nix
     ./audio.nix
+    ./openrgb.nix
 
     inputs.stylix.nixosModules.stylix
   ];
