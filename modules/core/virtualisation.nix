@@ -21,7 +21,7 @@
 
   users.users.${config.var.username} = {
     extraGroups = [
-      "libvirtd" # #Virt manager/QEMU access
+      "libvirtd" # Virt manager/QEMU access
       "podman" # Allow access as non-root
     ];
   };
