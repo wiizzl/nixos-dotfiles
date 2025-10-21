@@ -10,10 +10,11 @@
 
     # Apps
     onlyoffice-desktopeditors
-    dbgate
+    dbeaver-bin
     thunderbird
+    obs-studio
     slack
-    vlc
+    mpv
     gimp
 
     # Dev
@@ -29,6 +30,12 @@
 
     # Utils
     tldr
+    eza
+    bat
+    fd
+    fzf
+    ripgrep
+    yazi
 
     # Just cool
     peaclock

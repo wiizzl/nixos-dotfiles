@@ -17,11 +17,6 @@
           key = "d",
           mods = "CTRL|SHIFT",
           action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" }
-        },
-        {
-          key = "k",
-          mods = "CTRL",
-          action = wezterm.action.SendString "clear\n"
         }
       }
     '';
