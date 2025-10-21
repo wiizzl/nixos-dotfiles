@@ -6,6 +6,7 @@
 
     # System
     kdePackages.dolphin
+    warp-terminal
 
     # Apps
     onlyoffice-desktopeditors
@@ -27,10 +28,7 @@
     nixfmt
 
     # Utils
-    zip
-    unzip
     tldr
-    killall
 
     # Just cool
     peaclock

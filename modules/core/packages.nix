@@ -4,6 +4,9 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
-    (callPackage ./helium.nix { })
+    killall
+    playerctl
+    zip
+    unzip
   ];
 }

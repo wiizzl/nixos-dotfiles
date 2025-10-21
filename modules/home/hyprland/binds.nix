@@ -5,27 +5,84 @@
     "$mod" = "SUPER";
 
     bind = [
+      # Global
       "$mod, Return, exec, wezterm"
       "$mod, D, exec, rofi -show drun"
       "$mod, E, exec, dolphin"
-      "$mod, Q, killactive"
+      "$mod, Z, togglefloating"
+      "$mod, F, fullscreen"
       "$mod, V, togglefloating"
       "$mod, P, pseudo"
       "$mod, J, togglesplit"
 
-      # Move focus with mod + arrow keys
-      "$mod, left, movefocus, l"
-      "$mod, right, movefocus, r"
-      "$mod, up, movefocus, u"
-      "$mod, down, movefocus, d"
+      # Kill focused window
+      "$mod, Q, killactive"
+      "Alt, F4, killactive"
 
-      # Special workspace
-      # "$mod, S, togglespecialworkspace, magic"
-      # "$mod, SHIFT, S, movetoworkspace, special:magic"
+      # Groups
+      "$mod, G, togglegroup"
+      "$mod Control, H, changegroupactive, b"
+      "$mod Control, L, changegroupactive, f"
+
+      # Move focus
+      "ALT, Tab, cyclenext"
+      "$mod, J, movefocus, l"
+      "$mod, K, movefocus, r"
+      "$mod, H, movefocus, u"
+      "$mod, L, movefocus, d"
+
+      # Resize windows
+      "$mod Shift, K, resizeactive, 30 0"
+      "$mod Shift, J, resizeactive, -30 0"
+      "$mod Shift, H, resizeactive, 0 -30"
+      "$mod Shift, L, resizeactive, 0 30"
+
+      # Switch to a different workspaces
+      "$mod, ampersand, workspace, 1"
+      "$mod, eacute, workspace, 2"
+      "$mod, quotedbl, workspace, 3"
+      "$mod, apostrophe, workspace, 4"
+      "$mod, parenleft, workspace, 5"
+      "$mod, minus, workspace, 6"
+      "$mod, egrave, workspace, 7"
+      "$mod, underscore, workspace, 8"
+      "$mod, ccedilla, workspace, 9"
+      "$mod, agrave, workspace, 10"
+
+      "$mod Alt, ampersand, movetoworkspacesilent, 1"
+      "$mod Alt, eacute, movetoworkspacesilent, 2"
+      "$mod Alt, quotedbl, movetoworkspacesilent, 3"
+      "$mod Alt, apostrophe, movetoworkspacesilent, 4"
+      "$mod Alt, parenleft, movetoworkspacesilent, 5"
+      "$mod Alt, minus, movetoworkspacesilent, 6"
+      "$mod Alt, egrave, movetoworkspacesilent, 7"
+      "$mod Alt, underscore, movetoworkspacesilent, 8"
+      "$mod Alt, ccedilla, movetoworkspacesilent, 9"
+      "$mod Alt, agrave, movetoworkspacesilent, 10"
+
+      # Move focused window to workspace
+      "$mod Shift, ampersand, movetoworkspace, 1"
+      "$mod Shift, eacute, movetoworkspace, 2"
+      "$mod Shift, quotedbl, movetoworkspace, 3"
+      "$mod Shift, apostrophe, movetoworkspace, 4"
+      "$mod Shift, parenleft, movetoworkspace, 5"
+      "$mod Shift, minus, movetoworkspace, 6"
+      "$mod Shift, egrave, movetoworkspace, 7"
+      "$mod Shift, underscore, movetoworkspace, 8"
+      "$mod Shift, ccedilla, movetoworkspace, 9"
+      "$mod Shift, agrave, movetoworkspace, 10"
 
       # Scroll trough workspaces with mod + scroll
       "$mod, mouse_down, workspace, r-1"
       "$mod, mouse_up, workspace, r+1"
+
+      # Special workspaces
+      "$mod Shift, S, movetoworkspace, special"
+      "$mod Alt, S, movetoworkspacesilent, special"
+      "$mod, S, togglespecialworkspace"
+
+      # Capture
+      "$mod Shift, P, exec, hyprpicker -an"
     ];
 
     bindm = [

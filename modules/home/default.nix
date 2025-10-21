@@ -14,5 +14,6 @@
     ./packages.nix
     ./starship.nix
     ./bash.nix
+    ./zen.nix
   ];
 }

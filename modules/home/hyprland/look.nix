@@ -3,10 +3,10 @@
 {
   wayland.windowManager.hyprland.settings = {
     general = {
-      gaps_in = 5;
-      gaps_out = 10;
+      gaps_in = 3;
+      gaps_out = 8;
 
-      border_size = 1;
+      border_size = 2;
       resize_on_border = false;
 
       allow_tearing = false;
@@ -29,10 +29,11 @@
 
       blur = {
         enabled = true;
-        size = 5;
+        size = 6;
         passes = 3;
-        ignore_opacity = false;
         new_optimizations = true;
+        ignore_opacity = true;
+        xray = false;
       };
     };
 
