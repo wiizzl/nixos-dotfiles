@@ -121,8 +121,8 @@
         ms-python.vscode-python-envs
         charliermarsh.ruff
         meganrogge.template-string-converter
-        # github.copilot
-        # github.copilot-chat
+        github.copilot
+        github.copilot-chat
       ];
     };
   };
