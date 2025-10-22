@@ -5,7 +5,6 @@
     ./binds.nix
     ./input.nix
     ./windows.nix
-    ./monitors.nix
     ./look.nix
     ./animations.nix
     ./exec-once.nix
@@ -16,5 +15,9 @@
     enable = true;
     package = null;
     portalPackage = null;
+
+    settings = {
+      monitor = var.hyprland.monitors;
+    };
   };
 }

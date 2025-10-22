@@ -2,8 +2,6 @@
 
 {
   wayland.windowManager.hyprland.settings = {
-    # credit https://github.com/mylinuxforwork/dotfiles
-
     animations = {
       enabled = true;
 

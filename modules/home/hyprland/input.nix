@@ -15,11 +15,7 @@
       };
     };
 
-    # Per-device config
-    device = {
-      name = "logitech-usb-receiver";
-      sensitivity = -0.7;
-    };
+    device = var.hyprland.device;
 
     gesture = [ "3, horizontal, workspace" ];
   };
