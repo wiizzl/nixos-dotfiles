@@ -5,7 +5,6 @@
     enable = true;
     autoEnable = true;
 
-    image = ./wallpapers/mountainscapedark.jpg;
     polarity = "dark";
 
     # See https://tinted-theming.github.io/tinted-gallery/ for more schemes

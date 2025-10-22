@@ -49,15 +49,9 @@ build() {
     echo -e "Copying ${MAGENTA}/etc/nixos/hardware-configuration.nix${NORMAL} to ${MAGENTA}./hosts/${HOST}/${NORMAL}\n"
     cp /etc/nixos/hardware-configuration.nix hosts/${HOST}/hardware-configuration.nix
 
-    echo -e "Creating ${MAGENTA}system ${NORMAL}folders...\n"
-    mkdir -p ~/Documents
-    mkdir -p ~/Videos
-    mkdir -p ~/Pictures
-    mkdir -p ~/Downloads
-    mkdir -p ~/Desktop
-    mkdir -p ~/Musics
-    mkdir -p ~/Public
-    mkdir -p ~/Templates
+    echo -e "Copying ${MAGENTA}./wallpapers${NORMAL} to ${MAGENTA}~/Pictures/Wallpapers${NORMAL}\n"
+    mkdir -p ~/Pictures/Wallpapers
+    cp -r ./wallpapers/* ~/Pictures/Wallpapers/
 
     echo -en "You are about to start the system build, do you want to process ? "
     confirm

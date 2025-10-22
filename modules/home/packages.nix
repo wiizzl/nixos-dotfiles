@@ -7,15 +7,16 @@
     # System
     kdePackages.dolphin
     warp-terminal
+    mpv
 
     # Apps
-    onlyoffice-desktopeditors
     dbeaver-bin
+    onlyoffice-desktopeditors
     thunderbird
     obs-studio
     slack
-    mpv
     gimp
+    yaak
 
     # Dev
     go

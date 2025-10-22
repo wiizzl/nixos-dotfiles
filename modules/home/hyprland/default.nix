@@ -9,8 +9,7 @@
     ./look.nix
     ./animations.nix
     ./exec-once.nix
-    ./waybar.nix
-    ./swaync.nix
+    ./hyprpaper.nix
   ];
 
   wayland.windowManager.hyprland = {
