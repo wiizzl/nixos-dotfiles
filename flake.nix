@@ -23,16 +23,23 @@
 
   outputs =
     { nixpkgs, ... }@inputs:
-    {
-      nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+
+    let
+      makeNixosSystem =
+        configPath:
+        nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-            ./hosts/desktop/configuration.nix
+            configPath
             { nixpkgs.overlays = [ inputs.nix-vscode-extensions.overlays.default ]; }
           ];
         };
+    in
+    {
+      nixosConfigurations = {
+        desktop = makeNixosSystem ./hosts/desktop/configuration.nix;
+        laptop = makeNixosSystem ./hosts/laptop/configuration.nix;
       };
     };
 }
