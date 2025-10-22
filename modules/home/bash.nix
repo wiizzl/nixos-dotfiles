@@ -18,7 +18,7 @@
           return 1
         fi
 
-        sudo nixos-rebuild switch --flake "nixos-dotfiles#$1"
+        sudo nixos-rebuild switch --flake "$HOME/nixos-dotfiles#$1"
       }
     '';
   };
