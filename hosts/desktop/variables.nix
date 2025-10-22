@@ -24,7 +24,7 @@
         "HDMI-A-2, 1920x1200@59.95, auto-center-left, 1, transform, 1"
       ];
 
-      wallpaper = "~/Pictures/Wallpapers/nixos.png";
+      wallpaper = "nixos.png";
     };
 
     autoGarbageCollector = true;
