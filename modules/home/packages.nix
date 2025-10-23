@@ -16,7 +16,7 @@
     obs-studio
     slack
     gimp
-    yaak
+    postman
 
     # Dev
     go

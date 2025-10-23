@@ -8,7 +8,7 @@
       # Global
       "$mod, Return, exec, wezterm"
       "$mod, D, exec, rofi -show drun"
-      "$mod, E, exec, yazi"
+      "$mod, E, exec, thunar"
       "$mod, Z, togglefloating"
       "$mod, F, fullscreen"
       "$mod, V, togglefloating"
