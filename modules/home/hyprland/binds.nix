@@ -79,12 +79,13 @@
       "$mod, mouse_up, workspace, r+1"
 
       # Special workspaces
-      "$mod Shift, S, movetoworkspace, special"
-      "$mod Alt, S, movetoworkspacesilent, special"
-      "$mod, S, togglespecialworkspace"
+      "$mod Shift, X, movetoworkspace, special"
+      "$mod Alt, X, movetoworkspacesilent, special"
+      "$mod, X, togglespecialworkspace"
 
       # Capture
       "$mod Shift, P, exec, hyprpicker -adln"
+      "$mod Shift, S, exec, hyprshot -m region --freeze"
     ];
 
     bindm = [

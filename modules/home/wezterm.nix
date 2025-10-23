@@ -6,6 +6,7 @@
 
     extraConfig = ''
       config.enable_tab_bar = false
+      config.default_cursor_style = "SteadyBar"
 
       config.keys = {
         {

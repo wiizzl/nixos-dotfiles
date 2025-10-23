@@ -4,20 +4,22 @@
   programs.git = {
     enable = true;
 
-    userName = var.git.username;
-    userEmail = var.git.email;
+    settings = {
+      user = {
+        name = var.git.username;
+        email = var.git.email;
+      };
 
-    extraConfig = {
+      alias = {
+        c = "commit -m";
+        s = "status";
+        d = "diff";
+        b = "branch";
+        p = "pull";
+      };
+
       init.defaultBranch = "main";
       pull.rebase = true;
-    };
-
-    aliases = {
-      c = "commit -m";
-      s = "status";
-      d = "diff";
-      b = "branch";
-      p = "pull";
     };
   };
 }
