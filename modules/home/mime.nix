@@ -16,9 +16,9 @@
       "text/x-chdr" = "code.desktop";
       "text/x-csrc" = "code.desktop";
 
-      "image/jpeg" = "gimp.desktop";
-      "image/png" = "gimp.desktop";
-      "image/gif" = "gimp.desktop";
+      "image/jpeg" = "qimgv.desktop";
+      "image/png" = "qimgv.desktop";
+      "image/gif" = "qimgv.desktop";
 
       "application/pdf" = "onlyoffice-desktopeditors.desktop";
     };

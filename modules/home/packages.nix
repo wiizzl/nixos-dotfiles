@@ -3,9 +3,11 @@
 {
   home.packages = with pkgs; [
     # System
-    kdePackages.dolphin
+    gnome-icon-theme
+    xfce.thunar
     warp-terminal
     mpv
+    qimgv
 
     # Apps
     dbeaver-bin
