@@ -121,6 +121,7 @@
         meganrogge.template-string-converter
         github.copilot
         github.copilot-chat
+        github.vscode-github-actions
       ];
     };
   };
