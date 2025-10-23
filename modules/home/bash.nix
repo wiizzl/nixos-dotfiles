@@ -6,6 +6,7 @@
 
     shellAliases = {
       ll = "eza -lha --icons=auto --sort=name --group-directories-first";
+      tree = "eza --icons=auto -T";
       cat = "bat";
       find = "fd";
       rg = "rg -C 4";

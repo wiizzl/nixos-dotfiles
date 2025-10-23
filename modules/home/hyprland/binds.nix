@@ -29,15 +29,7 @@
       "$mod, H, movefocus, l"
       "$mod, L, movefocus, r"
       "$mod, J, movefocus, u"
-      "$mod, K, movefocus, d"
-
-      # Resize windows
-      "$mod Ctrl, H, resizeactive, -30 0"
-      "$mod Ctrl, L, resizeactive, 30 0"
-      "$mod Ctrl, J, resizeactive, 0 -30"
-      "$mod Ctrl, K, resizeactive, 0 30"
-
-      # Swap windows
+      "$mod, K, movefocus, d" # Swap windows
 
       # Switch to a different workspaces
       "$mod, ampersand, workspace, 1"
@@ -92,6 +84,14 @@
       # Move/resize windows with mod + LMB/RMB and dragging
       "$mod, mouse:272, movewindow"
       "$mod, mouse:273, resizewindow"
+    ];
+
+    binde = [
+      # Resize windows
+      "$mod Ctrl, H, resizeactive, -30 0"
+      "$mod Ctrl, L, resizeactive, 30 0"
+      "$mod Ctrl, J, resizeactive, 0 -30"
+      "$mod Ctrl, K, resizeactive, 0 30"
     ];
 
     bindel = [

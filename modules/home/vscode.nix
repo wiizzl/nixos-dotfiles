@@ -6,8 +6,6 @@
   programs.vscode = {
     enable = true;
 
-    package = pkgs.vscodium;
-
     profiles.default = {
       userSettings = {
         # Theme
@@ -97,7 +95,7 @@
         "discord.swapBigAndSmallImage" = true;
       };
 
-      extensions = with pkgs.vscode-marketplace; [
+      extensions = with pkgs.vscode-marketplace-release; [
         gruntfuggly.todo-tree
         astro-build.astro-vscode
         jnoortheen.nix-ide
