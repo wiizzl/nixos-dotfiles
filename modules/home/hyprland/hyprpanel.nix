@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  programs.hyprland = {
+  programs.hyprpanel = {
     enable = true;
 
     settings = {
