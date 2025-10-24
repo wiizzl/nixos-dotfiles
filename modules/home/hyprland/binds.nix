@@ -9,6 +9,7 @@
       "$mod, Return, exec, wezterm"
       "$mod, D, exec, rofi -show drun"
       "$mod, E, exec, thunar"
+      "$mod, B, exec, zen-beta"
       "$mod, Z, togglefloating"
       "$mod, F, fullscreen"
       "$mod, V, togglefloating"
@@ -21,8 +22,8 @@
 
       # Groups
       "$mod, G, togglegroup"
-      "$mod Control, H, changegroupactive, b"
-      "$mod Control, L, changegroupactive, f"
+      "$mod Alt, H, changegroupactive, b"
+      "$mod Alt, L, changegroupactive, f"
 
       # Move focus
       "ALT, Tab, cyclenext"

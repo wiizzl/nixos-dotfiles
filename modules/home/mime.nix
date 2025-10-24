@@ -30,7 +30,7 @@
       "image/svg+xml" = "qimgv.desktop";
 
       # PDF & documents
-      "application/pdf" = "onlyoffice-desktopeditors.desktop";
+      "application/pdf" = "zen-beta.desktop";
       "application/msword" = "onlyoffice-desktopeditors.desktop";
 
       # Audio

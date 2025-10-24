@@ -12,9 +12,5 @@
     };
   };
 
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "${pkgs.hyprpaper}/bin/hyprpaper"
-    ];
-  };
+  wayland.windowManager.hyprland.settings.exec-once = [ "${pkgs.hyprpaper}/bin/hyprpaper" ];
 }
