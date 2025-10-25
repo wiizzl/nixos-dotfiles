@@ -26,7 +26,7 @@
           let
             base = {
               install_url = "https://addons.mozilla.org/firefox/downloads/latest/${id}/latest.xpi";
-              installation_mode = "normal_installed";
+              installation_mode = "force_installed";
             };
           in
           if pinned then base // { default_area = "navbar"; } else base;
@@ -103,48 +103,25 @@
         "zen.welcome-screen.seen" = true;
       };
 
-      bookmarks = {
-        force = true;
-        settings = [
-          {
-            name = "Nix sites";
-            toolbar = true;
-            bookmarks = [
-              {
-                name = "homepage";
-                url = "https://nixos.org/";
-                tags = [ "nix" ];
-              }
-              {
-                name = "wiki";
-                tags = [
-                  "wiki"
-                  "nix"
-                ];
-                url = "https://wiki.nixos.org/";
-              }
-            ];
-          }
-        ];
-      };
-
       containers = {
         Work = {
+          id = 2;
           color = "green";
           icon = "briefcase";
-          id = 1;
         };
       };
 
       spaces = {
         "Pierre" = {
-          id = "c6de089c-410d-4206-961d-ab11f988d40a";
+          id = "572910e1-4468-4832-a869-0b3a93e2f165";
           position = 1000;
+          icon = "🪨";
         };
         "Work" = {
-          id = "b7e3a2c1-8f4d-4e2b-9d7a-1f2e3c4b5a6d";
-          container = 1;
-          position = 2000;
+          id = "2441acc9-79b1-4afb-b582-ee88ce554ec0";
+          container = 2;
+          position = 1001;
+          icon = "💼";
         };
       };
 
@@ -156,6 +133,12 @@
             nixSnowflakeIcon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
           in
           {
+            bing.metaData.hidden = "true";
+            duckDuckGo.metaData.hidden = "true";
+            wikipedia.metaData.hidden = "true";
+            perplexity.metaData.hidden = "true";
+            qwant.metaData.hidden = "true";
+
             "Nix Packages" = {
               urls = [
                 {
