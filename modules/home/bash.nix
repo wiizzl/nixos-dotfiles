@@ -24,7 +24,7 @@
         host="$1"
         shift
 
-        sudo nixos-rebuild switch --flake "$HOME/nixos-dotfiles#$host" "$@"
+        nixos-rebuild switch --sudo --flake "$HOME/nixos-dotfiles#$host" "$@"
       }
     '';
   };

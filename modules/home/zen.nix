@@ -26,7 +26,7 @@
           let
             base = {
               install_url = "https://addons.mozilla.org/firefox/downloads/latest/${id}/latest.xpi";
-              installation_mode = "force_installed";
+              installation_mode = "normal_installed";
             };
           in
           if pinned then base // { default_area = "navbar"; } else base;
@@ -54,6 +54,10 @@
             id = "ublock-origin";
             pinned = true;
           };
+          "@react-devtools" = mkExtensionEntry {
+            id = "react-developer-tools";
+            pinned = true;
+          };
           "{85860b32-02a8-431a-b2b1-40fbd64c9c69}" = "github-file-icons";
           "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = "return-youtube-dislikes";
           "{74145f27-f039-47ce-a470-a662b129930a}" = "clearurls";
@@ -63,7 +67,6 @@
           "jid1-BoFifL9Vbdl2zQ@jetpack" = "decentraleyes";
           "trackmenot@mrl.nyu.edu" = "trackmenot";
           "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}" = "stylus";
-          "@react-devtools" = "react-developer-tools";
         };
 
         PasswordManagerEnabled = false;
@@ -110,6 +113,7 @@
               {
                 name = "homepage";
                 url = "https://nixos.org/";
+                tags = [ "nix" ];
               }
               {
                 name = "wiki";
