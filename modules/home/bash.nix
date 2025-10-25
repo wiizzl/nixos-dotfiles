@@ -10,16 +10,21 @@
       cat = "bat";
       find = "fd";
       rg = "rg -C 4";
+
+      nfu = "cd ~/nixos-dotfiles && sudo nix flake update";
     };
 
     bashrcExtra = ''
       nrs() {
         if [ -z "$1" ]; then
-          echo "Usage: nrs <host>" >&2
+          echo "Usage: nrs <host> [additional nixos-rebuild args]" >&2
           return 1
         fi
 
-        sudo nixos-rebuild switch --flake "$HOME/nixos-dotfiles#$1"
+        host="$1"
+        shift
+
+        sudo nixos-rebuild switch --flake "$HOME/nixos-dotfiles#$host" "$@"
       }
     '';
   };
