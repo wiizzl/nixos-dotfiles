@@ -110,6 +110,8 @@ in
         dbaeumer.vscode-eslint
         prisma.prisma
         golang.go
+        ziglang.vscode-zig
+        rust-lang.rust-analyzer
         ms-vsliveshare.vsliveshare
         unifiedjs.vscode-mdx
         quicktype.quicktype

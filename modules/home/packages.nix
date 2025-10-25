@@ -24,7 +24,11 @@
     nodejs
     pnpm
     uv
+    python315
     jdk
+    lua
+    zig
+    rustup
     gcc
     gnumake
     nixfmt
