@@ -19,6 +19,13 @@
           "clock"
         ];
 
+        "hyprland/workspaces" = {
+          "all-outputs" = false;
+          "persistent-workspaces" = {
+            "*" = 5;
+          };
+        };
+
         "hyprland/window" = {
           max-length = 50;
         };
