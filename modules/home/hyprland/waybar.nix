@@ -10,255 +10,112 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 26;
         output = [ "DP-2" ];
 
-        "modules-left" = [
-          "hyprland/workspaces"
-        ];
-        "modules-center" = [
-          "clock"
-          "tray"
-        ];
-        "modules-right" = [
-          "group/expand"
+        modules-left = [ "hyprland/workspaces" ];
+        modules-center = [ "hyprland/window" ];
+        modules-right = [
           "battery"
-          "custom/notification"
+          "clock"
         ];
 
-        "hyprland/workspaces" = {
-          format = "{icon}";
-          format-icons = {
-            active = "";
-            default = "";
-            empty = "";
-          };
-        };
-
-        "custom/notification" = {
-          tooltip = false;
-          format = " ";
-          on-click = "swaync-client -t -sw";
-          escape = true;
-        };
-
-        clock = {
-          format = "{:%I:%M:%S}";
-          format-alt = "{:%a. %d %b.}";
-          interval = 1;
-          tooltip-format = "<tt>{calendar}</tt>";
-          actions = {
-            on-scroll-up = "shift_down";
-            on-scroll-down = "shift_up";
-          };
+        "hyprland/window" = {
+          max-length = 50;
         };
 
         battery = {
-          interval = 30;
-          states = {
-            good = 95;
-            warning = 30;
-            critical = 20;
-          };
           format = "{capacity}% {icon}";
-          format-charging = "{capacity}% 󰂄";
-          format-plugged = "{capacity}% 󰂄 ";
-          format-alt = "{time} {icon}";
           format-icons = [
-            "󰁻"
-            "󰁼"
-            "󰁾"
-            "󰂀"
-            "󰂂"
-            "󰁹"
+            ""
+            ""
+            ""
+            ""
+            ""
           ];
         };
 
-        "custom/expand" = {
-          format = "";
-          tooltip = false;
-        };
-
-        "group/expand" = {
-          orientation = "horizontal";
-          drawer = {
-            transition-duration = 600;
-            transition-to-left = true;
-            click-to-reveal = true;
-          };
-          modules = [
-            "custom/expand"
-            "custom/colorpicker"
-            "cpu"
-            "memory"
-          ];
-        };
-
-        "custom/colorpicker" = {
-          format = " ";
-          interval = "once";
-          on-click = "hyprpicker -adln";
-          tooltip-format = "Colorpicker";
-        };
-
-        cpu = {
-          format = " ";
-          tooltip = true;
-        };
-
-        memory = {
-          format = " ";
-          tooltip = true;
-        };
-
-        tray = {
-          icon-size = 14;
-          spacing = 10;
+        clock = {
+          format-alt = "{:%a, %d. %b  %H:%M}";
         };
       };
     };
 
     style = ''
-      window#waybar{
-        all:unset;
+      * {
+          border: none;
+          border-radius: 0;
+          font-family: Roboto, Helvetica, Arial, sans-serif;
+          font-size: 13px;
+          min-height: 0;
       }
-      .modules-left {
-        padding:7px;
-        margin:10 0 5 10;
-        border-radius:10px;
-        background: rgba(30, 30, 46, 0.6);
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+
+      window#waybar {
+          background: rgba(43, 48, 59, 0.5);
+          border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+          color: white;
       }
-      .modules-center {
-        padding:7px;
-        margin:10 0 5 0;
-        border-radius:10px;
-        background: rgba(30, 30, 46, 0.6);
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-      }
-      .modules-right {
-        padding:7px;
-        margin: 10 10 5 0;
-        border-radius:10px;
-        background: rgba(30, 30, 46, 0.6);
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-      }
+
       tooltip {
-        background: #1e1e2e;
-        color: #b4befe;
+        background: rgba(43, 48, 59, 0.5);
+        border: 1px solid rgba(100, 114, 125, 0.5);
       }
-      #clock:hover, #custom-pacman:hover, #custom-notification:hover,#battery:hover,#cpu:hover,#memory:hover{
-        transition: all .3s ease;
-        color: #f5c2e7;
+      tooltip label {
+        color: white;
       }
-      #custom-notification {
-        padding: 0px 5px;
-        transition: all .3s ease;
-        color: #cdd6f4;
-      }
-      #clock{
-        padding: 0px 5px;
-        color: #cdd6f4;
-        transition: all .3s ease;
-      }
-      #custom-pacman{
-        padding: 0px 5px;
-        transition: all .3s ease;
-        color: #cdd6f4;
-      }
-      #workspaces {
-        padding: 0px 5px;
-      }
+
       #workspaces button {
-        all:unset;
-        padding: 0px 5px;
-        color: rgba(245, 196, 231, 0.4);
-        transition: all .2s ease;
+          padding: 0 5px;
+          background: transparent;
+          color: white;
+          border-bottom: 3px solid transparent;
       }
-      #workspaces button:hover {
-        color:rgba(0,0,0,0);
-        border: none;
-        text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
-        transition: all 1s ease;
+
+      #workspaces button.focused {
+          background: #64727D;
+          border-bottom: 3px solid white;
       }
-      #workspaces button.active {
-        color: #f5c2e7;
-        border: none;
-        text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+
+      #mode, #clock, #battery {
+          padding: 0 10px;
       }
-      #workspaces button.empty {
-        color: rgba(0,0,0,0);
-        border: none;
-        text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+
+      #mode {
+          background: #64727D;
+          border-bottom: 3px solid white;
       }
-      #workspaces button.empty:hover {
-        color: rgba(0,0,0,0);
-        border: none;
-        text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
-        transition: all 1s ease;
+
+      #clock {
+          background-color: #64727D;
       }
-      #workspaces button.empty.active {
-        color: #f5c2e7;
-        border: none;
-        text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+
+      #battery {
+          background-color: #ffffff;
+          color: black;
       }
-      #battery{
-        padding: 0px 5px;
-        transition: all .3s ease;
-        color: #cdd6f4;
-      }
+
       #battery.charging {
-        color: #a6e3a1;
+          color: white;
+          background-color: #26A65B;
       }
+
+      @keyframes blink {
+          to {
+              background-color: #ffffff;
+              color: black;
+          }
+      }
+
       #battery.warning:not(.charging) {
-        color: #f9e2af;
-      }
-      #battery.critical:not(.charging) {
-        color: #f38ba8;
-        animation-name: blink;
-        animation-duration: 0.5s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-      #group-expand{
-        padding: 0px 5px;
-        transition: all .3s ease;
-      }
-      #custom-expand{
-        padding: 0px 5px;
-        color:rgba(205, 214, 244, 0.2);
-        text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
-        transition: all .3s ease;
-      }
-      #custom-expand:hover{
-        color:rgba(255,255,255,.2);
-        text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
-      }
-      #custom-colorpicker{
-        padding: 0px 5px;
-      }
-      #cpu,#memory,#temperature{
-        padding: 0px 5px;
-        transition: all .3s ease;
-        color: #cdd6f4;
-      }
-      #tray{
-        padding: 0px 5px;
-        transition: all .3s ease;
-      }
-      #tray menu * {
-        padding: 0px 5px;
-        transition: all .3s ease;
-      }
-      #tray menu separator {
-        padding: 0px 5px;
-        transition: all .3s ease;
+          background: #f53c3c;
+          color: white;
+          animation-name: blink;
+          animation-duration: 0.5s;
+          animation-timing-function: steps(12);
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
       }
     '';
   };
 
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [ "waybar" ];
-  };
+  wayland.windowManager.hyprland.settings.exec-once = [ "waybar" ];
 }

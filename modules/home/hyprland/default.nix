@@ -14,7 +14,7 @@
     ./animations.nix
     ./exec-once.nix
     ./hyprpaper.nix
-    ./hyprpanel.nix
+    ./waybar.nix
   ];
 
   wayland.windowManager.hyprland = {

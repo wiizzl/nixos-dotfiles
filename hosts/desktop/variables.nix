@@ -29,7 +29,7 @@
         sensitivity = -0.7;
       };
 
-      wallpaper = "mountainscapedark.jpg";
+      wallpaper = "a_road_leading_to_a_city.jpg";
     };
 
     autoGarbageCollector = true;

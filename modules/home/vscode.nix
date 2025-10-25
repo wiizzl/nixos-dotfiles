@@ -57,8 +57,9 @@
         };
 
         # Window UI
+        "window.titleBarStyle" = "native";
+        "window.menuBarVisibility" = "toggle";
         "window.commandCenter" = false;
-        "window.titleBarStyle" = "custom";
         "workbench.activityBar.location" = "top";
         "workbench.sideBar.location" = "right";
         "editor.accessibilitySupport" = "off";
@@ -83,16 +84,8 @@
         "editor.cursorBlinking" = "expand";
 
         # Discord RPC
-        "discord.detailsDebugging" = "🦾 {file_name}";
-        "discord.detailsEditing" = "✏️ {file_name}";
-        "discord.detailsIdling" = "💤 Idling";
-        "discord.largeImage" = "{LANG}";
-        "discord.lowerDetailsDebugging" = "🦾 {workspace}";
-        "discord.lowerDetailsIdling" = "💤 Idling";
-        "discord.largeImageIdling" = "💤 Idling";
-        "discord.lowerDetailsEditing" = "📂 {workspace}";
-        "discord.lowerDetailsNoWorkspaceFound" = "📑 No workspace";
-        "discord.swapBigAndSmallImage" = true;
+        "vscord.app.name" = "Visual Studio Code";
+        "vscord.status.idle.enabled" = false;
       };
 
       extensions = with pkgs.vscode-marketplace-release; [
@@ -122,6 +115,7 @@
         github.copilot
         github.copilot-chat
         github.vscode-github-actions
+        leonardssh.vscord
       ];
     };
   };
