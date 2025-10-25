@@ -5,7 +5,6 @@
     # System
     gnome-icon-theme
     xfce.thunar
-    warp-terminal
     mpv
     qimgv
 

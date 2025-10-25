@@ -68,7 +68,8 @@ in
         "window.titleBarStyle" = "native";
         "window.menuBarVisibility" = "toggle";
         "window.commandCenter" = false;
-        "workbench.activityBar.location" = "top";
+        "workbench.activityBar.location" = "hidden";
+        "workbench.layoutControl.enabled" = false;
         "workbench.sideBar.location" = "right";
         "editor.accessibilitySupport" = "off";
         "editor.bracketPairColorization.enabled" = true;
