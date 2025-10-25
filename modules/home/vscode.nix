@@ -113,6 +113,7 @@ in
         golang.go
         ziglang.vscode-zig
         rust-lang.rust-analyzer
+        vue.volar
         ms-vsliveshare.vsliveshare
         unifiedjs.vscode-mdx
         quicktype.quicktype
