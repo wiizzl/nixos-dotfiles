@@ -123,6 +123,7 @@ in
         github.copilot
         github.copilot-chat
         github.vscode-github-actions
+        github.vscode-pull-request-github
         leonardssh.vscord
       ];
     };
