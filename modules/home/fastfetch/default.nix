@@ -95,7 +95,7 @@
         "break"
         {
           type = "uptime";
-          key = "   Uptime   ";
+          key = " Uptime";
         }
       ];
     };
