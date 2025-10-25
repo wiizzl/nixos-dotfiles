@@ -1,6 +1,14 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
+let
+  pkgsWithOverlay = import pkgs.path {
+    system = pkgs.system;
+    overlays = [ inputs.nix-vscode-extensions.overlays.default ];
+    config = pkgs.config;
+  };
+in
 {
+
   stylix.targets.vscode.enable = false;
 
   programs.vscode = {
@@ -88,7 +96,7 @@
         "vscord.status.idle.enabled" = false;
       };
 
-      extensions = with pkgs.vscode-marketplace-release; [
+      extensions = with pkgsWithOverlay.vscode-marketplace-release; [
         gruntfuggly.todo-tree
         astro-build.astro-vscode
         jnoortheen.nix-ide

@@ -30,10 +30,7 @@
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
-          modules = [
-            configPath
-            { nixpkgs.overlays = [ inputs.nix-vscode-extensions.overlays.default ]; }
-          ];
+          modules = [ configPath ];
         };
     in
     {
