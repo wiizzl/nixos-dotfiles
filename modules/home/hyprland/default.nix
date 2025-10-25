@@ -15,6 +15,7 @@
     ./exec-once.nix
     ./hyprpaper.nix
     ./waybar.nix
+    ./workspaces.nix
   ];
 
   wayland.windowManager.hyprland = {
