@@ -16,5 +16,6 @@
     ./starship.nix
     ./bash.nix
     ./zen.nix
+    ./vicinae.nix
   ];
 }
