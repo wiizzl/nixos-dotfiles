@@ -17,5 +17,6 @@
     ./bash.nix
     ./zen.nix
     ./cava.nix
+    ./helix.nix
   ];
 }
