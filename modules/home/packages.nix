@@ -46,5 +46,6 @@
     cbonsai
     pipes
     cmatrix
+    nitch
   ];
 }

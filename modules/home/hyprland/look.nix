@@ -40,6 +40,11 @@
     dwindle = {
       pseudotile = true;
       preserve_split = true;
+      smart_split = false;
+      default_split_ratio = 1.0;
+      special_scale_factor = 0.9;
+      single_window_aspect_ratio = "0 0";
+      force_split = 2; # 0 = follow mouse | 1 = left | 2 = right
     };
 
     master = {

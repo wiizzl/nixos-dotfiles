@@ -64,8 +64,9 @@
           };
 
           "image#nixos" = {
-            "path" = nixSnowflakeIcon;
-            "size" = 24;
+            path = nixSnowflakeIcon;
+            size = 24;
+            on-click = "swaync-client -t -sw";
           };
 
           pulseaudio = {
