@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 init() {
-    CURRENT_USERNAME='pier'
     NORMAL=$(tput sgr0)
     WHITE=$(tput setaf 7)
     BLACK=$(tput setaf 0)
