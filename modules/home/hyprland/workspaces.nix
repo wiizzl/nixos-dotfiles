@@ -19,7 +19,7 @@
             "8, monitor:${monitors.primary}, persistent:true"
             "9, monitor:${monitors.primary}"
             "10, monitor:${monitors.primary}"
-            "20, monitor:${monitors.secondary}, default:true, persistent:true, gapsin:0, gapsout:0, border:false, rounding:false, decorate:false, shadow:false"
+            "20, monitor:${monitors.secondary}, default:true, persistent:true, gapsout:0, border:false, rounding:false, decorate:false, shadow:false"
           ]
         else
           [
