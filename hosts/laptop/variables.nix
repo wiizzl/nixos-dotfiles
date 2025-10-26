@@ -18,6 +18,10 @@
     };
 
     hyprland = {
+      waybar = {
+        network = "wlp15s0";
+      };
+
       monitors = {
         primary = "";
         secondary = "";

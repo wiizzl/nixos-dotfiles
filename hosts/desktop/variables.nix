@@ -18,6 +18,10 @@
     };
 
     hyprland = {
+      waybar = {
+        network = "enp14s0";
+      };
+
       monitors = {
         primary = "DP-2";
         secondary = "HDMI-A-2";

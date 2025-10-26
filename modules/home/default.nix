@@ -5,7 +5,6 @@
     ./fastfetch
     ./hyprland
     ./rofi.nix
-    ./mako.nix
     ./spotify.nix
     ./mime.nix
     ./discord.nix

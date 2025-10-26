@@ -1,9 +1,13 @@
 { ... }:
 
 {
-  services.mako = {
+  services.swaync = {
     enable = true;
 
     settings = { };
+
+    style = ''
+
+    '';
   };
 }
