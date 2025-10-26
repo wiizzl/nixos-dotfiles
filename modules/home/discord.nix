@@ -10,7 +10,7 @@
     vesktop.enable = true;
     discord.enable = false;
 
-    quickCss = "@import url('https://catppuccin.github.io/discord/dist/catppuccin-mocha-blue.theme.css');";
+    quickCss = "@import url('https://catppuccin.github.io/discord/dist/catppuccin-mocha-mauve.theme.css');";
 
     config = {
       useQuickCss = true;

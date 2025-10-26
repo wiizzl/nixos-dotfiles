@@ -22,8 +22,8 @@
       base0A = "f9e2af"; # Classes, Markup Bold, Search Text Background
       base0B = "a6e3a1"; # Strings, Inherited Class, Markup Code, Diff Inserted
       base0C = "94e2d5"; # Support, Regular Expressions, Escape Characters, Markup Quotes
-      base0D = "89b4fa"; # Functions, Methods, Attribute IDs, Headings, Accent color
-      base0E = "cba6f7"; # Keywords, Storage, Selector, Markup Italic, Diff Changed
+      base0D = "cba6f7"; # Functions, Methods, Attribute IDs, Headings, Accent color
+      base0E = "89b4fa"; # Keywords, Storage, Selector, Markup Italic, Diff Changed
       base0F = "f2cdcd"; # Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
     };
 

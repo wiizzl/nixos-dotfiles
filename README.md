@@ -17,7 +17,13 @@ sudo chmod +x ./build.sh
 ./build.sh
 ```
 
-3. Rebuild the config whenever you want
+3. Reboot your computer
+
+```sh
+reboot
+```
+
+4. Rebuild the config whenever you want
 
 ```sh
 nrs <host> # atm: desktop or laptop

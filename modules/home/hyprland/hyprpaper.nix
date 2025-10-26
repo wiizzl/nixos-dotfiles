@@ -5,7 +5,8 @@
     enable = true;
 
     settings = {
-      ipc = "on";
+      ipc = "off";
+      splash = false;
 
       preload = [ "~/nixos-dotfiles/wallpapers/${var.hyprland.wallpaper}" ];
       wallpaper = [ ", ~/nixos-dotfiles/wallpapers/${var.hyprland.wallpaper}" ];

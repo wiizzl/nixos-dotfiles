@@ -19,8 +19,11 @@ in
         # Theme
         "workbench.iconTheme" = "flow-dim";
         "workbench.colorTheme" = "Catppuccin Mocha";
-        "catppuccin.accentColor" = "blue";
         "workbench.productIconTheme" = "material-product-icons";
+
+        # More advanced cattpuccin settings
+        "editor.semanticHighlighting.enabled" = true;
+        "terminal.integrated.minimumContrastRatio" = 1;
 
         # Misc
         "workbench.startupEditor" = "none";
@@ -32,11 +35,11 @@ in
         # Formatter
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
         "prettier.printWidth" = 120;
-        "[prisma]".editor.defaultFormatter = "Prisma.prisma";
-        "[python]".editor.defaultFormatter = "charliermarsh.ruff";
+        "[prisma]"."editor"."defaultFormatter" = "Prisma.prisma";
+        "[python]"."editor"."defaultFormatter" = "charliermarsh.ruff";
         "prettier.documentSelectors" = [ "**/*.astro" ];
-        "[astro]".editor.defaultFormatter = "esbenp.prettier-vscode";
-        "[nix]".editor.defaultFormatter = "jnoortheen.nix-ide";
+        "[astro]"."editor"."defaultFormatter" = "esbenp.prettier-vscode";
+        "[nix]"."editor"."defaultFormatter" = "jnoortheen.nix-ide";
 
         # Font
         "editor.fontLigatures" = true;
