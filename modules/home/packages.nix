@@ -46,6 +46,5 @@
     cbonsai
     pipes
     cmatrix
-    cava
   ];
 }
