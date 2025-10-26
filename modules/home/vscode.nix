@@ -21,10 +21,6 @@ in
         "workbench.colorTheme" = "Catppuccin Mocha";
         "workbench.productIconTheme" = "material-product-icons";
 
-        # More advanced cattpuccin settings
-        "editor.semanticHighlighting.enabled" = true;
-        "terminal.integrated.minimumContrastRatio" = 1;
-
         # Misc
         "workbench.startupEditor" = "none";
         "files.enableTrash" = true;
@@ -35,10 +31,10 @@ in
         # Formatter
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
         "prettier.printWidth" = 120;
-        "[prisma]"."editor"."defaultFormatter" = "Prisma.prisma";
-        "[python]"."editor"."defaultFormatter" = "charliermarsh.ruff";
         "prettier.documentSelectors" = [ "**/*.astro" ];
         "[astro]"."editor"."defaultFormatter" = "esbenp.prettier-vscode";
+        "[prisma]"."editor"."defaultFormatter" = "Prisma.prisma";
+        "[python]"."editor"."defaultFormatter" = "charliermarsh.ruff";
         "[nix]"."editor"."defaultFormatter" = "jnoortheen.nix-ide";
 
         # Font
@@ -68,6 +64,8 @@ in
         };
 
         # Window UI
+        "editor.semanticHighlighting.enabled" = true;
+        "terminal.integrated.minimumContrastRatio" = 1;
         "window.titleBarStyle" = "native";
         "window.menuBarVisibility" = "toggle";
         "window.commandCenter" = false;

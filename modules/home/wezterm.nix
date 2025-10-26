@@ -18,6 +18,11 @@
           key = "d",
           mods = "CTRL|SHIFT",
           action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" }
+        },
+        {
+          key = "w",
+          mods = 'CTRL',
+          action = wezterm.action.CloseCurrentPane { confirm = true },
         }
       }
     '';
