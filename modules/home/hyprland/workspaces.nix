@@ -2,22 +2,35 @@
 
 {
   wayland.windowManager.hyprland.settings =
-    if builtins.length var.hyprland.monitors > 0 then
-      {
-        workspace = [
-          "1, monitor:DP-2, default:true²"
-          "2, monitor:DP-2"
-          "3, monitor:DP-2"
-          "4, monitor:DP-2"
-          "5, monitor:DP-2"
-          "6, monitor:DP-2"
-          "7, monitor:DP-2"
-          "8, monitor:DP-2"
-          "9, monitor:DP-2"
-          "10, monitor:DP-2"
-          "11, monitor:HDMI-A-2, default:true"
-        ];
-      }
-    else
-      { };
+    let
+      monitors = var.hyprland.monitors;
+    in
+    {
+      workspace =
+        if builtins.length monitors.values > 1 then
+          [
+            "1, monitor:${monitors.primary}, default:true, persistent:true"
+            "2, monitor:${monitors.primary}, persistent:true"
+            "3, monitor:${monitors.primary}, persistent:true"
+            "4, monitor:${monitors.primary}, persistent:true"
+            "5, monitor:${monitors.primary}, persistent:true"
+            "6, monitor:${monitors.primary}, persistent:true"
+            "7, monitor:${monitors.primary}, persistent:true"
+            "8, monitor:${monitors.primary}, persistent:true"
+            "9, monitor:${monitors.primary}"
+            "10, monitor:${monitors.primary}"
+            "20, monitor:${monitors.secondary}, default:true, persistent:true, gapsin:0, gapsout:0, border:false, rounding:false, decorate:false, shadow:false"
+          ]
+        else
+          [
+            "1, default:true, persistent:true"
+            "2, persistent:true"
+            "3, persistent:true"
+            "4, persistent:true"
+            "5, persistent:true"
+            "6, persistent:true"
+            "7, persistent:true"
+            "8, persistent:true"
+          ];
+    };
 }

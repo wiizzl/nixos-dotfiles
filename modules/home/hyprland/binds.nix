@@ -3,16 +3,19 @@
 {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
+    "misc:middle_click_paste" = false;
 
     bind = [
-      # Global
+      # Run applications
       "$mod, Return, exec, wezterm"
       "$mod, D, exec, rofi -show drun"
       "$mod, E, exec, thunar"
       "$mod, B, exec, zen-beta"
+      "$mod, C, exec, code"
+
+      # Window management
       "$mod, Z, togglefloating"
       "$mod, F, fullscreen"
-      "$mod, V, togglefloating"
       "$mod, P, pseudo"
       "$mod, W, togglesplit"
 
@@ -29,8 +32,14 @@
       "ALT, Tab, cyclenext"
       "$mod, H, movefocus, l"
       "$mod, L, movefocus, r"
-      "$mod, J, movefocus, u"
-      "$mod, K, movefocus, d" # Swap windows
+      "$mod, K, movefocus, u"
+      "$mod, J, movefocus, d"
+
+      # Swap windows
+      "$mod Shift, H, movewindow, l"
+      "$mod Shift, L, movewindow, r"
+      "$mod Shift, K, movewindow, u"
+      "$mod Shift, J, movewindow, d"
 
       # Switch to a different workspaces
       "$mod, ampersand, workspace, 1"
@@ -68,8 +77,8 @@
       "$mod Shift, agrave, movetoworkspace, 10"
 
       # Scroll trough workspaces with mod + scroll
-      "$mod, mouse_down, workspace, r-1"
-      "$mod, mouse_up, workspace, r+1"
+      "$mod, mouse_down, workspace, e-1"
+      "$mod, mouse_up, workspace, e+1"
 
       # Special workspaces
       "$mod Shift, X, movetoworkspace, special"
@@ -78,7 +87,7 @@
 
       # Capture
       "$mod Shift, P, exec, hyprpicker -adln"
-      "$mod Shift, S, exec, hyprshot -m region --freeze"
+      "$mod Shift, S, exec, hyprshot -m region --freeze -o ~/Pictures/Screenshots/"
     ];
 
     bindm = [

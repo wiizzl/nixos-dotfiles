@@ -24,7 +24,7 @@
     portalPackage = null;
 
     settings = {
-      monitor = var.hyprland.monitors;
+      monitor = var.hyprland.monitors.values;
     };
   };
 }

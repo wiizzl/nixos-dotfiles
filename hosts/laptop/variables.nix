@@ -18,7 +18,11 @@
     };
 
     hyprland = {
-      monitors = [ ];
+      monitors = {
+        primary = "";
+        secondary = "";
+        values = [ ];
+      };
 
       device = { };
 

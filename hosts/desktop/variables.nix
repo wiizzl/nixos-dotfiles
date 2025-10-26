@@ -18,10 +18,15 @@
     };
 
     hyprland = {
-      monitors = [
-        "DP-2, 1920x1080@164.92, 0x0, 1"
-        "HDMI-A-2, 1920x1200@59.95, auto-center-left, 1, transform, 1"
-      ];
+      monitors = {
+        primary = "DP-2";
+        secondary = "HDMI-A-2";
+
+        values = [
+          "DP-2, 1920x1080@164.92, 0x0, 1"
+          "HDMI-A-2, 1920x1200@59.95, auto-center-left, 1, transform, 1"
+        ];
+      };
 
       device = {
         name = "logitech-usb-receiver";
