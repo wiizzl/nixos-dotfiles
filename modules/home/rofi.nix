@@ -1,8 +1,5 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
-let
-  inherit (config.lib.formats.rasi) mkLiteral;
-in
 {
   stylix.targets.rofi.enable = false;
 
@@ -18,161 +15,177 @@ in
       display-drun = " Apps";
     };
 
-    theme = {
-      "*" = {
-        rosewater = mkLiteral "#f5e0dc";
-        flamingo = mkLiteral "#f2cdcd";
-        pink = mkLiteral "#f5c2e7";
-        mauve = mkLiteral "#cba6f7";
-        red = mkLiteral "#f38ba8";
-        maroon = mkLiteral "#eba0ac";
-        peach = mkLiteral "#fab387";
-        yellow = mkLiteral "#f9e2af";
-        green = mkLiteral "#a6e3a1";
-        teal = mkLiteral "#94e2d5";
-        sky = mkLiteral "#89dceb";
-        sapphire = mkLiteral "#74c7ec";
-        blue = mkLiteral "#89b4fa";
-        lavender = mkLiteral "#b4befe";
-        text = mkLiteral "#cdd6f4";
-        subtext1 = mkLiteral "#bac2de";
-        subtext0 = mkLiteral "#a6adc8";
-        overlay2 = mkLiteral "#9399b2";
-        overlay1 = mkLiteral "#7f849c";
-        overlay0 = mkLiteral "#6c7086";
-        surface2 = mkLiteral "#585b70";
-        surface1 = mkLiteral "#45475a";
-        surface0 = mkLiteral "#313244";
-        base = mkLiteral "#1e1e2e";
-        mantle = mkLiteral "#181825";
-        crust = mkLiteral "#11111b";
-        bg = mkLiteral "@base";
-        hv = mkLiteral "@mauve";
-        primary = mkLiteral "@surface1";
-        ug = mkLiteral "@red";
-        kl = mkLiteral "@blue";
-        font = mkLiteral "\"Monospace 11\"";
-        black = mkLiteral "#000000";
-        transparent = mkLiteral "rgba(46,52,64,0)";
-        background-color = mkLiteral "@bg";
-        border = mkLiteral "0px";
-      };
+    theme =
+      let
+        mkLiteral = config.lib.formats.rasi.mkLiteral;
+        colors = config.lib.stylix.colors;
+        hex = base: mkLiteral "#${base}";
 
-      "window" = {
-        width = 700;
-        orientation = mkLiteral "horizontal";
-        location = mkLiteral "center";
-        anchor = mkLiteral "center";
-        transparency = mkLiteral "\"screenshot\"";
-        border-color = mkLiteral "@transparent";
-        border = mkLiteral "0px";
-        border-radius = mkLiteral "6px";
-        spacing = mkLiteral "0";
-        children = map mkLiteral [ "mainbox" ];
-      };
+        palette = {
+          rosewater = hex colors.base06;
+          flamingo = hex colors.base0F;
+          mauve = hex colors.base0D;
+          red = hex colors.base08;
+          peach = hex colors.base09;
+          yellow = hex colors.base0A;
+          green = hex colors.base0B;
+          teal = hex colors.base0C;
+          blue = hex colors.base0E;
+          lavender = hex colors.base07;
+          text = hex colors.base05;
+          surface2 = hex colors.base04;
+          surface1 = hex colors.base03;
+          surface0 = hex colors.base02;
+          base = hex colors.base00;
+          mantle = hex colors.base01;
+        };
+      in
+      {
+        "*" = {
+          inherit (palette)
+            rosewater
+            flamingo
+            mauve
+            red
+            peach
+            yellow
+            green
+            teal
+            blue
+            lavender
+            text
+            surface2
+            surface1
+            surface0
+            base
+            mantle
+            ;
+          bg = mkLiteral "@base";
+          hv = mkLiteral "@mauve";
+          primary = mkLiteral "@surface1";
+          ug = mkLiteral "@red";
+          kl = mkLiteral "@blue";
+          black = mkLiteral "#000000";
+          transparent = mkLiteral "rgba(46,52,64,0)";
+          background-color = mkLiteral "@bg";
+          border = mkLiteral "0px";
+        };
 
-      "mainbox" = {
-        spacing = mkLiteral "0";
-        children = map mkLiteral [
-          "inputbar"
-          "message"
-          "listview"
-        ];
-      };
+        "window" = {
+          width = 700;
+          orientation = mkLiteral "horizontal";
+          location = mkLiteral "center";
+          anchor = mkLiteral "center";
+          transparency = mkLiteral "\"screenshot\"";
+          border-color = mkLiteral "@transparent";
+          border = mkLiteral "0px";
+          border-radius = mkLiteral "6px";
+          spacing = mkLiteral "0";
+          children = map mkLiteral [ "mainbox" ];
+        };
 
-      "inputbar" = {
-        color = mkLiteral "@kl";
-        padding = mkLiteral "11px";
-        border = mkLiteral "3px 3px 2px 3px";
-        border-color = mkLiteral "@primary";
-        border-radius = mkLiteral "6px 6px 0px 0px";
-      };
+        "mainbox" = {
+          spacing = mkLiteral "0";
+          children = map mkLiteral [
+            "inputbar"
+            "message"
+            "listview"
+          ];
+        };
 
-      "message" = {
-        padding = mkLiteral "0";
-        border-color = mkLiteral "@primary";
-        border = mkLiteral "0px 1px 1px 1px";
-      };
+        "inputbar" = {
+          color = mkLiteral "@kl";
+          padding = mkLiteral "11px";
+          border = mkLiteral "3px 3px 2px 3px";
+          border-color = mkLiteral "@primary";
+          border-radius = mkLiteral "6px 6px 0px 0px";
+        };
 
-      "entry" = {
-        text-font = mkLiteral "inherit";
-        text-color = mkLiteral "inherit";
-        cursor = mkLiteral "pointer";
-      };
+        "message" = {
+          padding = mkLiteral "0";
+          border-color = mkLiteral "@primary";
+          border = mkLiteral "0px 1px 1px 1px";
+        };
 
-      "prompt" = {
-        text-font = mkLiteral "inherit";
-        text-color = mkLiteral "inherit";
-        margin = mkLiteral "0px 5px 0px 0px";
-      };
+        "entry" = {
+          text-font = mkLiteral "inherit";
+          text-color = mkLiteral "inherit";
+          cursor = mkLiteral "pointer";
+        };
 
-      "case-indicator" = {
-        text-font = mkLiteral "inherit";
-        text-color = mkLiteral "inherit";
-      };
+        "prompt" = {
+          text-font = mkLiteral "inherit";
+          text-color = mkLiteral "inherit";
+          margin = mkLiteral "0px 5px 0px 0px";
+        };
 
-      "listview" = {
-        layout = mkLiteral "vertical";
-        padding = mkLiteral "8px";
-        lines = 7;
-        columns = 2;
-        border = mkLiteral "0px 3px 3px 3px";
-        border-radius = mkLiteral "0px 0px 6px 6px";
-        border-color = mkLiteral "@primary";
-        dynamic = false;
-      };
+        "case-indicator" = {
+          text-font = mkLiteral "inherit";
+          text-color = mkLiteral "inherit";
+        };
 
-      "element" = {
-        padding = mkLiteral "2px";
-        vertical-align = mkLiteral "1";
-        color = mkLiteral "@kl";
-        font = mkLiteral "inherit";
-      };
+        "listview" = {
+          layout = mkLiteral "vertical";
+          padding = mkLiteral "8px";
+          lines = 7;
+          columns = 2;
+          border = mkLiteral "0px 3px 3px 3px";
+          border-radius = mkLiteral "0px 0px 6px 6px";
+          border-color = mkLiteral "@primary";
+          dynamic = false;
+        };
 
-      "element-text" = {
-        background-color = mkLiteral "inherit";
-        text-color = mkLiteral "inherit";
-        vertical-align = mkLiteral "0.5";
-      };
+        "element" = {
+          padding = mkLiteral "2px";
+          vertical-align = mkLiteral "1";
+          color = mkLiteral "@kl";
+          font = mkLiteral "inherit";
+        };
 
-      "element selected.normal" = {
-        color = mkLiteral "@black";
-        background-color = mkLiteral "@hv";
-      };
+        "element-text" = {
+          background-color = mkLiteral "inherit";
+          text-color = mkLiteral "inherit";
+          vertical-align = mkLiteral "0.5";
+        };
 
-      "element normal active" = {
-        background-color = mkLiteral "@hv";
-        color = mkLiteral "@black";
-      };
+        "element selected.normal" = {
+          color = mkLiteral "@black";
+          background-color = mkLiteral "@hv";
+        };
 
-      "element-icon" = {
-        background-color = mkLiteral "inherit";
-        text-color = mkLiteral "inherit";
-        size = mkLiteral "2.5em";
-      };
+        "element normal active" = {
+          background-color = mkLiteral "@hv";
+          color = mkLiteral "@black";
+        };
 
-      "element normal urgent" = {
-        background-color = mkLiteral "@primary";
-      };
+        "element-icon" = {
+          background-color = mkLiteral "inherit";
+          text-color = mkLiteral "inherit";
+          size = mkLiteral "2.5em";
+        };
 
-      "element selected active" = {
-        background = mkLiteral "@hv";
-        foreground = mkLiteral "@bg";
-      };
+        "element normal urgent" = {
+          background-color = mkLiteral "@primary";
+        };
 
-      "button" = {
-        padding = mkLiteral "6px";
-        color = mkLiteral "@primary";
-        horizonatal-align = mkLiteral "0.5";
-        border = mkLiteral "2px 0px 2px 2px";
-        border-radius = mkLiteral "4px 0px 0px 4px";
-        border-color = mkLiteral "@primary";
-      };
+        "element selected active" = {
+          background = mkLiteral "@hv";
+          foreground = mkLiteral "@bg";
+        };
 
-      "button selected normal" = {
-        border = mkLiteral "2px 0px 2px 2px";
-        border-color = mkLiteral "@primary";
+        "button" = {
+          padding = mkLiteral "6px";
+          color = mkLiteral "@primary";
+          horizonatal-align = mkLiteral "0.5";
+          border = mkLiteral "2px 0px 2px 2px";
+          border-radius = mkLiteral "4px 0px 0px 4px";
+          border-color = mkLiteral "@primary";
+        };
+
+        "button selected normal" = {
+          border = mkLiteral "2px 0px 2px 2px";
+          border-color = mkLiteral "@primary";
+        };
       };
-    };
   };
 }
