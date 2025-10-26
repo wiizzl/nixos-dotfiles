@@ -53,7 +53,7 @@ build() {
     confirm
 
     echo -e "\nBuilding the system...\n"
-    nixos-rebuild switch --sudo --flake ~/nixos-dotfiles#${HOST}
+    sudo nixos-rebuild switch --flake ~/nixos-dotfiles#${HOST}
 }
 
 main() {

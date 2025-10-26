@@ -12,7 +12,6 @@
     ./waybar.nix
     ./workspaces.nix
     ./swaync.nix
-    ./hyprexpo.nix
   ];
 
   wayland.windowManager.hyprland = {

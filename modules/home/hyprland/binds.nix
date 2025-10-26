@@ -18,7 +18,6 @@
       "$mod, F, fullscreen"
       "$mod, P, pseudo"
       "$mod, W, togglesplit"
-      "$mod, Tab, hyprexpo:expo, toggle"
 
       # Kill focused window
       "$mod, Q, killactive"
