@@ -33,7 +33,7 @@
         sensitivity = -0.7;
       };
 
-      wallpaper = "a_road_leading_to_a_city.jpg";
+      wallpaper = "a_cartoon_of_a_woman_in_a_pool.jpg";
     };
 
     autoGarbageCollector = true;

@@ -1,5 +1,7 @@
 # nixos-dotfiles
 
+![Workflow status](https://github.com/wiizzl/nixos-dotfiles/actions/workflows/check.yml/badge.svg)
+
 This is my NixOS configuration files. Much inspired by configurations found online.
 
 1. Generate hardware-configuration.nix
