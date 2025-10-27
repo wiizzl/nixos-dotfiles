@@ -1,6 +1,7 @@
 # nixos-dotfiles
 
-![Workflow status](https://github.com/wiizzl/nixos-dotfiles/actions/workflows/check.yml/badge.svg)
+![Workflow status](https://github.com/wiizzl/nixos-dotfiles/actions/workflows/flake-check.yml/badge.svg)
+![Workflow status](https://github.com/wiizzl/nixos-dotfiles/actions/workflows/flake-updater.yml/badge.svg)
 
 This is my NixOS configuration files. Much inspired by configurations found online.
 
