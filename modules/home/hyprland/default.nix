@@ -1,4 +1,4 @@
-{ var, ... }:
+{ var, pkgs, ... }:
 
 {
   imports = [
@@ -14,6 +14,12 @@
     ./swaync.nix
   ];
 
+  home.packages = with pkgs; [
+    wl-clipboard
+    hyprpicker
+    hyprshot
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = null;
@@ -22,5 +28,9 @@
     settings = {
       monitor = var.hyprland.monitors.values;
     };
+  };
+
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # Hint Electron apps to use Wayland
   };
 }

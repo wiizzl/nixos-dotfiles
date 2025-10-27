@@ -2,8 +2,11 @@
 
 {
   home.packages = with pkgs; [
-    # System
+    # Icons themes
     gnome-icon-theme
+    adwaita-icon-theme
+
+    # System
     xfce.thunar
     mpv
     qimgv

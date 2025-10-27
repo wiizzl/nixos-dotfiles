@@ -37,7 +37,7 @@
         sensitivity = -0.7;
       };
 
-      wallpaper = "a_cartoon_of_a_girl_in_a_uniform.png";
+      wallpaper = "a_cartoon_of_a_woman_in_a_pool.jpg";
     };
 
     autoGarbageCollector = true;
