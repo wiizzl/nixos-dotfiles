@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   imports = [
     ./js.nix
