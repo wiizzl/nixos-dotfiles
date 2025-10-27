@@ -11,6 +11,10 @@
           yarn
           pnpm
         ];
+
+        shellHook = ''
+          echo "JavaScript dev shell is ready !"
+        '';
       };
     };
 }

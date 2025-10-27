@@ -9,6 +9,10 @@
           python315
           uv
         ];
+
+        shellHook = ''
+          echo "Python dev shell is ready !"
+        '';
       };
     };
 }

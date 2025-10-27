@@ -4,14 +4,6 @@
   perSystem =
     { pkgs, ... }:
     {
-      packages.default = pkgs.rustPlatform.buildRustPackage {
-        name = "my-app";
-        src = ./.;
-        buildInputs = with pkgs; [ glib ];
-        nativeBuildInputs = with pkgs; [ pkg-config ];
-        cargoHash = pkgs.lib.fakeHash;
-      };
-
       devShells.rust = pkgs.mkShell {
         buildInputs = with pkgs; [
           cargo
@@ -25,7 +17,11 @@
           pkg-config
         ];
 
-        env.RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+        RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+
+        shellHook = ''
+          echo "Rust dev shell is ready !"
+        '';
       };
     };
 }
