@@ -17,5 +17,6 @@
     ./zen.nix
     ./cava.nix
     ./helix.nix
+    ./direnv.nix
   ];
 }

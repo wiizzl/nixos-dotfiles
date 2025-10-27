@@ -26,6 +26,18 @@
 
         nixos-rebuild switch --sudo --flake "$HOME/nixos-dotfiles#$host" "$@"
       }
+
+      nd() {
+        if [ -z "$1" ]; then
+          echo "Usage: nd <shell> [additional nix develop args]" >&2
+          return 1
+        fi
+
+        shell="$1"
+        shift
+
+        nix develop "$HOME/nixos-dotfiles#$shell" "$@"
+      }
     '';
   };
 }

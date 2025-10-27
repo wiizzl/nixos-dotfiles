@@ -20,22 +20,8 @@
     gimp
     postman
 
-    # Dev
-    go
-    bun
-    nodejs
-    pnpm
-    uv
-    python315
-    jdk
-    lua
-    zig
-    rustup
-    gcc
-    gnumake
-    nixfmt
-
     # Utils
+    nixfmt
     tldr
     eza
     bat

@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # flake-parts.url = "github:hercules-ci/flake-parts"; # TODO: use it
+    flake-parts.url = "github:hercules-ci/flake-parts";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,21 +27,67 @@
   };
 
   outputs =
-    { nixpkgs, ... }@inputs:
+    inputs@{ nixpkgs, flake-parts, ... }:
 
     let
       makeNixosSystem =
         configPath:
         nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [ configPath ];
         };
     in
-    {
-      nixosConfigurations = {
-        desktop = makeNixosSystem ./hosts/desktop/configuration.nix;
-        laptop = makeNixosSystem ./hosts/laptop/configuration.nix;
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" ];
+      imports = [ ./shells ];
+      flake = {
+        nixosConfigurations = {
+          desktop = makeNixosSystem ./hosts/desktop/configuration.nix;
+          laptop = makeNixosSystem ./hosts/laptop/configuration.nix;
+        };
       };
     };
+  # outputs =
+  #   { nixpkgs, ... }@inputs:
+
+  #   let
+  #     system = "x86_64-linux";
+  #     pkgs = nixpkgs.legacyPackages.${system};
+
+  #     makeNixosSystem =
+  #       configPath:
+  #       nixpkgs.lib.nixosSystem {
+  #         inherit system;
+  #         specialArgs = { inherit inputs; };
+  #         modules = [ configPath ];
+  #       };
+  #   in
+  #   {
+  #     nixosConfigurations = {
+  #       desktop = makeNixosSystem ./hosts/desktop/configuration.nix;
+  #       laptop = makeNixosSystem ./hosts/laptop/configuration.nix;
+  #     };
+
+  #     devShells.${system} = {
+  #       js = pkgs.mkShell {
+  #         buildInputs = with pkgs; [
+  #           nodejs
+  #           bun
+  #           yarn
+  #           pnpm
+  #         ];
+  #       };
+  #       go = pkgs.mkShell {
+  #         buildInputs = with pkgs; [
+  #           go
+  #         ];
+  #       };
+  #       python = pkgs.mkShell {
+  #         buildInputs = with pkgs; [
+  #           python315
+  #           uv
+  #         ];
+  #       };
+  #     };
+  #   };
 }
