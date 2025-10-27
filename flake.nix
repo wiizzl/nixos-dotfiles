@@ -31,23 +31,25 @@
 
     let
       system = "x86_64-linux";
-
-      makeNixosSystem =
-        configPath:
-        inputs.nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [ configPath ];
-        };
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ system ];
       imports = [ ./shells ];
-      flake = {
-        nixosConfigurations = {
-          desktop = makeNixosSystem ./hosts/desktop/configuration.nix;
-          laptop = makeNixosSystem ./hosts/laptop/configuration.nix;
+      systems = [ system ];
+      flake =
+        let
+          makeNixosSystem =
+            configPath:
+            inputs.nixpkgs.lib.nixosSystem {
+              inherit system;
+              specialArgs = { inherit inputs; };
+              modules = [ configPath ];
+            };
+        in
+        {
+          nixosConfigurations = {
+            desktop = makeNixosSystem ./hosts/desktop/configuration.nix;
+            laptop = makeNixosSystem ./hosts/laptop/configuration.nix;
+          };
         };
-      };
     };
 }
