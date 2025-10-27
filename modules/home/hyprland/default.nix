@@ -18,6 +18,7 @@
     wl-clipboard
     hyprpicker
     hyprshot
+    playerctl
   ];
 
   wayland.windowManager.hyprland = {

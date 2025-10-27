@@ -17,6 +17,7 @@
     ./bluetooth.nix
     ./audio.nix
     ./keyring.nix
+    ./tailscale.nix
 
     inputs.stylix.nixosModules.stylix
   ];

@@ -53,41 +53,42 @@
       "$mod, ccedilla, workspace, 9"
       "$mod, agrave, workspace, 10"
 
-      "$mod Alt, ampersand, movetoworkspacesilent, 1"
-      "$mod Alt, eacute, movetoworkspacesilent, 2"
-      "$mod Alt, quotedbl, movetoworkspacesilent, 3"
-      "$mod Alt, apostrophe, movetoworkspacesilent, 4"
-      "$mod Alt, parenleft, movetoworkspacesilent, 5"
-      "$mod Alt, minus, movetoworkspacesilent, 6"
-      "$mod Alt, egrave, movetoworkspacesilent, 7"
-      "$mod Alt, underscore, movetoworkspacesilent, 8"
-      "$mod Alt, ccedilla, movetoworkspacesilent, 9"
-      "$mod Alt, agrave, movetoworkspacesilent, 10"
+      # Move focused window to workspace silently
+      "$mod Shift, ampersand, movetoworkspacesilent, 1"
+      "$mod Shift, eacute, movetoworkspacesilent, 2"
+      "$mod Shift, quotedbl, movetoworkspacesilent, 3"
+      "$mod Shift, apostrophe, movetoworkspacesilent, 4"
+      "$mod Shift, parenleft, movetoworkspacesilent, 5"
+      "$mod Shift, minus, movetoworkspacesilent, 6"
+      "$mod Shift, egrave, movetoworkspacesilent, 7"
+      "$mod Shift, underscore, movetoworkspacesilent, 8"
+      "$mod Shift, ccedilla, movetoworkspacesilent, 9"
+      "$mod Shift, agrave, movetoworkspacesilent, 10"
 
       # Move focused window to workspace
-      "$mod Shift, ampersand, movetoworkspace, 1"
-      "$mod Shift, eacute, movetoworkspace, 2"
-      "$mod Shift, quotedbl, movetoworkspace, 3"
-      "$mod Shift, apostrophe, movetoworkspace, 4"
-      "$mod Shift, parenleft, movetoworkspace, 5"
-      "$mod Shift, minus, movetoworkspace, 6"
-      "$mod Shift, egrave, movetoworkspace, 7"
-      "$mod Shift, underscore, movetoworkspace, 8"
-      "$mod Shift, ccedilla, movetoworkspace, 9"
-      "$mod Shift, agrave, movetoworkspace, 10"
+      "$mod Alt, ampersand, movetoworkspace, 1"
+      "$mod Alt, eacute, movetoworkspace, 2"
+      "$mod Alt, quotedbl, movetoworkspace, 3"
+      "$mod Alt, apostrophe, movetoworkspace, 4"
+      "$mod Alt, parenleft, movetoworkspace, 5"
+      "$mod Alt, minus, movetoworkspace, 6"
+      "$mod Alt, egrave, movetoworkspace, 7"
+      "$mod Alt, underscore, movetoworkspace, 8"
+      "$mod Alt, ccedilla, movetoworkspace, 9"
+      "$mod Alt, agrave, movetoworkspace, 10"
 
       # Scroll trough workspaces with mod + scroll
       "$mod, mouse_down, workspace, e-1"
       "$mod, mouse_up, workspace, e+1"
 
       # Special workspaces
-      "$mod Shift, X, movetoworkspace, special"
-      "$mod Alt, X, movetoworkspacesilent, special"
+      "$mod Alt, X, movetoworkspace, special"
+      "$mod Shift, X, movetoworkspacesilent, special"
       "$mod, X, togglespecialworkspace"
 
       # Capture
       "$mod Shift, P, exec, hyprpicker -adln"
-      "$mod Shift, S, exec, hyprshot -m region --freeze -o ~/Pictures/Screenshots/"
+      "$mod Shift, S, exec, hyprshot --mode region --freeze --output-folder ~/Pictures/Screenshots/"
     ];
 
     bindm = [

@@ -5,7 +5,6 @@
     wget
     curl
     killall
-    playerctl
     zip
     unzip
   ];
