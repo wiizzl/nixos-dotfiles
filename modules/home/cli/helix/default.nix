@@ -1,23 +1,20 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}:
+{ config, lib, ... }:
 
 with lib;
 let
-  inherit (config.my) cli;
+  inherit (config.my) cli user;
 in
 {
   config = mkIf cli.helix.enable {
-    programs.helix = {
-      enable = true;
+    home-manager.users.${user.name} = {
+      programs.helix = {
+        enable = true;
 
-      settings = {
-        editor = {
-          line-number = "relative";
-          lsp.display-messages = true;
+        settings = {
+          editor = {
+            line-number = "relative";
+            lsp.display-messages = true;
+          };
         };
       };
     };

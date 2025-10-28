@@ -36,9 +36,9 @@
         vlc.enable = true;
         vscode.enable = true;
         wezterm.enable = true;
-        spotify.enable = true;
-        discord.enable = true;
-        zen.enable = true;
+        # spotify.enable = true;
+        # discord.enable = true;
+        # zen.enable = true;
       };
 
       cli = {
