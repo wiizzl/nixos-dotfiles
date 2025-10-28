@@ -20,7 +20,7 @@ in
   config = mkIf apps.vscode.enable {
     home-manager.users.${user.name} = {
       stylix = mkIf desktop.addons.stylix.enable {
-        stylix.targets.vscode.enable = false;
+        targets.vscode.enable = false;
       };
 
       programs.vscode = {

@@ -11,14 +11,14 @@ let
   inherit (config.my) apps desktop user;
 in
 {
-  imports = [ inputs.zen-browser.homeModules.beta ];
-
   options.my.apps.zen = {
     enable = mkEnableOption "Enable Zen browser";
   };
 
   config = mkIf apps.zen.enable {
     home-manager.users.${user.name} = {
+      imports = [ inputs.zen-browser.homeModules.beta ];
+
       stylix = mkIf desktop.addons.stylix.enable {
         targets.zen-browser.profileNames = [ "default" ];
       };
