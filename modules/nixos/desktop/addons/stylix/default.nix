@@ -215,11 +215,9 @@ in
       enable = true;
       autoEnable = desktop.addons.stylix.autoEnable;
       polarity = desktop.addons.stylix.polarity;
+      base16Scheme = desktop.addons.stylix.base16Scheme;
       cursor = desktop.addons.stylix.cursor;
       fonts = desktop.addons.stylix.fonts;
-
-      # See https://tinted-theming.github.io/tinted-gallery/ for more schemes
-      base16Scheme = desktop.addons.stylix.base16Scheme;
     };
   };
 }

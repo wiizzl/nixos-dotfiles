@@ -10,7 +10,7 @@ let
   inherit (config.my) apps;
 in
 {
-  options.my.apps.firefox = {
+  options.my.apps.gimp = {
     enable = mkEnableOption "Enable GIMP";
   };
 

@@ -13,7 +13,7 @@ in
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-  config = mkIf user.home-manager.enable {
+  config = mkIf user.home-manager {
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
@@ -24,7 +24,7 @@ in
       };
 
       users."pier" = {
-        imports = [ ../home ];
+        programs.home-manager.enable = true;
 
         home = {
           username = "pier";
@@ -33,7 +33,5 @@ in
         };
       };
     };
-
-    programs.home-manager.enable = true;
   };
 }

@@ -53,7 +53,7 @@ in
     users.users.${user.name} = {
       isNormalUser = true;
       createHome = true;
-      description = "${username} account";
+      description = "${user.name} account";
       extraGroups = [ "wheel" ];
       shell = user.shell.package;
     };

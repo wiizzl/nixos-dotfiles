@@ -7,7 +7,7 @@ let
   aliases = import ../aliases.nix;
 in
 {
-  options.my.system.fish.bash = {
+  options.my.system.shell.fish = {
     enable = mkEnableOption "Enable fish";
   };
 

@@ -29,7 +29,7 @@ in
       gc = {
         automatic = true;
         dates = system.nix.garbage-collector.dates;
-        options = "--delete-older-than ${system.nix.garbage-collector.days}d";
+        options = "--delete-older-than ${toString system.nix.garbage-collector.days}d";
       };
 
       settings.auto-optimise-store = system.nix.garbage-collector.auto-optimise-store;

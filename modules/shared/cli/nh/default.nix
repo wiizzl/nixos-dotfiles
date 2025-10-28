@@ -7,7 +7,7 @@
 
 with lib;
 let
-  inherit (config.my) cli;
+  inherit (config.my) cli system;
 in
 {
   options.my.cli.nh = {
@@ -19,8 +19,8 @@ in
       enable = true;
 
       clean = {
-        enable = true;
-        extraArgs = "--keep-since 4d --keep 3";
+        enable = !system.nix.garbage-collector.enable;
+        extraArgs = "--keep-since ${toString system.nix.garbage-collector.days}d --keep 3";
       };
 
       flake = "/home/pier/nix-config"; # sets NH_OS_FLAKE variable for you

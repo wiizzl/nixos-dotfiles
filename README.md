@@ -78,13 +78,10 @@ nixosConfigurations = {
   # ... other hosts
   # <your-host> = makeNixosSystem ./hosts/<your-host>/configuration.nix "x86_64-linux";
 };
+```
 
 > [!IMPORTANT]
 > Replace "x86_64-linux" with your system architecture. Make sure it is supported first !
-```
-
-> [!TIP]
-> Replace <your-host> with a short alias for your device
 
 2. Edit the configuration based on your needs
 
