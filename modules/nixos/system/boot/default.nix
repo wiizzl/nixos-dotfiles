@@ -17,7 +17,7 @@ in
       description = "Enable grub as the bootloader";
     };
     kernel = mkOption {
-      type = types.package;
+      # type = types.package;
       default = pkgs.linuxPackages_rt_latest;
       description = "Enable grub as the bootloader";
     };
