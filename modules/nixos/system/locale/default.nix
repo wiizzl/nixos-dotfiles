@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.locale = {
+  options.my.system.locale = {
     keymap = mkOption {
       type = types.str;
       default = "en";

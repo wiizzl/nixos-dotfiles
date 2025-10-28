@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.onlyoffice = {
+  options.my.apps.onlyoffice = {
     enable = mkEnableOption "Enable OnlyOffice suite";
   };
 

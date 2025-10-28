@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.networking.hostname = mkOption {
+  options.my.system.networking.hostname = mkOption {
     type = types.str;
     default = "nixos";
     description = "System hostname";

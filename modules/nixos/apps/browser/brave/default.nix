@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.brave = {
+  options.my.apps.brave = {
     enable = mkEnableOption "Enable Brave Browser";
   };
 

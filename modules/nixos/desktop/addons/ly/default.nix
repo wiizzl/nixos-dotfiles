@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) desktop;
+  inherit (config.my) desktop;
 in
 {
-  options.desktop.addons.ly = {
+  options.my.desktop.addons.ly = {
     enable = mkEnableOption "Enable ly display manager";
   };
 

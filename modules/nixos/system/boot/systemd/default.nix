@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.boot.systemd = {
+  options.my.system.boot.systemd = {
     enable = mkEnableOption "Enable systemd-boot as the bootloader";
   };
 

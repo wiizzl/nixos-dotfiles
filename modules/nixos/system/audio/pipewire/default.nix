@@ -2,14 +2,14 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.audio.pipewire = {
+  options.my.system.audio.pipewire = {
     enable = mkEnableOption "Enable pipewire audio system";
   };
 
-  config = mkIf system.audio.pipewire {
+  config = mkIf system.audio.pipewire.enable {
     security.rtkit.enable = true;
 
     services.pipewire = {

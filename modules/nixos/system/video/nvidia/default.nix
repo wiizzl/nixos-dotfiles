@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.video.nvidia = {
+  options.my.system.video.nvidia = {
     enable = mkEnableOption "Enable NVIDIA graphics support";
   };
 

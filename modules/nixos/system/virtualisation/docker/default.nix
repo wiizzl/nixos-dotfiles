@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system user;
+  inherit (config.my) system user;
 in
 {
-  options.system.virtualisation.docker = {
+  options.my.system.virtualisation.docker = {
     enable = mkEnableOption "Enable Docker engine";
   };
 

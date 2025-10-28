@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.qimgv = {
+  options.my.apps.qimgv = {
     enable = mkEnableOption "Enable qimgv image viewer";
   };
 

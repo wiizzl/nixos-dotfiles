@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.slack = {
+  options.my.apps.slack = {
     enable = mkEnableOption "Enable Slack";
   };
 

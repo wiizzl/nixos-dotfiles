@@ -2,12 +2,12 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 
   aliases = import ../aliases.nix;
 in
 {
-  options.system.shell.bash = {
+  options.my.system.shell.bash = {
     enable = mkEnableOption "Enable bash";
   };
 

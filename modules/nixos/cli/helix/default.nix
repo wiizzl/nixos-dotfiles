@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) cli;
+  inherit (config.my) cli;
 in
 {
-  options.cli.helix = {
+  options.my.cli.helix = {
     enable = mkEnableOption "Enable Helix editor";
   };
 

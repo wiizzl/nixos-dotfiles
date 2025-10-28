@@ -7,12 +7,12 @@
 
 with lib;
 let
-  inherit (config) apps desktop user;
+  inherit (config.my) apps desktop user;
 in
 {
   imports = [ inputs.nixcord.homeModules.nixcord ];
 
-  options.apps.discord = {
+  options.my.apps.discord = {
     enable = mkEnableOption "Enable Vesktop Discord client";
   };
 

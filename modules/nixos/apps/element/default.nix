@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.element = {
+  options.my.apps.element = {
     enable = mkEnableOption "Enable Element Matrix Client";
   };
 

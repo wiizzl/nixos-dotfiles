@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.postman = {
+  options.my.apps.postman = {
     enable = mkEnableOption "Enable Postman";
   };
 

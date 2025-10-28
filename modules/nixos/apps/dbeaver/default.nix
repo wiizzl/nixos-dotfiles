@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.dbeaver = {
+  options.my.apps.dbeaver = {
     enable = mkEnableOption "Enable DBeaver Database Manager";
   };
 

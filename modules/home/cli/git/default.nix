@@ -2,7 +2,7 @@
 
 with lib;
 let
-  inherit (config) cli user;
+  inherit (config.my) cli user;
 in
 {
   config = mkIf cli.git.enable {

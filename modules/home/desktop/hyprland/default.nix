@@ -2,7 +2,7 @@
 
 with lib;
 let
-  inherit (config) desktop system user;
+  inherit (config.my) desktop system user;
 in
 {
   config = mkIf desktop.hyprland.enable {

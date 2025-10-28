@@ -7,12 +7,12 @@
 
 with lib;
 let
-  inherit (config) desktop;
+  inherit (config.my) desktop;
 in
 {
   imports = [ inputs.stylix.nixosModules.stylix ];
 
-  options.desktop.addons.stylix = {
+  options.my.desktop.addons.stylix = {
     enable = mkEnableOption "Enable Stylix theming framework";
     autoEnable = mkOption {
       type = types.bool;
@@ -122,71 +122,86 @@ in
       description = "Font configuration for Stylix";
       type = types.submodule {
         options = {
-          monospace = types.submodule {
-            options = {
-              package = mkOption {
-                type = types.package;
-                description = "The Nix package providing the monospace font";
-              };
-              name = mkOption {
-                type = types.str;
-                description = "The name of the monospace font";
-              };
-            };
-          };
-          sansSerif = types.submodule {
-            options = {
-              package = mkOption {
-                type = types.package;
-                description = "The Nix package providing the sans-serif font";
-              };
-              name = mkOption {
-                type = types.str;
-                description = "The name of the sans-serif font";
+          monospace = mkOption {
+            description = "Monospace font configuration";
+            type = types.submodule {
+              options = {
+                package = mkOption {
+                  type = types.package;
+                  description = "The Nix package providing the monospace font";
+                };
+                name = mkOption {
+                  type = types.str;
+                  description = "The name of the monospace font";
+                };
               };
             };
           };
-          serif = types.submodule {
-            options = {
-              package = mkOption {
-                type = types.package;
-                description = "The Nix package providing the serif font";
-              };
-              name = mkOption {
-                type = types.str;
-                description = "The name of the serif font";
-              };
-            };
-          };
-          emoji = types.submodule {
-            options = {
-              package = mkOption {
-                type = types.package;
-                description = "The Nix package providing the emoji font";
-              };
-              name = mkOption {
-                type = types.str;
-                description = "The name of the emoji font";
+          sansSerif = mkOption {
+            description = "Sans-serif font configuration";
+            type = types.submodule {
+              options = {
+                package = mkOption {
+                  type = types.package;
+                  description = "The Nix package providing the sans-serif font";
+                };
+                name = mkOption {
+                  type = types.str;
+                  description = "The name of the sans-serif font";
+                };
               };
             };
           };
-          sizes = types.submodule {
-            options = {
-              applications = mkOption {
-                type = types.int;
-                description = "Font size for applications";
+          serif = mkOption {
+            description = "Serif font configuration";
+            type = types.submodule {
+              options = {
+                package = mkOption {
+                  type = types.package;
+                  description = "The Nix package providing the serif font";
+                };
+                name = mkOption {
+                  type = types.str;
+                  description = "The name of the serif font";
+                };
               };
-              desktop = mkOption {
-                type = types.int;
-                description = "Font size for desktop elements";
+            };
+          };
+          emoji = mkOption {
+            description = "Emoji font configuration";
+            type = types.submodule {
+              options = {
+                package = mkOption {
+                  type = types.package;
+                  description = "The Nix package providing the emoji font";
+                };
+                name = mkOption {
+                  type = types.str;
+                  description = "The name of the emoji font";
+                };
               };
-              popups = mkOption {
-                type = types.int;
-                description = "Font size for popups";
-              };
-              terminal = mkOption {
-                type = types.int;
-                description = "Font size for terminal";
+            };
+          };
+          sizes = mkOption {
+            description = "Font sizes configuration";
+            type = types.submodule {
+              options = {
+                applications = mkOption {
+                  type = types.int;
+                  description = "Font size for applications";
+                };
+                desktop = mkOption {
+                  type = types.int;
+                  description = "Font size for desktop elements";
+                };
+                popups = mkOption {
+                  type = types.int;
+                  description = "Font size for popups";
+                };
+                terminal = mkOption {
+                  type = types.int;
+                  description = "Font size for terminal";
+                };
               };
             };
           };

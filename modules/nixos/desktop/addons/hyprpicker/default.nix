@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) desktop;
+  inherit (config.my) desktop;
 in
 {
-  options.desktop.addons.hyprpicker = {
+  options.my.desktop.addons.hyprpicker = {
     enable = mkEnableOption "Enable hyprpicker";
   };
 

@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) desktop user;
+  inherit (config.my) desktop user;
 in
 {
-  options.desktop.addons.waybar = {
+  options.my.desktop.addons.waybar = {
     enable = mkEnableOption "Enable Waybar status bar";
   };
 

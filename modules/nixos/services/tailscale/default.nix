@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) services;
+  inherit (config.my) services;
 in
 {
-  options.services.tailscale = {
+  options.my.services.tailscale = {
     enable = mkEnableOption "Enable Tailscale VPN";
   };
 

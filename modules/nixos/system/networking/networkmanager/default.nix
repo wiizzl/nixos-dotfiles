@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system user;
+  inherit (config.my) system user;
 in
 {
-  options.system.networking.networkmanager = {
+  options.my.system.networking.networkmanager = {
     enable = mkEnableOption "Enable Network Manager";
   };
 

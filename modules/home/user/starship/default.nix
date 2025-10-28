@@ -2,7 +2,7 @@
 
 with lib;
 let
-  inherit (config) user;
+  inherit (config.my) user;
 
   starship = import ../../../nixos/user/starship {
     inherit config lib;

@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) cli;
+  inherit (config.my) cli;
 in
 {
-  options.cli.bottom = {
+  options.my.cli.bottom = {
     enable = mkEnableOption "Enable bottom";
   };
 

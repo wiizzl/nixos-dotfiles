@@ -2,7 +2,7 @@
 
 with lib;
 let
-  inherit (config) user;
+  inherit (config.my) user;
 in
 {
   config = mkIf user.shell.starship.enable {

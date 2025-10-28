@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) user;
+  inherit (config.my) user;
 in
 {
-  options.user = {
+  options.my.user = {
     enable = mkEnableOption "Enable user configuration";
     name = mkOption {
       type = types.str;

@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.nix.garbage-collector = {
+  options.my.system.nix.garbage-collector = {
     enable = mkEnableOption "Enable ly display manager";
     dates = mkOption {
       type = types.str;

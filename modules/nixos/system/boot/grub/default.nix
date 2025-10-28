@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.boot.grub = {
+  options.my.system.boot.grub = {
     enable = mkEnableOption "Enable grub as the bootloader";
   };
 

@@ -7,7 +7,7 @@
 
 with lib;
 let
-  inherit (config) cli;
+  inherit (config.my) cli;
 in
 {
   config = mkIf cli.helix.enable {

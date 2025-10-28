@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) apps user;
+  inherit (config.my) apps user;
 in
 {
-  options.apps.kitty = {
+  options.my.apps.kitty = {
     enable = mkEnableOption "Enable Kitty terminal emulator";
   };
 

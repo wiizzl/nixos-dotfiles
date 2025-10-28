@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.vscode = {
+  options.my.apps.vscode = {
     enable = mkEnableOption "Enable Visual Studio Code";
   };
 

@@ -8,10 +8,10 @@
 
 with lib;
 let
-  inherit (config) desktop system;
+  inherit (config.my) desktop system;
 in
 {
-  options.desktop.hyprland = {
+  options.my.desktop.hyprland = {
     enable = mkEnableOption "Enable Hyprland desktop environment";
   };
 

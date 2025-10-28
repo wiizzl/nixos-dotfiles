@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.mpv = {
+  options.my.apps.mpv = {
     enable = mkEnableOption "Enable mpv media player";
   };
 

@@ -2,12 +2,12 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 
   aliases = import ../aliases.nix;
 in
 {
-  options.system.fish.bash = {
+  options.my.system.fish.bash = {
     enable = mkEnableOption "Enable fish";
   };
 

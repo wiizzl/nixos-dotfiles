@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.libreoffice = {
+  options.my.apps.libreoffice = {
     enable = mkEnableOption "Enable LibreOffice suite";
   };
 

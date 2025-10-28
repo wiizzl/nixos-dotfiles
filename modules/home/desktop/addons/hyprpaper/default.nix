@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) cli desktop user;
+  inherit (config.my) cli desktop user;
 in
 {
-  options.desktop.addons.hyprpaper = {
+  options.my.desktop.addons.hyprpaper = {
     enable = mkEnableOption "Enable hyprpaper wallpaper manager";
   };
 

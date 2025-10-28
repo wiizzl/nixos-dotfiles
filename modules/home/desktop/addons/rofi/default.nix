@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) desktop user;
+  inherit (config.my) desktop user;
 in
 {
-  options.desktop.addons.rofi = {
+  options.my.desktop.addons.rofi = {
     enable = mkEnableOption "Enable Rofi app launcher";
   };
 

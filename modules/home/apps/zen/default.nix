@@ -8,16 +8,16 @@
 
 with lib;
 let
-  inherit (config) apps user;
+  inherit (config.my) apps desktop user;
 in
 {
   imports = [ inputs.zen-browser.homeModules.beta ];
 
-  options.apps.zen = {
+  options.my.apps.zen = {
     enable = mkEnableOption "Enable Zen browser";
   };
 
-  config = mkIf apps.spotify.enable {
+  config = mkIf apps.zen.enable {
     home-manager.users.${user.name} = {
       stylix = mkIf desktop.addons.stylix.enable {
         targets.zen-browser.profileNames = [ "default" ];

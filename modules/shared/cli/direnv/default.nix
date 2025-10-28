@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) cli;
+  inherit (config.my) cli;
 in
 {
-  options.cli.direnv = {
+  options.my.cli.direnv = {
     enable = mkEnableOption "Enable direnv";
   };
 

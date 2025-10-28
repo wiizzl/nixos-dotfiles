@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.timezone = mkOption {
+  options.my.system.timezone = mkOption {
     type = types.str;
     default = "America/New_York";
     description = "System timezone";

@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.services.bluetooth = {
+  options.my.system.services.bluetooth = {
     enable = mkEnableOption "Enable Bluetooth";
     blueman = mkOption {
       type = types.bool;

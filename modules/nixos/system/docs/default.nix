@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.docs = {
+  options.my.system.docs = {
     enable = mkEnableOption "Enable documentation generation";
     doc = mkOption {
       type = types.bool;

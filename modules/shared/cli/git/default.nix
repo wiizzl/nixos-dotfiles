@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) cli;
+  inherit (config.my) cli;
 in
 {
-  options.cli.git = {
+  options.my.cli.git = {
     enable = mkEnableOption "Enable git";
     name = mkOption {
       type = types.str;
@@ -23,7 +23,7 @@ in
   };
 
   config = mkIf cli.git.enable {
-    home.packages = with pkgs; [
+    environment.systemPackages = with pkgs; [
       git
       gh
     ];

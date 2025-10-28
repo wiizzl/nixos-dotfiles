@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.networking.firewall = {
+  options.my.system.networking.firewall = {
     enable = mkEnableOption "Enable Firewall";
   };
 

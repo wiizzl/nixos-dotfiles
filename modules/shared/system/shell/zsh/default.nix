@@ -2,12 +2,12 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 
   aliases = import ../aliases.nix;
 in
 {
-  options.system.zsh.bash = {
+  options.my.system.zsh.bash = {
     enable = mkEnableOption "Enable zsh";
   };
 

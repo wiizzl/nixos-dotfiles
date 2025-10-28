@@ -2,7 +2,7 @@
 
 with lib;
 let
-  inherit (config) desktop user;
+  inherit (config.my) desktop user;
 in
 {
   config = mkIf desktop.addons.swaync.enable {

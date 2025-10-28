@@ -2,14 +2,14 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.audio.pulseaudio = {
+  options.my.system.audio.pulseaudio = {
     enable = mkEnableOption "Enable pulseaudio audio system";
   };
 
-  config = mkIf system.audio.pulseaudio {
+  config = mkIf system.audio.pulseaudio.enable {
     services.pulseaudio = {
       enable = true;
     };

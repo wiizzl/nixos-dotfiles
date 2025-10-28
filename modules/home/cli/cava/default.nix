@@ -2,7 +2,7 @@
 
 with lib;
 let
-  inherit (config) cli desktop user;
+  inherit (config.my) cli desktop user;
 in
 {
   config = mkIf cli.cava.enable {

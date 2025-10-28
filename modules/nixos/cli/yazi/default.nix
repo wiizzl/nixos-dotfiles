@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) cli;
+  inherit (config.my) cli;
 in
 {
-  options.cli.yazi = {
+  options.my.cli.yazi = {
     enable = mkEnableOption "Enable Yazi file explorer";
   };
 

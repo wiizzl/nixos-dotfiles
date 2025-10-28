@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.thunderbird = {
+  options.my.apps.thunderbird = {
     enable = mkEnableOption "Enable Thunderbird";
   };
 

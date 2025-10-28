@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) cli;
+  inherit (config.my) cli;
 in
 {
-  options.cli.just = {
+  options.my.cli.just = {
     enable = mkEnableOption "Enable just";
   };
 

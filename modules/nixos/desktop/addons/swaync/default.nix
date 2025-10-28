@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) desktop;
+  inherit (config.my) desktop;
 in
 {
-  options.desktop.addons.swaync = {
+  options.my.desktop.addons.swaync = {
     enable = mkEnableOption "Enable Sway Notifications Center (swaync)";
   };
 

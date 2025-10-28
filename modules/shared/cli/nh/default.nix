@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) cli;
+  inherit (config.my) cli;
 in
 {
-  options.cli.nh = {
+  options.my.cli.nh = {
     enable = mkEnableOption "Enable Yet another Nix CLI helper (nh)";
   };
 

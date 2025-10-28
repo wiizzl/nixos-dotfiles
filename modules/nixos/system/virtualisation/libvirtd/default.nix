@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system user;
+  inherit (config.my) system user;
 in
 {
-  options.system.virtualisation.libvirtd = {
+  options.my.system.virtualisation.libvirtd = {
     enable = mkEnableOption "Enable libvirtd";
     virt-manager = mkOption {
       type = types.bool;

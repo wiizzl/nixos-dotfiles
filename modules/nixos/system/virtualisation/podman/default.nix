@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) system user;
+  inherit (config.my) system user;
 in
 {
-  options.system.virtualisation.podman = {
+  options.my.system.virtualisation.podman = {
     enable = mkEnableOption "Enable Podman engine";
     docker-compat = mkOption {
       type = types.bool;

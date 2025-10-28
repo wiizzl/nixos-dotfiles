@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.fonts = {
+  options.my.system.fonts = {
     enable = mkEnableOption "Enable fonts";
     default = mkOption {
       type = types.bool;

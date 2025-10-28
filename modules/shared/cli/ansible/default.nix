@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) cli;
+  inherit (config.my) cli;
 in
 {
-  options.cli.ansible = {
+  options.my.cli.ansible = {
     enable = mkEnableOption "Enable ansible";
   };
 

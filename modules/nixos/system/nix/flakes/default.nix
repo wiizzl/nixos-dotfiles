@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.nix.flakes = {
+  options.my.system.nix.flakes = {
     extra-options = mkOption {
       type = types.str;
       default = '''';

@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) desktop;
+  inherit (config.my) desktop;
 in
 {
-  options.desktop.addons.screenshots = {
+  options.my.desktop.addons.screenshots = {
     enable = mkEnableOption "Enable screenshots with grim and slurp";
   };
 

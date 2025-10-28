@@ -8,14 +8,14 @@
 
 with lib;
 let
-  inherit (config) apps user;
+  inherit (config.my) apps user;
 
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
 in
 {
   imports = [ inputs.spicetify-nix.homeManagerModules.default ];
 
-  options.apps.spotify = {
+  options.my.apps.spotify = {
     enable = mkEnableOption "Enable Spotify with Spicetify";
   };
 

@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.services.openssh = {
+  options.my.system.services.openssh = {
     enable = mkEnableOption "Enable OpenSSH";
   };
 

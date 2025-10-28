@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.utils = {
+  options.my.system.utils = {
     enable = mkEnableOption "Enable utils packages";
     dev = mkOption {
       type = types.bool;

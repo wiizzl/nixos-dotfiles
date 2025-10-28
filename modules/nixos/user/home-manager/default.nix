@@ -8,7 +8,7 @@
 
 with lib;
 let
-  inherit (config) user;
+  inherit (config.my) user;
 in
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];

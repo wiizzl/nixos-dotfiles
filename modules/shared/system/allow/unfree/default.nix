@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.allow.unfree = {
+  options.my.system.allow.unfree = {
     enable = mkEnableOption "Allow unfree packages";
   };
 

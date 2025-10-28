@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.vivaldi = {
+  options.my.apps.vivaldi = {
     enable = mkEnableOption "Enable Vivaldi Browser";
   };
 

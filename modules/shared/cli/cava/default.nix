@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) cli;
+  inherit (config.my) cli;
 in
 {
-  options.cli.cava = {
+  options.my.cli.cava = {
     enable = mkEnableOption "Enable cava";
   };
 

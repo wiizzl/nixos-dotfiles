@@ -2,10 +2,10 @@
 
 with lib;
 let
-  inherit (config) apps user;
+  inherit (config.my) apps user;
 in
 {
-  options.apps.wezterm = {
+  options.my.apps.wezterm = {
     enable = mkEnableOption "Enable Wez's terminal emulator";
   };
 

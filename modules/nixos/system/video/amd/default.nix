@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) system;
+  inherit (config.my) system;
 in
 {
-  options.system.video.amd = {
+  options.my.system.video.amd = {
     enable = mkEnableOption "Enable AMD graphics support";
   };
 

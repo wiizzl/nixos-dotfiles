@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.vlc = {
+  options.my.apps.vlc = {
     enable = mkEnableOption "Enable VLC media player";
   };
 

@@ -7,10 +7,10 @@
 
 with lib;
 let
-  inherit (config) apps;
+  inherit (config.my) apps;
 in
 {
-  options.apps.obs = {
+  options.my.apps.obs = {
     enable = mkEnableOption "Enable Open Broadcaster Software (OBS) Studio";
   };
 
