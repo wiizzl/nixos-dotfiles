@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 with lib;
 let
@@ -49,7 +49,7 @@ in
             ];
 
             network = {
-              interface = var.hyprland.waybar.network;
+              # interface = var.hyprland.waybar.network;
               format = "{ifname}";
               format-wifi = "{icon}";
               format-ethernet = "";

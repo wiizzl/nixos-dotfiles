@@ -65,9 +65,9 @@
           ly.enable = true;
           swaync.enable = true;
           screenshots.enable = true;
-          # hyprpaper.enable = true;
-          # rofi.enable = true;
-          # waybar.enable = true;
+          hyprpaper.enable = true;
+          rofi.enable = true;
+          waybar.enable = true;
           stylix = {
             enable = true;
             autoEnable = true;
