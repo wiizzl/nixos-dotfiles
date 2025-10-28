@@ -3,7 +3,7 @@
 ![Workflow status](https://github.com/wiizzl/nix-config/actions/workflows/flake-check.yml/badge.svg)
 ![Workflow status](https://github.com/wiizzl/nix-config/actions/workflows/flake-updater.yml/badge.svg)
 
-This is my NixOS configuration files. Much inspired by configurations found online.
+This is my Nix configuration files. Much inspired by configurations found online.
 
 ## My Journey into Declarative system
 
