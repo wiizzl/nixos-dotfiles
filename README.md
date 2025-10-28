@@ -9,22 +9,7 @@ This is my NixOS configuration files. Much inspired by configurations found onli
 
 - Secrets management with [sops-nix](https://github.com/Mic92/sops-nix)
 - Darwin system modules
-
-## Flake inputs
-
-| Name                                                                             | Description                                                                        |
-| :------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------- |
-| [nixpkgs](https://github.com/NixOS/nixpkgs/tree/nixos-unstable)                  | Unstable Nix package repository for the latest packages                            |
-| [flake-parts](https://github.com/hercules-ci/flake-parts)                        | Simplify Nix Flakes with the module system packages                                |
-| [home-manager](https://github.com/nix-community/home-manager/tree/release-25.05) | Manages user environments declaratively                                            |
-| [nix-darwin](https://github.com/LnL7/nix-darwin)                                 | Nix-based configuration management for macOS                                       |
-| [sops-nix](https://github.com/Mic92/sops-nix)                                    | Integrates [SOPS](https://getsops.io) with Nix for handling encrypted secrets      |
-| [stylix](https://github.com/nix-community/stylix)                                | Theming framework for NixOS, Home Manager, nix-darwin                              |
-| [zen-browser](https://github.com/0xc000022070/zen-browser-flake)                 | Community-driven Nix Flake for the [Zen](https://zen-browser.app) browser          |
-| [hyprland](https://github.com/hyprwm/Hyprland)                                   | Official [Hyprland](https://hypr.land/) Nix Flake                                  |
-| [nixcord](https://github.com/KaylorBen/nixcord)                                  | Declarative [Vencord](https://vencord.dev/) Nix Flake                              |
-| [spicetify-nix](https://github.com/Gerg-L/spicetify-nix)                         | A nix library for modifying spotify with [spicetify](https://github.com/spicetify) |
-| [nix-vscode-extensions](https://github.com/nix-community/nix-vscode-extensions)  | Nix expressions for VS Code Marketplace and Open VSX extensions                    |
+- Use custom functions to make options
 
 ## Modules
 
@@ -63,11 +48,11 @@ The repository uses a modular, opinionated structure. While it may seem complex 
 1. Create your host and add it to the flakes entries
 
 ```sh
-mkdir -p ~/nix-config/hosts/<your-host>
+mkdir -p ~/nix-config/hosts/your-host
 ```
 
 > [!TIP]
-> Replace <your-host> with a short alias for your device
+> Replace `your-host` with a short alias for your device
 
 ```sh
 nano ~/nix-config/flake.nix
@@ -76,7 +61,7 @@ nano ~/nix-config/flake.nix
 ```nix
 nixosConfigurations = {
   # ... other hosts
-  # <your-host> = makeNixosSystem ./hosts/<your-host>/configuration.nix "x86_64-linux";
+  # your-host = makeNixosSystem ./hosts/your-host/configuration.nix "x86_64-linux";
 };
 ```
 
@@ -86,7 +71,7 @@ nixosConfigurations = {
 2. Edit the configuration based on your needs
 
 ```sh
-nano ~/nix-config/hosts/<your-host>/configuration.nix
+nano ~/nix-config/hosts/your-host/configuration.nix
 ```
 
 > [!INFO]
@@ -94,7 +79,7 @@ nano ~/nix-config/hosts/<your-host>/configuration.nix
 
 3. Generate hardware-configuration.nix and move it yo your host
 
-> [!IMPORTANT]
+> [!NOTE]
 > You can skip this step if you are not on NixOS
 
 ```sh
