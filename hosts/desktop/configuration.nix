@@ -78,8 +78,8 @@
 
     system = {
       allow = {
-        unfree = true;
-        broken = true;
+        unfree.enable = true;
+        broken.enable = true;
       };
       fonts = {
         enable = true;

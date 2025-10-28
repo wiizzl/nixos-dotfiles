@@ -195,14 +195,16 @@ in
     };
   };
 
-  config.stylix = mkIf desktop.stylix.enable {
-    enable = true;
-    autoEnable = desktop.addons.stylix.autoEnable;
-    polarity = desktop.addons.stylix.polarity;
-    cursor = desktop.addons.stylix.cursor;
-    fonts = desktop.addons.stylix.fonts;
+  config = mkIf desktop.addons.stylix.enable {
+    stylix = {
+      enable = true;
+      autoEnable = desktop.addons.stylix.autoEnable;
+      polarity = desktop.addons.stylix.polarity;
+      cursor = desktop.addons.stylix.cursor;
+      fonts = desktop.addons.stylix.fonts;
 
-    # See https://tinted-theming.github.io/tinted-gallery/ for more schemes
-    base16Scheme = desktop.addons.stylix.base16Scheme;
+      # See https://tinted-theming.github.io/tinted-gallery/ for more schemes
+      base16Scheme = desktop.addons.stylix.base16Scheme;
+    };
   };
 }
