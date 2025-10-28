@@ -2,10 +2,18 @@
   description = "My garden of configurations";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
@@ -17,38 +25,43 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
     nixcord.url = "github:KaylorBen/nixcord";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs =
-    inputs@{ flake-parts, ... }:
-
-    let
-      system = "x86_64-linux";
-    in
+    {
+      flake-parts,
+      nixpkgs,
+      self,
+      ...
+    }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ ./shells ];
-      systems = [ system ];
+      systems = [ "x86_64-linux" ];
+      imports = [ ./shells/import.nix ];
       flake =
         let
+          lib = nixpkgs.lib.extend (
+            self: super: {
+              extraMkOptions = import ./lib {
+                inherit inputs;
+                lib = self;
+              };
+            }
+          );
+
           makeNixosSystem =
-            configPath:
-            inputs.nixpkgs.lib.nixosSystem {
+            configPath: system:
+            nixpkgs.lib.nixosSystem {
               inherit system;
-              specialArgs = { inherit inputs; };
+              specialArgs = { inherit inputs lib; };
               modules = [ configPath ];
             };
         in
         {
           nixosConfigurations = {
-            desktop = makeNixosSystem ./hosts/desktop/configuration.nix;
-            laptop = makeNixosSystem ./hosts/laptop/configuration.nix;
+            desktop = makeNixosSystem ./hosts/desktop/configuration.nix "x86_64-linux";
           };
         };
     };
