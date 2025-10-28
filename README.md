@@ -5,6 +5,16 @@
 
 This is my NixOS configuration files. Much inspired by configurations found online.
 
+## My Journey into Declarative system
+
+After using Fedora for a while, I really thought I had found the perfect distribution for my needs. I was using GNOME and was very satisfied with my experience — everything just worked without having to fuss around too much.
+
+But one day, when I wanted to reproduce my setup on another machine, it took me quite a bit of time (setting up RPM Fusion, installing my applications, etc.). That’s when I decided I wanted to automate the setup of my configuration from a fresh Fedora image.
+
+I started by writing simple bash scripts — which was quite annoying — and eventually discovered Ansible, which turned out to be incredibly handy. It made my configuration process a lot simpler, even if far from perfect since I was just getting started with Ansible. This [configuration](https://github.com/wiizzl/fedora-setup) served me for a while, until I heard about NixOS through [tony's video](https://www.youtube.com/watch?v=2QjzI5dXwDY).
+
+That’s when I started using NixOS, first with Qtile, which was my very first experience with a tiling window manager. I loved it! GNOME instantly felt far behind. I spent a lot of time configuring and exploring NixOS — not only the ability to make the system declarative, but also every single application configuration. Later, I moved on to i3, and then to Hyprland because I absolutely love animations. Yep, I'm like a kid.
+
 ## TODO
 
 - Secrets management with [sops-nix](https://github.com/Mic92/sops-nix)
