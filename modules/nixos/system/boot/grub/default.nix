@@ -5,11 +5,7 @@ let
   inherit (config.my) system;
 in
 {
-  options.my.system.boot.grub = {
-    enable = mkEnableOption "Enable grub as the bootloader";
-  };
-
-  config = mkIf system.boot.grub.enable {
+  config = mkIf system.boot.grub {
     boot.loader.grub = {
       enable = true;
       useOSProber = true; # NOTE: this only work with Windows, if you want other OS, go for systemd-boot

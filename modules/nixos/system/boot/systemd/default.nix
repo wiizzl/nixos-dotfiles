@@ -5,11 +5,7 @@ let
   inherit (config.my) system;
 in
 {
-  options.my.system.boot.systemd = {
-    enable = mkEnableOption "Enable systemd-boot as the bootloader";
-  };
-
-  config = mkIf system.boot.systemd.enable {
+  config = mkIf system.boot.systemd {
     boot.loader.systemd-boot = {
       enable = true;
       consoleMode = "auto";

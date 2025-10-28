@@ -149,7 +149,10 @@
           fun = true;
         };
         audio.pipewire.enable = true;
-        boot.systemd.enable = true;
+        boot = {
+          systemd = true;
+          kernel = pkgs.linuxPackages_latest; # _zen, _hardened, _rt, _rt_latest, etc.
+        };
         docs = {
           enable = true;
           man = true;
