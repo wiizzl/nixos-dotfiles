@@ -37,8 +37,8 @@
         vscode.enable = true;
         wezterm.enable = true;
         # spotify.enable = true;
-        # discord.enable = true;
-        # zen.enable = true;
+        discord.enable = true;
+        zen.enable = true;
       };
 
       cli = {
@@ -48,7 +48,7 @@
         direnv.enable = true;
         fastfetch.enable = true;
         just.enable = true;
-        bottom.enable = true;
+        btop.enable = true;
         yazi.enable = true;
         git = {
           enable = true;
