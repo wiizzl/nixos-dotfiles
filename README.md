@@ -5,7 +5,7 @@
 
 This is my Nix configuration files. Much inspired by configurations found online.
 
-## My Journey into Declarative system
+## My Journey into declarative systems
 
 After using Fedora for a while, I really thought I had found the perfect distribution for my needs. I was using GNOME and was very satisfied with my experience — everything just worked without having to fuss around too much.
 
