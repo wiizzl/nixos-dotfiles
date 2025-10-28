@@ -9,7 +9,7 @@ let
   };
 in
 {
-  config = mkIf user.shell.starship.enable {
+  config = mkIf user.shell.starship {
     home-manager.users.${user.name} = starship;
   };
 }

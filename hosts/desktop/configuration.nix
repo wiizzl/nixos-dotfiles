@@ -6,7 +6,7 @@
 
     ../../modules/nixos/import.nix
     ../../modules/shared/import.nix
-    # ../../modules/home/import.nix
+    ../../modules/home/import.nix
   ];
 
   config = {
@@ -31,15 +31,14 @@
         gimp.enable = true;
         obs.enable = true;
         onlyoffice.enable = true;
-        postman.enable = true;
         qimgv.enable = true;
         thunderbird.enable = true;
         vlc.enable = true;
         vscode.enable = true;
-        # wezterm.enable = true;
-        # spotify.enable = true;
-        # discord.enable = true;
-        # zen.enable = true;
+        wezterm.enable = true;
+        spotify.enable = true;
+        discord.enable = true;
+        zen.enable = true;
       };
 
       cli = {

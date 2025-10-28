@@ -45,12 +45,8 @@ in
           hicolor-icon-theme
           adwaita-icon-theme
         ]
-        ++ optionals system.audio.pipewire
-        ||
-          system.audio.pulseaudio [ pavucontrol ]
-          ++ optionals system.networkmanager [
-            networkmanagerapplet
-          ];
+        ++ (if system.audio.pipewire.enable || system.networkmanager.enable then [ pavucontrol ] else [ ])
+        ++ (if system.networking.networkmanager.enable then [ networkmanagerapplet ] else [ ]);
     };
   };
 }
