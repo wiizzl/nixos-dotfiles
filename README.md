@@ -41,7 +41,7 @@ The repository uses a modular, opinionated structure. While it may seem complex 
 ```
 ├── wallpapers/      # Image files for wallpapers
 ├── hosts/
-│   └── desktop/     # Main desktop setup (AMD 5950x, 64GB DDR4, AMD 6600XT)
+│   └── desktop/     # Main desktop setup
 ├── flake.nix
 ├── flake.lock
 ├── lib/             # Custom functions extending `nixpkgs.lib`
