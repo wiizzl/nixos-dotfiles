@@ -11,7 +11,7 @@ let
 in
 {
   options.my.apps.firefox = {
-    enable = mkEnableOption "Enable Firefox Browser";
+    enable = mkEnableOption "Enable Firefox browser";
   };
 
   config = mkIf apps.firefox.enable {

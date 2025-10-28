@@ -10,13 +10,13 @@ let
   inherit (config.my) apps;
 in
 {
-  options.my.apps.brave = {
-    enable = mkEnableOption "Enable Brave Browser";
+  options.my.apps.chromium = {
+    enable = mkEnableOption "Enable Chromium browser";
   };
 
-  config = mkIf apps.brave.enable {
+  config = mkIf apps.chromium.enable {
     environment.systemPackages = with pkgs; [
-      brave
+      ungoogled-chromium
     ];
   };
 }
