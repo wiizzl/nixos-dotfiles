@@ -4,7 +4,7 @@
   perSystem =
     { pkgs, ... }:
     {
-      devShells.rs = pkgs.mkShell {
+      devShells.cs = pkgs.mkShell {
         buildInputs = with pkgs; [
           dotnetCorePackages.sdk_9_0-bin
         ];
