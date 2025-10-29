@@ -66,9 +66,6 @@
           name = "wiizzl";
           email = "git@houlliere.com";
         };
-        dev = {
-          js.enable = true;
-        };
       };
 
       desktop = {

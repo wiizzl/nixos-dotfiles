@@ -7,6 +7,7 @@
       bun
       yarn
       pnpm
+      openssl
     ];
 
     shellHook = ''
