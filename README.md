@@ -55,7 +55,7 @@ The repository uses a modular, opinionated structure. While it may seem complex 
 
 ## Installation
 
-1. Create your host and add it to the flakes entries
+### 1. Create your host and add it to the flakes entries
 
 ```sh
 mkdir -p ~/nix-config/hosts/your-host
@@ -78,7 +78,7 @@ nixosConfigurations = {
 > [!IMPORTANT]
 > Replace "x86_64-linux" with your system architecture. Make sure it is supported first !
 
-2. Edit the configuration based on your needs
+### 2. Edit the configuration based on your needs
 
 ```sh
 nano ~/nix-config/hosts/your-host/configuration.nix
@@ -87,7 +87,7 @@ nano ~/nix-config/hosts/your-host/configuration.nix
 > [!TIP]
 > You will need to explore the configuration to understand how to add your own things
 
-3. Generate hardware-configuration.nix and move it yo your host
+### 3. Generate hardware-configuration.nix and move it yo your host
 
 > [!NOTE]
 > You can skip this step if you are not on NixOS
@@ -97,4 +97,4 @@ nixos-generate-config # You probably need to sudo it
 cp /etc/nixos/hardware-configuration.nix ~/nix-config/hosts/your-host/
 ```
 
-4. Build the configuration and reboot your device
+### 4. Build the configuration and reboot your device
