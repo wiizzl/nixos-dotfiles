@@ -1,19 +1,15 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  perSystem =
-    { pkgs, ... }:
-    {
-      devShells.cs = pkgs.mkShell {
-        buildInputs = with pkgs; [
-          dotnetCorePackages.sdk_9_0-bin
-          dotnetCorePackages.runtime_9_0-bin
-          dotnetPackages.Nuget
-        ];
+  cs = pkgs.mkShell {
+    buildInputs = with pkgs; [
+      dotnetCorePackages.sdk_9_0-bin
+      dotnetCorePackages.runtime_9_0-bin
+      dotnetPackages.Nuget
+    ];
 
-        shellHook = ''
-          echo "C# dev shell is ready !"
-        '';
-      };
-    };
+    shellHook = ''
+      echo "C# dev shell is ready !"
+    '';
+  };
 }
