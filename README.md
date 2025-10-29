@@ -18,8 +18,9 @@ That’s when I started using NixOS, first with Qtile, which was my very first e
 ## TODO
 
 - Secrets management with [sops-nix](https://github.com/Mic92/sops-nix)
-- Darwin system modules
 - Use custom functions to make options
+- Config [templates](./hosts/templates)
+- Darwin modules
 
 ## Modules
 
@@ -41,6 +42,7 @@ The repository uses a modular, opinionated structure. While it may seem complex 
 ```
 ├── wallpapers/      # Image files for wallpapers
 ├── hosts/
+│   ├── templates/    # Template hosts so you can see all available options
 │   └── desktop/     # Main desktop setup
 ├── flake.nix
 ├── flake.lock

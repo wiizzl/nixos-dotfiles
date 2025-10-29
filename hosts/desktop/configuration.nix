@@ -20,7 +20,7 @@
         home-manager = true;
 
         shell = {
-          package = pkgs.fish; # Also see system.shell.<shell>.enable below
+          package = pkgs.fish;
           starship = true;
         };
       };
