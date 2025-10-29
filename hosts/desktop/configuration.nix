@@ -57,7 +57,7 @@
         nh.enable = true;
         cava.enable = true;
         direnv.enable = true;
-        fastfetch.enable = true;
+        microfetch.enable = true;
         just.enable = true;
         btop.enable = true;
         yazi.enable = true;
