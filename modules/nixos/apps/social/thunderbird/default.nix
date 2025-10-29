@@ -10,13 +10,9 @@ let
   inherit (config.my) apps;
 in
 {
-  options.my.apps.firefox = {
-    enable = mkEnableOption "Enable Firefox browser";
-  };
-
-  config = mkIf apps.firefox.enable {
+  config = mkIf apps.social.thunderbird.enable {
     environment.systemPackages = with pkgs; [
-      firefox
+      thunderbird
     ];
   };
 }

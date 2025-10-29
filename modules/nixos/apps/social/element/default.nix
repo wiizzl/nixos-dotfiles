@@ -10,13 +10,9 @@ let
   inherit (config.my) apps;
 in
 {
-  options.my.apps.slack = {
-    enable = mkEnableOption "Enable Slack";
-  };
-
-  config = mkIf apps.slack.enable {
+  config = mkIf apps.social.element.enable {
     environment.systemPackages = with pkgs; [
-      slack
+      element-desktop
     ];
   };
 }

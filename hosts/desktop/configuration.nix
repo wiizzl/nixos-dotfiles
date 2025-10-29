@@ -27,21 +27,27 @@
 
       apps = {
         dbeaver.enable = true;
-        element.enable = true;
         gimp.enable = true;
         obs.enable = true;
         onlyoffice.enable = true;
         qimgv.enable = true;
-        thunderbird.enable = true;
         vlc.enable = true;
         vscode.enable = true;
-        wezterm.enable = true;
         spotify.enable = true;
-        discord.enable = true;
-        zen.enable = true;
+        social = {
+          vencord.enable = true;
+          thunderbird.enable = true;
+        };
+        terminal = {
+          wezterm.enable = true;
+        };
+        browser = {
+          zen.enable = true;
+        };
         jetbrains = {
           enable = true;
           rider.enable = true;
+          androidstudio.enable = true;
         };
       };
 

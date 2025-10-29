@@ -14,7 +14,7 @@
             export HOME=$(mktemp -d)
           fi
 
-          $out/bin/dotnet workload install maui
+          $out/bin/dotnet workload install maui-android
         '';
 
         shellHook = ''

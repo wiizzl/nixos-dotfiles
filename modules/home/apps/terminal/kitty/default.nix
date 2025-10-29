@@ -5,11 +5,7 @@ let
   inherit (config.my) apps user;
 in
 {
-  options.my.apps.kitty = {
-    enable = mkEnableOption "Enable Kitty terminal emulator";
-  };
-
-  config = mkIf apps.kitty.enable {
+  config = mkIf apps.terminal.kitty.enable {
     home-manager.users.${user.name} = {
       programs.kitty = {
         enable = true;

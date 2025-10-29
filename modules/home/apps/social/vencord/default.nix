@@ -10,11 +10,7 @@ let
   inherit (config.my) apps desktop user;
 in
 {
-  options.my.apps.discord = {
-    enable = mkEnableOption "Enable Vesktop Discord client";
-  };
-
-  config = mkIf apps.discord.enable {
+  config = mkIf apps.social.vencord.enable {
     home-manager.users.${user.name} = {
       imports = [ inputs.nixcord.homeModules.nixcord ];
 
