@@ -27,7 +27,7 @@ That’s when I started using NixOS, first with Qtile, which was my very first e
 The repository is split into several module types.
 
 - [NixOS modules](https://github.com/wiizzl/nix-config/tree/main/modules/nixos): System configurations tailored for NixOS.
-- [home-manager modules](https://github.com/wiizzl/nix-config/tree/main/modules/home): User-specific setups managed by [home-manager](https://github.com/nix-community/home-manager).
+- [Home modules](https://github.com/wiizzl/nix-config/tree/main/modules/home): User-specific setups managed by [home-manager](https://github.com/nix-community/home-manager).
 - [Darwin modules](https://github.com/wiizzl/nix-config/tree/main/modules/darwin): macOS system configurations using [nix-darwin](https://github.com/nix-darwin/nix-darwin).
 - [Shared modules](https://github.com/wiizzl/nix-config/tree/main/modules/shared): Common settings for both NixOS and Darwin platforms.
 
