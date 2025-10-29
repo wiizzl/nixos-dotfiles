@@ -1,13 +1,8 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}:
+{ config, lib, ... }:
 
 with lib;
 let
-  inherit (config.my) cli system;
+  inherit (config.my) cli user system;
 in
 {
   options.my.cli.nh = {
@@ -23,7 +18,7 @@ in
         extraArgs = "--keep-since ${toString system.nix.garbage-collector.days}d --keep 3";
       };
 
-      flake = "/home/pier/nix-config"; # sets NH_OS_FLAKE variable for you
+      flake = "${user.homeDir}/nix-config"; # sets NH_OS_FLAKE variable for you
     };
   };
 }

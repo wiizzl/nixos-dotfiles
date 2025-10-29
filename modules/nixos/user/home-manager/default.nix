@@ -23,12 +23,10 @@ in
         inherit user;
       };
 
-      users."pier" = {
-        programs.home-manager.enable = true;
-
+      users.${user.name} = {
         home = {
-          username = "pier";
-          homeDirectory = "/home/pier";
+          username = user.name;
+          homeDirectory = user.homeDir;
           stateVersion = "25.05";
         };
       };
