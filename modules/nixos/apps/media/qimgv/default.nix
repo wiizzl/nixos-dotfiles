@@ -10,13 +10,9 @@ let
   inherit (config.my) apps;
 in
 {
-  options.my.apps.mpv = {
-    enable = mkEnableOption "Enable mpv media player";
-  };
-
-  config = mkIf apps.mpv.enable {
+  config = mkIf apps.media.qimgv.enable {
     environment.systemPackages = with pkgs; [
-      mpv
+      qimgv
     ];
   };
 }

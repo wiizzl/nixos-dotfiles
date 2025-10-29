@@ -10,13 +10,9 @@ let
   inherit (config.my) apps;
 in
 {
-  options.my.apps.qimgv = {
-    enable = mkEnableOption "Enable qimgv image viewer";
-  };
-
-  config = mkIf apps.qimgv.enable {
+  config = mkIf apps.media.vlc.enable {
     environment.systemPackages = with pkgs; [
-      qimgv
+      vlc
     ];
   };
 }

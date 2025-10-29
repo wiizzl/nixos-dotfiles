@@ -30,10 +30,12 @@
         gimp.enable = true;
         obs.enable = true;
         onlyoffice.enable = true;
-        qimgv.enable = true;
-        vlc.enable = true;
         vscode.enable = true;
         spotify.enable = true;
+        media = {
+          qimgv.enable = true;
+          vlc.enable = true;
+        };
         social = {
           vencord.enable = true;
           thunderbird.enable = true;
