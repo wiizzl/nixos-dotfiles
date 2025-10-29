@@ -45,7 +45,6 @@
           zen.enable = true;
         };
         jetbrains = {
-          enable = true;
           rider.enable = true;
           androidstudio.enable = true;
         };

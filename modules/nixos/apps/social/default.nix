@@ -10,7 +10,7 @@ let
   inherit (config.my) apps;
 in
 {
-  options.my.apps.browser = {
+  options.my.apps.social = {
     element.enable = mkOption {
       type = types.bool;
       default = false;
