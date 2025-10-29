@@ -84,7 +84,7 @@ nixosConfigurations = {
 nano ~/nix-config/hosts/your-host/configuration.nix
 ```
 
-> [!INFO]
+> [!TIP]
 > You will need to explore the configuration to understand how to add your own things
 
 3. Generate hardware-configuration.nix and move it yo your host
@@ -94,7 +94,7 @@ nano ~/nix-config/hosts/your-host/configuration.nix
 
 ```sh
 nixos-generate-config # You probably need to sudo it
-cp /etc/nixos/hardware-configuration.nix ~/nix-config
+cp /etc/nixos/hardware-configuration.nix ~/nix-config/hosts/your-host/
 ```
 
 4. Build the configuration and reboot your device
