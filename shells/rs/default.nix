@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  devShells.rs = pkgs.mkShell {
+  rs = pkgs.mkShell {
     buildInputs = with pkgs; [
       cargo
       rustc

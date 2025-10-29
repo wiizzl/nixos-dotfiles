@@ -1,9 +1,6 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 let
-  # Credit: @infinisil
-  # https://github.com/Infinisil/system/blob/df9232c4b6cec57874e531c350157c37863b91a0/config/new-modules/default.nix
-
   getDir =
     dir:
     lib.mapAttrs (file: type: if type == "directory" then getDir "${dir}/${file}" else type) (
@@ -16,12 +13,7 @@ let
       lib.mapAttrsRecursive (path: type: lib.concatStringsSep "/" path) (getDir dir)
     );
 
-  getDefaultNix =
-    dir:
-    builtins.map (file: ./. + "/${file}") (
-      builtins.filter (file: builtins.baseNameOf file == "default.nix") (files dir)
-    );
+  defaultNixFiles = builtins.filter (file: builtins.baseNameOf file == "default.nix") (files ./.);
+  importedShells = builtins.map (file: import ./${file} { inherit pkgs lib; }) defaultNixFiles;
 in
-{
-  imports = getDefaultNix ./.;
-}
+lib.foldl' lib.recursiveUpdate { } importedShells
