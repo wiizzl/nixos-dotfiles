@@ -18,6 +18,10 @@ in
       shellAliases = {
         nfu = "cd ~/nix-config && sudo nix flake update";
       };
+
+      interactiveShellInit = ''
+        set fish_greeting
+      '';
     };
   };
 }

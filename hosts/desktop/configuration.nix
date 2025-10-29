@@ -20,7 +20,7 @@
         home-manager = true;
 
         shell = {
-          package = pkgs.bash;
+          package = pkgs.fish; # Also see system.shell.<shell>.enable below
           starship = true;
         };
       };
@@ -152,7 +152,7 @@
           enable = true;
           default = true;
         };
-        shell.bash.enable = true;
+        shell.fish.enable = true;
         timezone = "Europe/Paris";
         utils = {
           enable = true;
