@@ -11,13 +11,8 @@
           dotnetPackages.Nuget
         ];
 
-        postInstall = ''
-          if [ ! -w "$HOME" ]; then
-            export HOME=$(mktemp -d)
-          fi
-
-          $out/bin/dotnet workload install maui-android
-        '';
+        # TODO: postinstall MAUI, maybe custom dotnet build ?
+        # dotnet workload install maui-android
 
         shellHook = ''
           echo "C# + MAUI dev shell is ready !"

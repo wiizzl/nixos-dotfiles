@@ -50,18 +50,14 @@
               };
             }
           );
-
-          makeNixosSystem =
-            configPath: system:
-            nixpkgs.lib.nixosSystem {
-              inherit system;
-              specialArgs = { inherit inputs lib; };
-              modules = [ configPath ];
-            };
         in
         {
           nixosConfigurations = {
-            desktop = makeNixosSystem ./hosts/desktop/configuration.nix "x86_64-linux";
+            nixos = nixpkgs.lib.nixosSystem {
+              system = "x86_64-linux";
+              specialArgs = { inherit inputs lib; };
+              modules = [ ./hosts/desktop/configuration.nix ];
+            };
           };
         };
     };

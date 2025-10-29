@@ -2,7 +2,7 @@
 
 with lib;
 let
-  inherit (config.my) system;
+  inherit (config.my) system cli;
 
   aliases = import ../aliases.nix;
 in
@@ -15,7 +15,9 @@ in
     programs.fish = {
       enable = true;
 
-      # TODO: add dynamic aliases
+      shellAliases = {
+        nfu = "cd ~/nix-config && sudo nix flake update";
+      };
     };
   };
 }

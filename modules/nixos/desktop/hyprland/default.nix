@@ -41,8 +41,7 @@ in
         [
           playerctl
           wl-clipboard
-          # gnome-icon-theme # TODO: check if I want this one too
-          hicolor-icon-theme
+          gnome-icon-theme
           adwaita-icon-theme
         ]
         ++ (if system.audio.pipewire.enable || system.networkmanager.enable then [ pavucontrol ] else [ ])

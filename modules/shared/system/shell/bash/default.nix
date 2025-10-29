@@ -2,7 +2,7 @@
 
 with lib;
 let
-  inherit (config.my) system;
+  inherit (config.my) system cli;
 
   aliases = import ../aliases.nix;
 in
@@ -15,17 +15,15 @@ in
     programs.bash = {
       enable = true;
 
-      # TODO: add dynamic aliases
+      # shellAliases =
+      #   (optionals system.utils.enable (aliases.eza // aliases.bat))
+      #   // (optionals cli.git.enable aliases.git)
+      #   // {
+      #   };
 
-      # shellAliases = {
-      #   ll = "eza -lha --icons=auto --sort=name --group-directories-first";
-      #   tree = "eza --icons=auto -T";
-      #   cat = "bat";
-      #   find = "fd";
-      #   rg = "rg -C 4";
-
-      #   nfu = "cd ~/nix-config && sudo nix flake update";
-      # };
+      shellAliases = {
+        nfu = "cd ~/nix-config && sudo nix flake update";
+      };
 
       # bashrcExtra = ''
       #   nrs() {

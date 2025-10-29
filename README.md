@@ -55,7 +55,7 @@ The repository uses a modular, opinionated structure. While it may seem complex 
 
 ## Installation
 
-### 1. Create your host and add it to the flakes entries
+### 1. Create your host and edit `flake.nix`
 
 ```sh
 mkdir -p ~/nix-config/hosts/your-host
@@ -70,8 +70,11 @@ nano ~/nix-config/flake.nix
 
 ```nix
 nixosConfigurations = {
-  # ... other hosts
-  # your-host = makeNixosSystem ./hosts/your-host/configuration.nix "x86_64-linux";
+  nixos = nixpkgs.lib.nixosSystem {
+    system = "x86_64-linux";
+    specialArgs = { inherit inputs lib; };
+    modules = [ ./hosts/your-host/configuration.nix ];
+  };
 };
 ```
 
