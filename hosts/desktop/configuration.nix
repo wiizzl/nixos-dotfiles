@@ -29,7 +29,6 @@
         dbeaver.enable = true;
         element.enable = true;
         gimp.enable = true;
-        rider.enable = true;
         obs.enable = true;
         onlyoffice.enable = true;
         qimgv.enable = true;
@@ -40,6 +39,10 @@
         spotify.enable = true;
         discord.enable = true;
         zen.enable = true;
+        jetbrains = {
+          enable = true;
+          rider.enable = true;
+        };
       };
 
       cli = {
