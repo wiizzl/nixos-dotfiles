@@ -64,7 +64,7 @@
         git = {
           enable = true;
           name = "wiizzl";
-          email = "github@houlliere.com";
+          email = "git@houlliere.com";
         };
         dev = {
           js.enable = true;
