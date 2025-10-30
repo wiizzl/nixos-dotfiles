@@ -42,7 +42,7 @@ The repository uses a modular, opinionated structure. While it may seem complex 
 ```
 ├── wallpapers/      # Image files for wallpapers
 ├── hosts/
-│   ├── templates/    # Template hosts so you can see all available options
+│   ├── templates/   # Template hosts so you can see all available options
 │   └── desktop/     # Main desktop setup
 ├── flake.nix
 ├── flake.lock
