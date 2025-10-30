@@ -64,7 +64,7 @@ mkdir -p ~/nix-config/hosts/your-host
 ```
 
 > [!TIP]
-> Replace `your-host` with a short alias for your device
+> Replace `your-host` with a short alias for your device.
 
 ```sh
 nano ~/nix-config/flake.nix
@@ -81,7 +81,7 @@ nixosConfigurations = {
 ```
 
 > [!IMPORTANT]
-> Replace "x86_64-linux" with your system architecture. Make sure it is supported first !
+> Replace "x86_64-linux" with your system architecture. Make sure it is supported first!
 
 ### 2. Edit the configuration based on your needs
 
