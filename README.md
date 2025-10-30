@@ -90,12 +90,12 @@ nano ~/nix-config/hosts/your-host/configuration.nix
 ```
 
 > [!TIP]
-> You will need to explore the configuration to understand how to add your own things
+> You will need to explore the configuration to understand how to add your own things.
 
 ### 3. Generate hardware-configuration.nix and move it yo your host
 
 > [!NOTE]
-> You can skip this step if you are not on NixOS
+> You can skip this step if you are not on NixOS.
 
 ```sh
 nixos-generate-config # You probably need to sudo it
