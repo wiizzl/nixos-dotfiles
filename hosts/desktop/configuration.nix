@@ -29,7 +29,6 @@
         dbeaver.enable = true;
         gimp.enable = true;
         obs.enable = true;
-        vscode.enable = true;
         spotify.enable = true;
         media = {
           qimgv.enable = true;
@@ -38,6 +37,10 @@
         suite.onlyoffice.enable = true;
         file-manager.thunar.enable = true;
         terminal.wezterm.enable = true;
+        editor = {
+          zed.enable = true;
+          vscode.enable = true;
+        };
         social = {
           vesktop.enable = true;
           thunderbird.enable = true;

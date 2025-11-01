@@ -17,7 +17,7 @@ let
   };
 in
 {
-  config = mkIf apps.vscode.enable {
+  config = mkIf apps.editor.vscode.enable {
     home-manager.users.${user.name} = {
       stylix = mkIf desktop.addons.stylix.enable {
         targets.vscode.enable = false;
