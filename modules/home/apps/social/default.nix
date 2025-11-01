@@ -6,10 +6,6 @@ let
 in
 {
   options.my.apps.social = {
-    vencord.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable Vencord client";
-    };
+    vencord = mkEnableOption "Enable Vencord client";
   };
 }

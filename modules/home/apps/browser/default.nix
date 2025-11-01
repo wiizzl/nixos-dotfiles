@@ -6,10 +6,6 @@ let
 in
 {
   options.my.apps.browser = {
-    zen.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable Zen browser";
-    };
+    zen.enable = mkEnableOption "Enable Zen browser";
   };
 }

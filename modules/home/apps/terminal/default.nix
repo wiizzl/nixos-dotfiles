@@ -6,15 +6,7 @@ let
 in
 {
   options.my.apps.terminal = {
-    wezterm.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable Wez's terminal emulator";
-    };
-    kitty.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable Kitty terminal emulator";
-    };
+    wezterm.enable = mkEnableOption "Enable Wez's terminal emulator";
+    kitty.enable = mkEnableOption "Enable Kitty terminal emulator";
   };
 }

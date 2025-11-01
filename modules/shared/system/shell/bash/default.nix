@@ -7,10 +7,6 @@ let
   aliases = import ../aliases.nix;
 in
 {
-  options.my.system.shell.bash = {
-    enable = mkEnableOption "Enable bash";
-  };
-
   config = mkIf system.shell.bash.enable {
     programs.bash = {
       enable = true;
