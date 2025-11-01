@@ -29,19 +29,18 @@
         dbeaver.enable = true;
         gimp.enable = true;
         obs.enable = true;
-        onlyoffice.enable = true;
         vscode.enable = true;
         spotify.enable = true;
         media = {
           qimgv.enable = true;
           vlc.enable = true;
         };
+        suite.onlyoffice.enable = true;
+        file-manager.thunar.enable = true;
+        terminal.wezterm.enable = true;
         social = {
           vencord.enable = true;
           thunderbird.enable = true;
-        };
-        terminal = {
-          wezterm.enable = true;
         };
         browser = {
           zen.enable = true;

@@ -10,11 +10,7 @@ let
   inherit (config.my) apps;
 in
 {
-  options.my.apps.onlyoffice = {
-    enable = mkEnableOption "Enable OnlyOffice suite";
-  };
-
-  config = mkIf apps.onlyoffice.enable {
+  config = mkIf apps.suite.onlyoffice.enable {
     environment.systemPackages = with pkgs; [
       onlyoffice-desktopeditors
     ];
