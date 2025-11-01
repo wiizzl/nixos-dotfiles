@@ -6,20 +6,8 @@ let
 in
 {
   options.my.apps.social = {
-    element.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable Element matrix client";
-    };
-    slack.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable Slack client";
-    };
-    thunderbird.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable Thunderbird email client";
-    };
+    element.enable = mkEnableOption "Element matrix client";
+    slack.enable = mkEnableOption "Slack client";
+    thunderbird.enable = mkEnableOption "Thunderbird email client";
   };
 }

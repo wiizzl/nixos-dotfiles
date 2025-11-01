@@ -6,20 +6,8 @@ let
 in
 {
   options.my.apps.media = {
-    vlc.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable VLC media player";
-    };
-    mpv.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable mpv media player";
-    };
-    qimgv.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable VLC media player";
-    };
+    vlc.enable = mkEnableOption "VLC media player";
+    mpv.enable = mkEnableOption "mpv media player";
+    qimgv.enable = mkEnableOption "Qimgv image viewer";
   };
 }

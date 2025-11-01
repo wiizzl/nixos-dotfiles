@@ -6,15 +6,7 @@ let
 in
 {
   options.my.apps.suite = {
-    libreoffice.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable LibreOffice suite";
-    };
-    onlyoffice.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable OnlyOffice suite";
-    };
+    libreoffice = mkEnableOption "LibreOffice suite";
+    onlyoffice = mkEnableOption "OnlyOffice suite";
   };
 }

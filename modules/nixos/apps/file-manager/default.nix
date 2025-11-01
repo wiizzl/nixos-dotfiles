@@ -6,15 +6,7 @@ let
 in
 {
   options.my.apps.file-manager = {
-    thunar.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable Thunar file manager";
-    };
-    dolphin.enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable Dolphin file manager";
-    };
+    thunar = mkEnableOption "Thunar file manager";
+    dolphin = mkEnableOption "Dolphin file manager";
   };
 }
