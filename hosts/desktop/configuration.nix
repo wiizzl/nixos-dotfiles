@@ -39,7 +39,7 @@
         file-manager.thunar.enable = true;
         terminal.wezterm.enable = true;
         social = {
-          vencord.enable = true;
+          vesktop.enable = true;
           thunderbird.enable = true;
         };
         browser = {

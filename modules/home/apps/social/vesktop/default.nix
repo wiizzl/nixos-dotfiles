@@ -11,10 +11,10 @@ let
 in
 {
   options.my.apps.social = {
-    vencord.enable = mkEnableOption "Enable Vencord client";
+    vesktop.enable = mkEnableOption "Enable Vesktop client (Discord)";
   };
 
-  config = mkIf apps.social.vencord.enable {
+  config = mkIf apps.social.vesktop.enable {
     home-manager.users.${user.name} = {
       imports = [ inputs.nixcord.homeModules.nixcord ];
 
