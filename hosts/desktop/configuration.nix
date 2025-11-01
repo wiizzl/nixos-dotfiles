@@ -124,7 +124,7 @@
                 name = "DM Sans";
               };
               emoji = {
-                package = pkgs.noto-fonts-emoji;
+                package = pkgs.noto-fonts-color-emoji;
                 name = "Noto Color Emoji";
               };
               sizes = {
@@ -160,7 +160,7 @@
         };
         audio.pipewire.enable = true;
         boot = {
-          systemd = true;
+          systemd.enable = true;
           kernel = pkgs.linuxPackages_latest; # _zen, _hardened, _rt, _rt_latest, etc.
         };
         docs = {

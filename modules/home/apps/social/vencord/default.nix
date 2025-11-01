@@ -10,6 +10,10 @@ let
   inherit (config.my) apps desktop user;
 in
 {
+  options.my.apps.social = {
+    vencord.enable = mkEnableOption "Enable Vencord client";
+  };
+
   config = mkIf apps.social.vencord.enable {
     home-manager.users.${user.name} = {
       imports = [ inputs.nixcord.homeModules.nixcord ];

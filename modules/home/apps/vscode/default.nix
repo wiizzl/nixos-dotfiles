@@ -11,7 +11,7 @@ let
   inherit (config.my) apps desktop user;
 
   pkgsWithOverlay = import pkgs.path {
-    system = pkgs.system;
+    system = pkgs.stdenv.hostPlatform.system;
     overlays = [ inputs.nix-vscode-extensions.overlays.default ];
     config = pkgs.config;
   };

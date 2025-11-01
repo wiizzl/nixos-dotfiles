@@ -6,16 +6,6 @@ let
 in
 {
   options.my.system.boot = {
-    systemd = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable systemd-boot as the bootloader";
-    };
-    grub = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable grub as the bootloader";
-    };
     kernel = mkOption {
       # type = types.package;
       default = pkgs.linuxPackages_rt_latest;
