@@ -1,13 +1,12 @@
 {
-  pkgs,
   config,
   lib,
   inputs,
   ...
 }:
 
-with lib;
 let
+  inherit (lib) mkIf;
   inherit (config.my) user;
 in
 {

@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
-with lib;
 let
+  inherit (lib) mkOption;
   inherit (config.my) system;
 in
 {

@@ -5,8 +5,8 @@
   ...
 }:
 
-with lib;
 let
+  inherit (lib) mkEnableOption mkOption mkIf;
   inherit (config.my) user;
 in
 {

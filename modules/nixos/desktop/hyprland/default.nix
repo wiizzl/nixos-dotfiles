@@ -6,8 +6,8 @@
   ...
 }:
 
-with lib;
 let
+  inherit (lib) mkEnableOption mkIf;
   inherit (config.my) desktop system;
 in
 {

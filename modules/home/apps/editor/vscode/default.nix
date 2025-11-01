@@ -6,8 +6,8 @@
   ...
 }:
 
-with lib;
 let
+  inherit (lib) mkIf;
   inherit (config.my) apps desktop user;
 
   pkgsWithOverlay = import pkgs.path {

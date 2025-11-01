@@ -6,8 +6,8 @@
   ...
 }:
 
-with lib;
 let
+  inherit (lib) mkEnableOption mkIf;
   inherit (config.my) apps user;
 in
 {

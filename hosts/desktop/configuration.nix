@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 
 let
-  inherit (lib.extraMkOptions) enabled;
+  inherit (lib.extraMkOptions) enabled disabled;
 in
 {
   imports = [

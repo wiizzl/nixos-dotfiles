@@ -1,7 +1,12 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
-with lib;
 let
+  inherit (lib) mkEnableOption mkIf;
   inherit (config.my) desktop user;
 in
 {

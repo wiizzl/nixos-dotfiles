@@ -1,12 +1,7 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}:
+{ config, lib, ... }:
 
-with lib;
 let
+  inherit (lib) mkEnableOption mkIf;
   inherit (config.my) system;
 in
 {

@@ -1,12 +1,17 @@
 { config, lib, ... }:
 
-with lib;
 let
+
+  inherit (lib) mkEnableOption mkIf;
   inherit (config.my) system cli;
 
   aliases = import ../aliases.nix;
 in
 {
+  options.my.system.shell = {
+    bash.enable = mkEnableOption "Enable Bash shell";
+  };
+
   config = mkIf system.shell.bash.enable {
     programs.bash = {
       enable = true;

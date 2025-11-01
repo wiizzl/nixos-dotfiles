@@ -6,15 +6,9 @@
   ...
 }:
 
-with lib;
 let
+  inherit (lib) mkIf;
   inherit (config.my) apps desktop user;
-
-  pkgsWithOverlay = import pkgs.path {
-    system = pkgs.stdenv.hostPlatform.system;
-    overlays = [ inputs.nix-vscode-extensions.overlays.default ];
-    config = pkgs.config;
-  };
 in
 {
   config = mkIf apps.editor.zed.enable {

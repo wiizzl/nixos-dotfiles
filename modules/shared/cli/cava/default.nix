@@ -5,8 +5,8 @@
   ...
 }:
 
-with lib;
 let
+  inherit (lib) mkEnableOption mkIf;
   inherit (config.my) cli;
 in
 {

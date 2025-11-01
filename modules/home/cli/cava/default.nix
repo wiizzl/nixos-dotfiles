@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
-with lib;
 let
+  inherit (lib) mkIf;
   inherit (config.my) cli desktop user;
 in
 {
