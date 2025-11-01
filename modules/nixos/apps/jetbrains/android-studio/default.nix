@@ -11,10 +11,10 @@ let
 in
 {
   options.my.apps.jetbrains = {
-    androidstudio.enable = mkEnableOption "Enable Jetbrains Android Studio IDE";
+    android-studio.enable = mkEnableOption "Enable Jetbrains Android Studio IDE";
   };
 
-  config = mkIf apps.jetbrains.androidstudio.enable {
+  config = mkIf apps.jetbrains.android-studio.enable {
     environment.systemPackages = with pkgs; [
       android-studio
     ];

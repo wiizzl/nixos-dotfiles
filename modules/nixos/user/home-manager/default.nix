@@ -13,7 +13,7 @@ in
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-  config = mkIf user.home-manager {
+  config = mkIf user.home-manager.enable {
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;

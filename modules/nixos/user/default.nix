@@ -22,7 +22,7 @@ in
       default = "/home/${user.name}";
       description = "Home directory path";
     };
-    home-manager = mkOption {
+    home-manager.enable = mkOption {
       type = types.bool;
       default = false;
       description = "Enable home-manager";
@@ -37,7 +37,7 @@ in
             default = pkgs.bash;
             description = "Shell package";
           };
-          starship = mkOption {
+          starship.enable = mkOption {
             type = types.bool;
             default = false;
             description = "Enable starship prompt";

@@ -1,5 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
+let
+  inherit (lib.extraMkOptions) enabled;
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -17,52 +20,52 @@
         enable = true;
         name = "pier";
         homeDir = "/home/pier";
-        home-manager = true;
+        home-manager = enabled;
 
         shell = {
           package = pkgs.fish;
-          starship = true;
+          starship = enabled;
         };
       };
 
       apps = {
-        dbeaver.enable = true;
-        gimp.enable = true;
-        obs.enable = true;
-        spotify.enable = true;
+        dbeaver = enabled;
+        gimp = enabled;
+        obs = enabled;
+        spotify = enabled;
         media = {
-          qimgv.enable = true;
-          vlc.enable = true;
+          qimgv = enabled;
+          vlc = enabled;
         };
-        suite.onlyoffice.enable = true;
-        file-manager.thunar.enable = true;
-        terminal.wezterm.enable = true;
+        suite.onlyoffice = enabled;
+        file-manager.thunar = enabled;
+        terminal.wezterm = enabled;
         editor = {
-          zed.enable = true;
-          vscode.enable = true;
+          zed = enabled;
+          vscode = enabled;
         };
         social = {
-          vesktop.enable = true;
-          thunderbird.enable = true;
+          vesktop = enabled;
+          thunderbird = enabled;
         };
         browser = {
-          zen.enable = true;
+          zen = enabled;
         };
         jetbrains = {
-          rider.enable = true;
-          androidstudio.enable = true;
+          rider = enabled;
+          android-studio = enabled;
         };
       };
 
       cli = {
-        helix.enable = true;
-        nh.enable = true;
-        cava.enable = true;
-        direnv.enable = true;
-        microfetch.enable = true;
-        just.enable = true;
-        btop.enable = true;
-        yazi.enable = true;
+        helix = enabled;
+        nh = enabled;
+        cava = enabled;
+        direnv = enabled;
+        microfetch = enabled;
+        just = enabled;
+        btop = enabled;
+        yazi = enabled;
         git = {
           enable = true;
           name = "wiizzl";
@@ -71,20 +74,19 @@
       };
 
       desktop = {
-        hyprland.enable = true;
+        hyprland = enabled;
 
         addons = {
-          hyprpicker.enable = true;
-          ly.enable = true;
-          swaync.enable = true;
-          hyprshot.enable = true;
-          hyprpaper.enable = true;
-          rofi.enable = true;
-          waybar.enable = true;
+          ly = enabled;
+          hyprpicker = enabled;
+          swaync = enabled;
+          hyprshot = enabled;
+          hyprpaper = enabled;
+          rofi = enabled;
+          waybar = enabled;
           stylix = {
             enable = true;
             autoEnable = true;
-
             polarity = "dark";
 
             # See https://tinted-theming.github.io/tinted-gallery/ for more schemes
@@ -142,26 +144,26 @@
       };
 
       services = {
-        tailscale.enable = true;
+        tailscale = enabled;
       };
 
       system = {
         allow = {
-          unfree.enable = true;
-          broken.enable = true;
+          unfree = enabled;
+          broken = enabled;
         };
         fonts = {
           enable = true;
           default = true;
         };
-        shell.fish.enable = true;
+        shell.fish = enabled;
         timezone = "Europe/Paris";
         utils = {
           enable = true;
           dev = true;
           fun = true;
         };
-        audio.pipewire.enable = true;
+        audio.pipewire = enabled;
         boot = {
           systemd.enable = true;
           kernel = pkgs.linuxPackages_latest; # _zen, _hardened, _rt, _rt_latest, etc.
@@ -176,9 +178,9 @@
           extra-locale = "fr_FR.UTF-8";
         };
         networking = {
-          firewall.enable = false;
+          firewall = disabled;
           hostname = "nixos";
-          networkmanager.enable = true;
+          networkmanager = enabled;
         };
         nix = {
           flakes.extra-options = ''
@@ -200,9 +202,9 @@
             enable = true;
             seahorse = true;
           };
-          openssh.enable = true;
+          openssh = enabled;
         };
-        video.amd.enable = true;
+        video.amd = enabled;
         virtualisation = {
           podman = {
             enable = true;
