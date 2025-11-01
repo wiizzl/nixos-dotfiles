@@ -11,6 +11,10 @@ let
   inherit (config.my) apps desktop user;
 in
 {
+  options.my.apps.browser = {
+    zen.enable = mkEnableOption "Enable Zen browser";
+  };
+
   config = mkIf apps.browser.zen.enable {
     home-manager.users.${user.name} = {
       imports = [ inputs.zen-browser.homeModules.beta ];
